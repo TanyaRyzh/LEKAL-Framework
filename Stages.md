@@ -1,122 +1,127 @@
 # LEKAL Framework — Stages
 
-The Product LEKAL Method is a structured workflow that transforms a raw product idea into a validated product definition.
+LEKAL is a structured workflow that transforms a raw product idea into a buildable product and solution definition.
 
-The method is based on a sequence of filtering stages.  
-At each stage, uncertainty is reduced and the product concept becomes more structured.
+The method is based on a sequence of stages that progressively reduce uncertainty and increase the level of product detail.
 
-The process moves from an initial idea to an approved product definition through a series of analytical steps.
+Each stage uses the results of the previous stage as its input, adds a new level of understanding, validates critical decisions where necessary, and produces a structured document that becomes the input for the following stage.
 
 ---
 
 # Overview
 
-The methodology consists of six stages.
+The methodology consists of five stages.
 
-1. Idea Clarification  
-2. Product Framing Canvas  
-3. Concept Formation  
-4. Product Definition  
-5. Solution Definition  
-6. Validation  
+1. Idea
+2. Frame
+3. Structure
+4. Requirements
+5. Solutions
 
-Each stage filters and refines the product idea, progressively transforming it into a structured and agreed product definition.
+The process moves from understanding the initial idea to defining how the product should work and how it can be implemented.
 
 ---
 
-# Stage 1 — Idea Clarification
+# Stage 1 — Idea
 
 Goal:  
-Transform a raw idea into a clearly articulated product hypothesis.
+Collect and structure enough information about the initial idea to begin product development.
 
 Focus areas:
 
-- understanding the problem
-- identifying target users
-- defining the core outcome
-- capturing the initial product hypothesis
+- problem context
+- users and stakeholders
+- expected outcomes
+- constraints
+- existing solutions
+- assumptions and uncertainties
 
-This stage reduces ambiguity and determines whether the idea has a viable product direction.
+The consultant gathers information without attempting to design the solution.
+
+The stage produces an **Idea** document that captures the initial idea and its surrounding context.
 
 ---
 
-# Stage 2 — Product Framing
+# Stage 2 — Frame
 
 Goal:  
-Define the basic shape of the product.
+Transform the collected idea context into a structured and validated product and business framing.
 
 Focus areas:
 
-- identifying user roles
-- understanding the context of use
-- outlining core product flows
-- defining initial product scope
+- Customer Segments
+- Jobs to Be Done
+- Value Proposition
+- Revenue Streams
+- Competitors / Alternatives
+- Product Stages / Scope
+- Integrations
+- Constraints
 
-At this stage the idea begins to take the form of a potential product.
+The consultant analyzes the Idea, prepares a visual Product Framing representation, and validates it with the client or relevant decision-makers.
+
+The validated results are captured in a **Frame** document.
 
 ---
 
-# Stage 3 — Concept Formation
+# Stage 3 — Structure
 
 Goal:  
-Develop and select a coherent product concept.
+Transform the framed product scope into a coherent and validated product structure.
 
 Focus areas:
 
-- grouping features
-- defining product capabilities
-- determining system boundaries
-- evaluating alternative product concepts
+- High-Level Product Flow
+- Functional Areas
+- capabilities grouped by Functional Area
+- Functional Area Concepts
+- connections and boundaries between Functional Areas
 
-The outcome of this stage is a selected product concept.
+The consultant first defines how the product works end-to-end, then identifies the Functional Areas that emerge from the flow and prepares a visual concept for each area.
+
+The resulting product structure is validated with the client or relevant decision-makers.
+
+The validated results are captured in a **Structure** document.
 
 ---
 
-# Stage 4 — Product Definition
+# Stage 4 — Requirements
 
 Goal:  
-Translate the product concept into a structured product description.
+Translate the validated product structure into a detailed description of product behavior.
 
 Focus areas:
 
 - defining use cases
 - structuring functional requirements
 - identifying domain entities
+- defining business rules
 - clarifying product behavior
+- identifying exceptions and edge cases
 
-This stage produces a clear description of how the product should function.
+This stage progressively decomposes the product structure into detailed requirements that describe how the product should function.
+
+The exact process and outputs of this stage are defined separately.
 
 ---
 
-# Stage 5 — Solution Definition
+# Stage 5 — Solutions
 
 Goal:  
-Define the technical shape of the system that will implement the product.
+Define the technical solution required to implement the product.
 
 Focus areas:
 
 - defining system components
 - identifying services and modules
+- defining integrations
+- defining data flows
 - outlining system architecture
-- identifying integrations and data flows
+- addressing relevant non-functional requirements and technical constraints
 
-The product concept is translated into a technical solution.
+This stage translates the defined product behavior into a technical solution that can be implemented.
 
----
-
-# Stage 6 — Validation
-
-Goal:  
-Confirm that the defined product and solution align with stakeholder expectations.
-
-Focus areas:
-
-- reviewing product definition
-- reviewing solution structure
-- clarifying open questions
-- obtaining stakeholder approval
-
-The stage concludes with an agreed and validated product definition.
+The exact process and outputs of this stage are defined separately.
 
 ---
 
@@ -126,16 +131,25 @@ The LEKAL Method transforms an idea through the following sequence:
 
 Raw Idea  
 ↓  
-Idea Clarification  
+**Idea**  
+Understand and structure the initial context  
 ↓  
-Product Framing  
+Idea Document  
 ↓  
-Concept Formation  
+**Frame**  
+Define and validate the product and business framing  
 ↓  
-Product Definition  
+Frame Document  
 ↓  
-Solution Definition  
+**Structure**  
+Define and validate how the product works and how it is structured  
 ↓  
-Validation  
+Structure Document  
 ↓  
-Approved Product Definition
+**Requirements**  
+Define detailed product behavior  
+↓  
+**Solutions**  
+Define the technical solution  
+↓  
+Buildable Product Scope

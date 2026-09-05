@@ -1,4 +1,4 @@
-# Idea Context Snapshot
+# Idea
 
 ## Basic Information
 
@@ -131,9 +131,3 @@ Examples:
 Short summary of the idea and its context.
 
 ---
-
-# Next Step
-
-Recommended next stage in the Product LEKAL Framework:
-
-**Product Canvas Framing**

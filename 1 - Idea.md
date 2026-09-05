@@ -1,6 +1,6 @@
 //**Possible automations -> AI assistant**
 
-# LEKAL 1 — Idea Clarification
+# LEKAL 1 — Idea
 
 The goal of this stage is to collect and structure the maximum amount of information about the initial idea before starting product development.
 
@@ -76,8 +76,8 @@ The goal is to gather information rather than to design the solution.
 
 # Output
 
-1. The stage produces an **Idea Context Snapshot** 
-[](./templates/Idea%20Context%20Snapshot.md)
+1. The stage produces an **Idea** document 
+[](./templates/Idea.md)
 
 This snapshot contains structured information describing the idea and its surrounding context.
 
@@ -96,7 +96,7 @@ The stage is complete when:
 - key stakeholders are identified
 - major assumptions and constraints are recorded
 
-Once these conditions are satisfied, the process can move to the next stage: **Product Development**.
+Once these conditions are satisfied, the process can move to the next stage: **Frame**.
 
 ## Failure Conditions
 
