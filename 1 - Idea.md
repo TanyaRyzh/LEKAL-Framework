@@ -1,5 +1,3 @@
-//**Possible automations -> AI assistant**
-
 # LEKAL 1 — Idea
 
 The goal of this stage is to collect and structure the maximum amount of information about the initial idea before starting product development.
@@ -56,19 +54,36 @@ Are there known limitations such as time, budget, technology, or integration req
 
 How is the problem currently solved?
 
+### Core interaction
+
+What is the main interaction expected between the user and the potential product?
+
+At this stage, describe the interaction at a high level without designing detailed functionality.
+
+### Assumptions and open questions
+
+What is currently assumed to be true?
+
+Which important aspects of the idea remain uncertain or unknown?
+
 ---
 
 # Process
 
-[](./templates/First%20Interview%20Script.md)
+Use the [First Interview Script](./templates/First%20Interview%20Script.md) as guidance for the clarification conversation.
 
 The consultant performs the following activities:
 
 1. Listen to the client’s explanation of the idea.
 2. Ask structured questions to expand the context.
 3. Identify stakeholders and potential users.
-4. Identify assumptions and constraints.
-5. Capture signals that may influence product development.
+4. Identify the core interaction between the user and the potential product.
+5. Identify assumptions and constraints.
+6. Capture open questions and signals that may influence product development.
+
+The interview script is a guide, not a checklist.
+
+Questions that have already been answered should not be repeated. The consultant may ask additional follow-up questions where necessary.
 
 The goal is to gather information rather than to design the solution.
 
@@ -76,14 +91,15 @@ The goal is to gather information rather than to design the solution.
 
 # Output
 
-1. The stage produces an **Idea** document 
-[](./templates/Idea.md)
+The stage produces an **Idea** document using the [Idea template](./templates/Idea.md).
 
-This snapshot contains structured information describing the idea and its surrounding context.
+The document contains structured information describing the idea and its surrounding context.
 
-The snapshot becomes the foundation for the next stage of the methodology.
+It is prepared from the clarification conversation and any other relevant information available during the stage.
 
-Based on first interview meeting transcription.
+If the clarification was conducted as a recorded or transcribed meeting, the transcription may be used as an input.
+
+The **Idea** document becomes the foundation for the next stage of the methodology.
 
 ---
 
@@ -92,21 +108,25 @@ Based on first interview meeting transcription.
 The stage is complete when:
 
 - the idea is clearly described
+- the problem or situation behind the idea is understood
+- the primary user or user group is identified
+- the core interaction between the user and the potential product is understood
 - the surrounding context is captured
 - key stakeholders are identified
-- major assumptions and constraints are recorded
+- known constraints are recorded
+- major assumptions and open questions are captured
 
 Once these conditions are satisfied, the process can move to the next stage: **Frame**.
 
 ## Failure Conditions
 
-The stage is considered unsuccessful if the consultant cannot clearly identify one or more of the following:
+The stage is considered unsuccessful if the consultant cannot establish enough information to describe:
 
-- the problem the idea attempts to solve
-- the primary user of the potential product
-- the core interaction between the user and the system
+- the problem or situation the idea addresses
+- the primary user or user group
+- the core interaction between the user and the potential product
 - the context in which the idea would operate
 
-In such cases, the idea is considered insufficiently defined to proceed to product development.
+In such cases, the idea is considered insufficiently defined to proceed to **Frame**.
 
-The consultant should request additional information.
+The consultant should request additional information before completing the stage.

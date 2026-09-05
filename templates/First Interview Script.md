@@ -1,6 +1,6 @@
 # Idea Clarification Interview Script
 
-This script helps the consultant collect the information required to create an **Idea Context Snapshot**.
+This script helps the consultant collect the information required to create an **Idea** stage.
 
 The goal of the interview is not to design the product, but to understand the context surrounding the idea.
 
@@ -164,6 +164,6 @@ This ensures that the captured information is accurate.
 
 # Output
 
-After the interview, the consultant creates the **Idea Context Snapshot** based on the collected information.
+After the interview, the consultant creates the **Idea** document based on the collected information.
 
 This document becomes the input for the next stage of the LEKAL Framework.
