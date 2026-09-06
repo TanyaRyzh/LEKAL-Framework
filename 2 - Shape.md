@@ -1,8 +1,8 @@
 # LEKAL Stages
 
-LEKAL transforms a raw product idea into a buildable product scope through six stages.
+LEKAL transforms a raw product idea into a buildable product scope through five stages.
 
-Each stage has a specific purpose and produces an output that becomes the basis for the following work.
+Each stage represents a meaningful transformation of product information and produces an output that becomes the basis for the following work.
 
 ---
 
@@ -20,7 +20,7 @@ The consultant explores:
 - assumptions and open questions
 - the core interaction between the user and the potential product
 
-The purpose of this stage is to understand the idea before attempting to frame or design the product.
+The purpose of this stage is to understand the idea before attempting to shape or design the product.
 
 **Output:** Idea
 
@@ -28,7 +28,7 @@ The purpose of this stage is to understand the idea before attempting to frame o
 
 # 2 — Shape
 
-Transform the Idea into structured material for product and business framing.
+Transform the Idea into a structured and validated product and business hypothesis.
 
 The consultant analyzes and expands the available information across:
 
@@ -41,42 +41,21 @@ The consultant analyzes and expands the available information across:
 - Integrations
 - Constraints
 
-Additional information is collected where the Idea is not sufficient.
+The first result of this work is **Shape v1** — the consultant's product hypothesis.
 
-The result is prepared for visualization on the Product Framing Board.
+Shape v1 is visualized in Miro and reviewed with the client or relevant decision-makers.
 
-The purpose of this stage is to prepare a coherent product hypothesis that can be visualized and reviewed with the client or relevant decision-makers.
+The Shape is then updated based on the validation results, producing **Shape v2**.
 
-**Output:** Product Framing Board
+The purpose of this stage is to establish a sufficiently validated product direction before defining how the product works.
 
----
-
-# 3 — Frame
-
-Validate the prepared product framing with the client or relevant decision-makers and capture the confirmed product direction.
-
-The Product Framing Board is used as the primary working artifact during the review.
-
-The consultant:
-
-- presents and discusses the framing
-- identifies incorrect assumptions and contradictions
-- collects feedback
-- resolves critical open questions
-- confirms or changes product boundaries
-- updates the framing based on the validation results
-
-The validated framing is then captured in a structured document.
-
-The purpose of this stage is to establish an agreed product and business frame before defining how the product works.
-
-**Output:** Frame
+**Output:** Shape v2
 
 ---
 
-# 4 — Structure
+# 3 — Structure
 
-Transform the validated Frame into a coherent product structure.
+Transform the validated Shape into a coherent product structure.
 
 The consultant defines:
 
@@ -84,6 +63,8 @@ The consultant defines:
 - Functional Areas
 - Functional Area Concepts
 - relationships and interactions between product areas
+
+The High-Level Product Flow is defined first and used as the basis for identifying Functional Areas and their concepts.
 
 The product structure is visualized and reviewed before it is finalized.
 
@@ -93,7 +74,7 @@ The purpose of this stage is to establish how the product works at a high level 
 
 ---
 
-# 5 — Requirements
+# 4 — Requirements
 
 Transform the validated product structure into detailed product requirements.
 
@@ -116,7 +97,7 @@ The purpose of this stage is to describe **what the product must do** in suffici
 
 ---
 
-# 6 — Solutions
+# 5 — Solutions
 
 Transform the validated product requirements into a technical solution that can be used as the basis for implementation.
 
@@ -147,7 +128,7 @@ Raw Idea
 ↓
 
 **1 — Idea**  
-Understand and structure the context.
+Understand and structure the initial context.
 
 ↓
 
@@ -156,24 +137,27 @@ Understand and structure the context.
 ↓
 
 **2 — Shape**  
-Analyze the product and business framing and prepare it for visualization.
+Develop the product and business hypothesis.
 
 ↓
 
-**Shape**
+**Shape v1**
 
 ↓
 
-**3 — Frame**  
-Review and validate the framing with the client or relevant decision-makers.
+**Visualization in Miro**
 
 ↓
 
-**Frame**
+**Client Review**
 
 ↓
 
-**4 — Structure**  
+**Shape v2**
+
+↓
+
+**3 — Structure**  
 Define how the product works and how it is structured.
 
 ↓
@@ -182,7 +166,7 @@ Define how the product works and how it is structured.
 
 ↓
 
-**5 — Requirements**  
+**4 — Requirements**  
 Define detailed product behavior.
 
 ↓
@@ -191,7 +175,7 @@ Define detailed product behavior.
 
 ↓
 
-**6 — Solutions**  
+**5 — Solutions**  
 Define the technical solution.
 
 ↓

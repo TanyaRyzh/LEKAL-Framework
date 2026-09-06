@@ -1,6 +1,6 @@
 # Process
 
-The consultant starts with the validated **Frame** document and transforms the selected product scope into a structured product model.
+The consultant starts with the validated **Shape** document and transforms the selected product scope into a structured product model.
 
 The process follows a general sequence:
 
@@ -75,7 +75,7 @@ Once these conditions are satisfied, the process can move to the next stage: **R
 
 ## Failure Conditions
 
-The stage is considered unsuccessful if the consultant cannot establish a coherent product structure based on the validated Frame.
+The stage is considered unsuccessful if the consultant cannot establish a coherent product structure based on the validated **Shape**.
 
 This may include situations where:
 
@@ -86,4 +86,4 @@ This may include situations where:
 - major contradictions remain unresolved after validation
 - the client does not confirm the fundamental product structure
 
-In such cases, the consultant should return to the unresolved areas, revise the product structure, or revisit the **Frame** stage where changes to the product framing or scope are required.
+In such cases, the consultant should return to the unresolved areas, revise the product structure, or revisit the **Shape** stage where changes to the product framing or scope are required.

@@ -13,7 +13,7 @@ Each stage uses the results of the previous stage as its input, adds a new level
 The methodology consists of five stages.
 
 1. Idea
-2. Frame
+2. Shape
 3. Structure
 4. Requirements
 5. Solutions
@@ -42,7 +42,7 @@ The stage produces an **Idea** document that captures the initial idea and its s
 
 ---
 
-# Stage 2 — Frame
+# Stage 2 — Shape
 
 Goal:  
 Transform the collected idea context into a structured and validated product and business framing.
@@ -60,7 +60,7 @@ Focus areas:
 
 The consultant analyzes the Idea, prepares a visual Product Framing representation, and validates it with the client or relevant decision-makers.
 
-The validated results are captured in a **Frame** document.
+The validated results are captured in a **Shape** document.
 
 ---
 

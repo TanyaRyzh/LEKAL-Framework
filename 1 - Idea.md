@@ -116,7 +116,7 @@ The stage is complete when:
 - known constraints are recorded
 - major assumptions and open questions are captured
 
-Once these conditions are satisfied, the process can move to the next stage: **Frame**.
+Once these conditions are satisfied, the process can move to the next stage: **Shape**.
 
 ## Failure Conditions
 
@@ -127,6 +127,6 @@ The stage is considered unsuccessful if the consultant cannot establish enough i
 - the core interaction between the user and the potential product
 - the context in which the idea would operate
 
-In such cases, the idea is considered insufficiently defined to proceed to **Frame**.
+In such cases, the idea is considered insufficiently defined to proceed to **Shape**.
 
 The consultant should request additional information before completing the stage.
