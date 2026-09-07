@@ -12,7 +12,7 @@ The first result of this work is **Shape v1 Document** — the consultant's prod
 
 **Shape v1 Document** is visualized in Miro and reviewed with the client or relevant decision-makers.
 
-The results of the review are incorporated into the **Shape Stage**, producing **Shape v2 Document** — the validated product hypothesis and the input for Structure.
+The results of the review are incorporated into **Shape v2 Document** — the validated product hypothesis and the input for **Structure Stage**.
 
 ---
 
@@ -35,7 +35,7 @@ Not every uncertainty must be eliminated during **Shape Stage**.
 
 However, uncertainty must be actively analyzed where possible and must not be silently converted into assumptions or ignored.
 
-The result must provide a sufficiently stable product direction before defining how the product works in Structure.
+The result must provide a sufficiently stable product direction before defining how the product works in **Structure Stage**.
 
 ---
 
@@ -235,7 +235,7 @@ Where the market provides sufficient information, build a competitive matrix con
 - 5–10 relevant competitors or alternatives;
 - 10–20 meaningful product-level comparison characteristics.
 
-The product hypothesis must be the first row of the matrix.
+The product hypothesis must be included as the first product being compared.
 
 The comparison characteristics must begin with:
 
@@ -244,8 +244,8 @@ The comparison characteristics must begin with:
 
 The remaining characteristics should be ordered by product importance:
 
-- core and potentially MVP-defining characteristics further left;
-- secondary and later-stage characteristics further right.
+- core and potentially MVP-defining characteristics first;
+- secondary and later-stage characteristics later.
 
 Avoid using obvious atomic functionality that does not meaningfully differentiate the products.
 
@@ -257,6 +257,21 @@ For each characteristic use:
 - `No evidence found`
 
 Do not treat information that could not be found as evidence that a capability does not exist.
+
+### Competitive Matrix Format
+
+The comparison rules define the information that must be analyzed, not a mandatory physical table orientation.
+
+The matrix may be:
+
+- horizontal, with products as rows and characteristics as columns; or
+- transposed, with characteristics as rows and products as columns.
+
+Choose the format that makes the comparison easiest to understand and review.
+
+The document and visual representation may use different orientations where this improves readability.
+
+Changing the physical orientation must not change the comparison logic or remove relevant information.
 
 After completing the comparison, analyze the results to identify:
 
@@ -305,13 +320,34 @@ Use as inputs:
 
 ### MVP
 
-Define the smallest coherent product that can deliver the core value proposition and allow the primary users to complete the core product interaction.
+Define the smallest coherent product that can deliver the core Value Proposition and allow the primary users to complete the core product interaction.
 
-The MVP must be checked as an end-to-end value loop.
+The MVP must represent a complete end-to-end value loop.
 
-Walk through the primary user journey and verify that it can reach a meaningful outcome using only MVP capabilities.
+A value loop is complete only when the relevant Jobs to Be Done can reach their meaningful outcomes.
 
-If the proposed MVP stops before the user's job is completed, identify the missing capability and evaluate whether it belongs in the MVP.
+Reaching an intermediate product or workflow state is not sufficient if additional actions are necessary to achieve the original job.
+
+### Value Loop Walkthrough
+
+Walk through the primary product interaction from its trigger to its meaningful outcome.
+
+For each important path, determine:
+
+1. What starts the user's job?
+2. What actions and interactions are required?
+3. What happens when the primary path succeeds?
+4. What happens when an important action produces a negative, failed, or unresolved result?
+5. What must happen after that result for the original job to continue?
+6. Can the necessary participants continue the process using the proposed MVP?
+7. Can the relevant Job to Be Done eventually reach its stated outcome?
+8. Is there a meaningful final state indicating that the loop has been completed?
+
+If a negative or unresolved result creates additional work that is necessary to achieve the original job, the required recovery path is part of the core value loop.
+
+Do not treat an intermediate state — such as recording a failure, creating an issue, notifying another participant, or making information visible — as completion unless it genuinely represents the outcome of the user's job.
+
+If the proposed MVP stops before the meaningful outcome, identify the missing capability and evaluate whether it belongs in the MVP.
 
 Functionality must not be omitted merely because it appears obvious or expected.
 
@@ -325,15 +361,26 @@ Validate the proposed MVP against:
 
 #### Jobs to Be Done
 
-Can the primary segments complete their key jobs?
+Can the primary segments complete their key jobs from trigger to meaningful outcome?
+
+For each primary Job to Be Done, verify that the proposed MVP contains the capabilities necessary to reach its expected outcome.
 
 #### Value Proposition
 
 Does the MVP actually deliver the value promised by the product hypothesis?
 
+For each major Value Proposition statement, verify that the proposed MVP provides the capabilities necessary to support it.
+
+A promised value without supporting product capability indicates either a scope gap or a Value Proposition that must be revised.
+
 #### Core Product Flow
 
-Does the end-to-end interaction reach a meaningful outcome without depending on functionality assigned to a later stage?
+Does the end-to-end interaction reach a meaningful outcome without depending on functionality assigned to a later product stage?
+
+Check both:
+
+- the successful path;
+- important negative or recovery paths required to complete the same job.
 
 #### Competitive Analysis
 
@@ -345,7 +392,15 @@ Is the proposed MVP realistic within the known business, technical, organization
 
 Where the boundary is uncertain, identify alternative scope options, analyze their implications, and present a recommendation or candidates for validation.
 
-Stop adding functionality once the core value loop and meaningful stage boundaries are sufficiently represented.
+Stop adding functionality once:
+
+- the primary Jobs to Be Done can reach their meaningful outcomes;
+- the core value loop and necessary recovery paths are complete;
+- the Value Proposition is supported;
+- the relevant differentiation hypothesis is represented;
+- the product-stage boundary is coherent.
+
+Do not add functionality solely to match competitors or fill conceptual space.
 
 ---
 
@@ -377,7 +432,7 @@ Do not confuse internal product mechanisms with external integrations.
 
 At **Shape Stage**, the purpose is to understand the integration need and realistic options.
 
-Detailed integration design and final provider selection belong to Solutions unless the choice materially affects the product hypothesis or constraints.
+Detailed integration design and final provider selection belong to **Solutions Stage** unless the choice materially affects the product hypothesis or constraints.
 
 ---
 
@@ -457,7 +512,7 @@ For each relevant technical area:
 2. Keep them explicitly marked as candidates.
 3. Identify relevant observations, constraints, or risks.
 4. Highlight decisions that may materially affect feasibility, cost, scope, or product direction.
-5. Defer detailed technical comparison and final selection to Solutions.
+5. Defer detailed technical comparison and final selection to **Solutions Stage**.
 
 Do not select a technology merely because a candidate is familiar or popular.
 
@@ -508,12 +563,12 @@ In particular:
 - Jobs to Be Done must inform Value Proposition;
 - Value Proposition must inform Product Scope;
 - competitor research should inform Revenue Streams, differentiation, and Product Scope;
-- Product Scope must support the core value loop;
+- Product Scope must support the complete core value loop;
 - Integrations must follow actual product needs;
 - Constraints must influence Scope and technical candidates;
 - Potential Tech Stack must remain compatible with the product hypothesis and known constraints.
 
-The result of this step is [Shape v1 document](/templates/Shape%20Template.md).
+The result of this step is **Shape v1 Document**.
 
 **Shape v1 Document** represents the consultant's product hypothesis before client validation.
 
@@ -535,7 +590,10 @@ Check that:
 - direct and adjacent competitors are distinguished where possible;
 - differentiation hypotheses are explicit;
 - MVP candidates follow from the preceding analysis;
+- each primary Job to Be Done can reach its meaningful outcome;
 - the MVP represents a complete core value loop;
+- important negative or recovery paths required to complete that loop have been considered;
+- major Value Proposition statements are supported by the proposed MVP;
 - Integrations are justified by product needs;
 - Potential Tech Stack contains realistic candidates without prematurely defining the solution;
 - Constraints are reflected in relevant decisions;
@@ -577,21 +635,17 @@ Do not introduce silent assumptions or functionality while visualizing.
 
 ### External Validation Boundary
 
-**Shape v1 Document** is the result of consultant and agent analysis before client validation.
+**Shape v1 Document** represents the product hypothesis before client validation.
 
-After **Shape v1 Document** is created and visualized, the process pauses for external validation.
+After **Shape v1 Document** is created and visualized, **Shape Stage** pauses for external validation.
 
 The client review is conducted by the consultant with the client or relevant decision-makers.
 
-The agent does not conduct, simulate, or infer the result of this validation.
+**Shape v1 Document** remains explicitly unvalidated until that review takes place.
 
-**Shape v1 Document** must remain explicitly unvalidated until the consultant provides the results of the external review.
+The validation results are incorporated into **Shape v2 Document**.
 
-The process continues only after validation feedback has been provided.
-
-The validation results are then incorporated into **Shape v2 Document**.
-
-Only **Shape v2 Document** may be used as input for Structure.
+Only **Shape v2 Document** may be used as input for **Structure Stage**.
 
 ---
 
@@ -609,6 +663,7 @@ During validation:
 - review monetization hypotheses where relevant;
 - review competitor conclusions and differentiation hypotheses;
 - validate Product Stages / Scope;
+- verify that the proposed MVP represents a complete value loop;
 - review important Integrations and Constraints;
 - review relevant technical assumptions where they materially affect the product;
 - capture new information;
@@ -616,13 +671,13 @@ During validation:
 
 Silence must not be treated as confirmation.
 
-Not every uncertainty must be resolved if it does not prevent the product from moving into Structure.
+Not every uncertainty must be resolved if it does not prevent the product from moving into **Structure Stage**.
 
 ---
 
-### Step 6 — Create **Shape v2 Document**
+### Step 6 — Develop **Shape v2 Document**
 
-Incorporate the external validation results into the **Shape Stage**.
+Incorporate the external validation results into **Shape v2 Document**.
 
 When updating:
 
@@ -636,60 +691,49 @@ When updating:
 - retain unresolved assumptions and open questions explicitly;
 - perform another consistency review.
 
-The result is [Shape v2 document](/templates/Shape%20Template.md).
+The result of this step is **Shape v2 Document**.
 
 **Shape v2 Document** represents the product hypothesis after client validation.
 
-If validation reveals that the original **Idea Document** was materially misunderstood, revisit the relevant parts of **Idea Document** before finalizing **Shape Stage**.
+If validation reveals that the original **Idea Document** was materially misunderstood, revisit the relevant parts of **Idea Stage** before finalizing **Shape Stage**.
 
 ---
 
 ## Output
 
-The output of this stage is:
+**Shape Stage** produces two documents during its lifecycle:
 
-- **Shape v2 Document**
+### **Shape v1 Document**
 
-**Shape v2 Document** contains:
-
-- Customer Segments;
-- Jobs to Be Done;
-- Value Proposition;
-- Revenue Streams;
-- Competitors / Alternatives;
-- Product Stages / Scope;
-- Integrations;
-- Constraints;
-- Potential Tech Stack;
-- remaining Assumptions and Open Questions.
-
-During execution of the stage:
-
-**Shape v1 Document**  
 The consultant's product and business hypothesis before client validation.
 
-↓
+It is used as the basis for Miro visualization and external review.
 
-**Miro Visualization**  
-The working representation used to review the hypothesis.
+It is not an input for **Structure Stage**.
 
-↓
+### **Shape v2 Document**
 
-**Client Review**  
-External validation performed by the consultant with the client or relevant decision-makers.
+The updated product and business hypothesis after external validation.
 
-↓
+It incorporates validated decisions, corrections, rejected hypotheses, and remaining uncertainty.
 
+Only **Shape v2 Document** may be used as input for **Structure Stage**.
+
+The process is:
+
+**Shape v1 Document**  
+↓  
+Miro Visualization  
+↓  
+Client Review  
+↓  
 **Shape v2 Document**
-The updated and validated product hypothesis.
-
-**Shape v2 Document** is the primary input for Structure.
 
 ---
 
 ## Success Criteria
 
-The stage is complete when:
+**Shape Stage** is complete when:
 
 - relevant Customer Segments are sufficiently understood;
 - key Jobs to Be Done are defined;
@@ -700,8 +744,11 @@ The stage is complete when:
 - relevant market signals and baseline capabilities are understood;
 - differentiation hypotheses are explicit;
 - Product Stages / Scope are defined;
-- the MVP represents a coherent end-to-end value loop;
+- each primary Job to Be Done can reach its meaningful outcome within the MVP;
+- the MVP represents a coherent and complete end-to-end value loop;
+- important negative or recovery paths required to complete the core value loop are supported;
 - the MVP is consistent with the Jobs to Be Done and Value Proposition;
+- major Value Proposition statements are supported by MVP capabilities;
 - relevant Integrations and realistic candidates are identified;
 - relevant Constraints are understood;
 - Potential Tech Stack candidates are identified without prematurely defining the technical solution;
@@ -709,16 +756,16 @@ The stage is complete when:
 - **Shape v1 Document** has been visualized;
 - **Shape v1 Document** has been reviewed with the client or relevant decision-makers;
 - external validation feedback has been incorporated;
-- rejected or changed hypotheses have been reflected in the **Shape Stage**;
+- rejected or changed hypotheses have been reflected in **Shape v2 Document**;
 - critical contradictions have been resolved;
 - remaining assumptions and open questions are explicit;
-- **Shape v2 Document** provides a sufficiently stable basis for Structure.
+- **Shape v2 Document** provides a sufficiently stable basis for **Structure Stage**.
 
 ---
 
 ## Failure Conditions
 
-The stage is not complete when:
+**Shape Stage** is not complete when:
 
 - the target customer or primary users remain fundamentally unclear;
 - key Jobs to Be Done cannot be established;
@@ -727,14 +774,16 @@ The stage is not complete when:
 - competitor analysis is insufficient to understand the relevant market context;
 - the proposed differentiation cannot be articulated where differentiation is necessary;
 - the MVP is an arbitrary feature list rather than a coherent product boundary;
-- the core value loop cannot be completed within the proposed MVP;
+- a primary Job to Be Done cannot reach its meaningful outcome within the proposed MVP;
+- the core value loop stops at an intermediate state instead of the meaningful outcome of the user's job;
+- an important negative or recovery path required to complete the core value loop is missing;
+- a major Value Proposition statement has no supporting MVP capability;
 - the proposed scope contradicts the Jobs to Be Done or Value Proposition;
 - critical Integrations or Constraints remain unknown;
 - technical feasibility contains unresolved risks that materially affect the product hypothesis;
 - major contradictions between Focus Areas remain unresolved;
 - **Shape v1 Document** has not been externally validated;
-- client validation results have not been incorporated;
-- the agent or consultant has treated **Shape v1 Document** as validated without external review;
-- there is no sufficiently stable **Shape v2 Document** to proceed to Structure.
+- client validation results have not been incorporated into **Shape v2 Document**;
+- there is no sufficiently stable **Shape v2 Document** to proceed to **Structure Stage**.
 
-If these conditions occur, continue analysis, gather additional information, revise the **Shape Stage**, perform or complete external validation, or revisit **Idea Stage** where necessary.
+If these conditions occur, continue analysis, gather additional information, revise the product hypothesis, perform or complete external validation, or revisit **Idea Stage** where necessary.
