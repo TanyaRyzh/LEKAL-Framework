@@ -91,7 +91,7 @@ The goal is to gather information rather than to design the solution.
 
 # Output
 
-The stage produces an **Idea** document using the [Idea template](./templates/Idea.md).
+The stage produces an **Idea Document** using the [Idea template](./templates/Idea%20Template.md).
 
 The document contains structured information describing the idea and its surrounding context.
 
@@ -99,7 +99,7 @@ It is prepared from the clarification conversation and any other relevant inform
 
 If the clarification was conducted as a recorded or transcribed meeting, the transcription may be used as an input.
 
-The **Idea** document becomes the foundation for the next stage of the methodology.
+The **Idea Document** becomes the foundation for the next stage of the methodology.
 
 ---
 
@@ -116,7 +116,7 @@ The stage is complete when:
 - known constraints are recorded
 - major assumptions and open questions are captured
 
-Once these conditions are satisfied, the process can move to the next stage: **Shape**.
+Once these conditions are satisfied, the process can move to the next stage: **Shape Stage**.
 
 ## Failure Conditions
 
@@ -127,6 +127,6 @@ The stage is considered unsuccessful if the consultant cannot establish enough i
 - the core interaction between the user and the potential product
 - the context in which the idea would operate
 
-In such cases, the idea is considered insufficiently defined to proceed to **Shape**.
+In such cases, the idea is considered insufficiently defined to proceed to **Shape Stage**.
 
 The consultant should request additional information before completing the stage.

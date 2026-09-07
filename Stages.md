@@ -38,14 +38,14 @@ Focus areas:
 
 The consultant gathers information without attempting to design the solution.
 
-The stage produces an **Idea** document that captures the initial idea and its surrounding context.
+The stage produces an **Idea Document** that captures the initial idea and its surrounding context.
 
 ---
 
 # Stage 2 — Shape
 
 Goal:  
-Transform the collected idea context into a structured and validated product and business framing.
+Transform the collected **Idea Document** into an analyzed and validated product and business hypothesis.
 
 Focus areas:
 
@@ -57,17 +57,30 @@ Focus areas:
 - Product Stages / Scope
 - Integrations
 - Constraints
+- Potential Tech Stack
 
-The consultant analyzes the Idea, prepares a visual Product Framing representation, and validates it with the client or relevant decision-makers.
+**Shape Stage** is an analysis stage.
 
-The validated results are captured in a **Shape** document.
+The consultant uses the **Idea Document** as the starting context, but does not only structure the information already available.
+
+Where uncertainty exists, the consultant actively works to reduce it through analysis and research: developing hypotheses and alternatives, gathering relevant evidence, comparing options, identifying risks and trade-offs, and forming reasoned recommendations where possible.
+
+The first result is **Shape v1 Document** — the consultant's product and business hypothesis before client validation.
+
+**Shape v1 Document** is visualized in Miro and reviewed with the client or relevant decision-makers.
+
+The validation results are then incorporated into the **Shape Stage**, producing **Shape v2 Document**.
+
+Only **Shape v2 Document** is used as input for Stage 3 — Structure.
+
+The stage produces a validated **Shape v2 Document**.
 
 ---
 
 # Stage 3 — Structure
 
 Goal:  
-Transform the framed product scope into a coherent and validated product structure.
+Transform the validated product hypothesis into a coherent and validated product structure.
 
 Focus areas:
 
@@ -136,10 +149,16 @@ Understand and structure the initial context
 ↓  
 Idea Document  
 ↓  
-**Frame**  
-Define and validate the product and business framing  
+**Shape**  
+Analyze the product and develop the product and business hypothesis  
 ↓  
-Frame Document  
+Shape v1 Document 
+↓  
+Miro Visualization  
+↓  
+Client Review / Validation  
+↓  
+Shape v2 Document
 ↓  
 **Structure**  
 Define and validate how the product works and how it is structured  
@@ -149,7 +168,11 @@ Structure Document
 **Requirements**  
 Define detailed product behavior  
 ↓  
+Requirements Document  
+↓  
 **Solutions**  
 Define the technical solution  
+↓  
+Solutions  
 ↓  
 Buildable Product Scope
