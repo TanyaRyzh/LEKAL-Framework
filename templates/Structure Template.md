@@ -1,248 +1,278 @@
 # Structure Document
 
-**Status:** <Draft / Ready for external review / Validated>  
-**Project:** <project>  
+## Status
+
+**Project:** <Project Name>  
 **Input:** **Shape v2 Document**  
-**Stage:** **Structure Stage**
+**Stage:** **Structure Stage**  
+**Document Version:** v1 | v2  
+**Structure Status:** Proposed | Reviewed  
 
 ---
 
-## 1. Functional Areas
+## 1. Functional Structure
 
-- <Functional Area>
-- <Functional Area>
-- <Functional Area>
+### 1.1 <Functional Area>
 
----
+**Responsibility:**  
+<Short description of the functional responsibility represented by this area.>
 
-## 2. Functional Structure
+**Actors:**  
+<Relevant actors, if useful for understanding the area.>
 
-### 2.1 <Functional Area>
+#### <Capability Group>
 
-#### Capabilities
+| Capability | Classification | Priority | Actor | Rationale / Notes |
+|---|---|---|---|---|
+| <Capability> | Validated / Derived | Must / Should / Could | <Actor> | <Rationale, dependency, uncertainty, or other relevant note> |
+| <Capability> | Validated / Derived | Must / Should / Could | <Actor> | |
+| <Capability> | Validated / Derived | Must / Should / Could | <Actor> | |
 
-- <Actor> can <capability>.
-- <Actor> can <capability>.
-- <Actor> can <capability>.
-- <Actor> can <capability>.
+#### <Capability Group>
 
----
-
-#### <Capability / Functional Flow Name>
-
-**Actor:** <Actor>
-
-| Actor | System |
-|---|---|
-| <Actor action> | |
-| | <System response> |
-| | <Validation / decision> |
-| <Next actor action> | |
-| | <System response> |
-| | <State change / result> |
-
-##### Alternative / Negative Flows
-
-- `<Condition> → <System behavior> → <Return point / result>`
-- `<Condition> → <System behavior> → <Return point / result>`
-
-##### Rules
-
-- <Structurally relevant rule>
-- <Validation>
-- <Constraint>
-- <Permission / ownership rule>
-- <Limit>
-
-##### States
-
-`<State> → <State> → <State>`
-
-##### Open Questions
-
-- <Open question>
-
-Include only sections that are relevant to this Functional Flow.
+| Capability | Classification | Priority | Actor | Rationale / Notes |
+|---|---|---|---|---|
+| <Capability> | Validated / Derived | Must / Should / Could | <Actor> | |
+| <Capability> | Validated / Derived | Must / Should / Could | <Actor> | |
 
 ---
 
-#### <Capability / Functional Flow Name>
+### 1.2 <Functional Area>
 
-**Actor:** <Actor>
+**Responsibility:**  
+<Short description of the functional responsibility represented by this area.>
 
-| Actor | System |
-|---|---|
-| <Actor action> | |
-| | <System response> |
-| <Next actor action> | |
-| | <System response / result> |
+**Actors:**  
+<Relevant actors, if useful.>
 
-##### Alternative / Negative Flows
+| Capability | Classification | Priority | Actor | Rationale / Notes |
+|---|---|---|---|---|
+| <Capability> | Validated / Derived | Must / Should / Could | <Actor> | |
+| <Capability> | Validated / Derived | Must / Should / Could | <Actor> | |
 
-- <Alternative / negative flow>
-
-##### Rules
-
-- <Rule>
-
-##### States
-
-`<State> → <State>`
-
-##### Open Questions
-
-- <Open question>
+> Use Capability Groups only where they improve understanding.  
+> A Functional Area may contain a flat capability list when grouping adds no value.
 
 ---
 
-### 2.2 <Functional Area>
+## 2. Structural Dependencies
 
-#### Capabilities
+Include only dependencies that materially affect functional Structure, completeness, or priority.
 
-- <Actor> can <capability>.
-- <Actor> can <capability>.
-- <Actor> can <capability>.
+| Capability | Depends On | Why It Matters |
+|---|---|---|
+| <Capability> | <Capability / condition> | <Functional reason> |
+| <Capability> | <Capability / condition> | <Functional reason> |
 
----
-
-#### <Capability / Functional Flow Name>
-
-**Actor:** <Actor>
-
-| Actor | System |
-|---|---|
-| <Actor action> | |
-| | <System response> |
-| | <Validation / decision> |
-| <Next actor action> | |
-| | <System response / result> |
-
-##### Alternative / Negative Flows
-
-- <Alternative / negative flow>
-
-##### Rules
-
-- <Rule>
-
-##### States
-
-`<State> → <State>`
-
-##### Open Questions
-
-- <Open question>
+Do not include technical implementation dependencies.
 
 ---
 
 ## 3. Validated Scope Coverage
 
-Map every validated MVP capability from the **Shape v2 Document** to the resulting Structure.
+Map the validated MVP scope from the **Shape v2 Document** to the proposed Structure.
 
-| Validated MVP Capability from Shape v2 Document | Functional Area | Structure Representation | Coverage |
+| Validated Scope Item | Structure Representation | Coverage | Notes |
 |---|---|---|---|
-| <Capability> | <Functional Area> | <Capability / Functional Flow> | <Covered / Transformed / Gap> |
+| <Shape capability / scope item> | <Functional Area → Capability> | Covered / Transformed / Gap | |
+| <Shape capability / scope item> | <Functional Area → Capability> | Covered / Transformed / Gap | |
 
-Use:
+### Coverage Summary
 
-- `Covered` — the validated capability is explicitly represented in the Structure.
-- `Transformed` — the validated capability is represented through a different structural decomposition without losing the original validated behavior.
-- `Gap` — the validated capability is not adequately represented.
+**Covered:** <number>  
+**Transformed:** <number>  
+**Gap:** <number>
 
-Every validated MVP capability from the **Shape v2 Document** must appear in this table.
+### Unresolved Gaps
 
-For every `Transformed` item, explain how the original validated behavior is represented.
+- <Gap and required action>
+- <Gap and required action>
 
-Every `Gap` must be resolved or explicitly returned for validation.
+If no unresolved gaps remain:
 
-Coverage does not by itself prove sufficient decomposition.
-
-A validated capability represented only by a broad statement is not sufficiently structured when meaningful actor actions, system responses, validations, decisions, states or recovery behavior remain hidden.
-
----
-
-## 4. Structure Consistency Review
-
-### Capability Decomposition
-
-- <Does every structurally significant capability have a Functional Flow or explicit representation within another named Functional Flow?>
-- <Have complex capabilities been decomposed into meaningful actor actions and system responses?>
-- <Are meaningful validations, decisions and state changes visible?>
-- <Do any capability statements hide multiple materially different interactions?>
-- <Are any capabilities unnecessarily granular?>
-
-### Validated Scope Coverage
-
-- <Has every validated MVP capability from the Shape v2 Document been traced to the Structure?>
-- <Are there any unresolved Gaps?>
-- <Do Transformed capabilities preserve the original validated behavior?>
-
-### Functional Coverage
-
-- <Can the identified capabilities support the relevant JTBD?>
-- <Can users reach the meaningful outcomes defined in the Shape v2 Document?>
-- <Are important negative and recovery paths represented?>
-- <Is any functional mechanism required for the validated MVP missing?>
-
-### Functional Areas
-
-- <Does each capability belong to an appropriate Functional Area?>
-- <Are any Functional Areas unnecessarily broad?>
-- <Are any responsibilities duplicated or unclear?>
-
-### Structure / Requirements Boundary
-
-- <What detailed behavior is intentionally deferred to the Requirements Stage?>
-- <Has enough functional behavior been captured to understand how each mechanism works?>
-
-### Structure / Solutions Boundary
-
-- <What technical decisions are intentionally deferred to the Solutions Stage?>
-- <Has premature implementation design been avoided?>
+`No unresolved validated scope gaps.`
 
 ---
 
-## 5. Assumptions and Open Questions
+## 4. Functional Completeness Review
 
-Include only structural assumptions and open questions that do not belong to one specific Functional Flow.
+### <Functional Area>
+
+**Actors covered:**  
+<Yes / No + relevant finding>
+
+**Start of work covered:**  
+<Yes / No + relevant finding>
+
+**Return to existing work covered:**  
+<Yes / No + relevant finding>
+
+**Lifecycle sufficiently represented:**  
+<Yes / No + relevant finding>
+
+**Necessary management capabilities covered:**  
+<Yes / No + relevant finding>
+
+**Important recovery / continuation capabilities covered:**  
+<Yes / No + relevant finding>
+
+**Hidden broad capabilities:**  
+<None or capability requiring further decomposition>
+
+**Missing or questionable capabilities:**  
+<None or findings>
+
+---
+
+### <Functional Area>
+
+**Actors covered:**  
+<...>
+
+**Start of work covered:**  
+<...>
+
+**Return to existing work covered:**  
+<...>
+
+**Lifecycle sufficiently represented:**  
+<...>
+
+**Necessary management capabilities covered:**  
+<...>
+
+**Important recovery / continuation capabilities covered:**  
+<...>
+
+**Hidden broad capabilities:**  
+<...>
+
+**Missing or questionable capabilities:**  
+<...>
+
+---
+
+## 5. Product-Level Completeness Review
+
+### Primary JTBD
+
+| JTBD | Functional Support | Status | Notes |
+|---|---|---|---|
+| <JTBD> | <Relevant Functional Areas / Capabilities> | Supported / Gap | |
+| <JTBD> | <Relevant Functional Areas / Capabilities> | Supported / Gap | |
+
+### Value Proposition
+
+| Value Proposition | Functional Support | Status | Notes |
+|---|---|---|---|
+| <Value proposition item> | <Relevant capabilities> | Supported / Gap | |
+
+### MVP Value Loop
+
+**Value Loop:**  
+<Short representation of the validated end-to-end value loop>
+
+**Functional Support:**  
+<Functional Areas / capabilities supporting the loop>
+
+**Can the loop reach its meaningful outcome?**  
+Yes / No
+
+**Can important negative paths return to the loop where necessary?**  
+Yes / No
+
+**Known gaps:**  
+<None or findings>
+
+---
+
+## 6. Derived Capabilities Review
+
+Use this section to make agent-generated scope expansion easy to challenge during consultant review.
+
+| Derived Capability | Priority | Functional Rationale | Consultant Decision |
+|---|---|---|---|
+| <Capability> | Must / Should / Could | <Why it appears necessary> | Pending / Accept / Reject / Transform |
+| <Capability> | Must / Should / Could | <Why it appears necessary> | Pending / Accept / Reject / Transform |
+
+For **Structure v1 Document**, Consultant Decision may remain `Pending`.
+
+For **Structure v2 Document**, all material Derived capabilities should have an explicit decision or remain clearly identified as unresolved.
+
+---
+
+## 7. Assumptions and Open Questions
 
 ### Assumptions
 
-- <Assumption>
+- <Assumption affecting functional Structure>
+- <Assumption affecting priority or capability existence>
 
 ### Open Questions
 
-- <Open question>
+- <Question that may change Structure>
+- <Question requiring consultant or client decision>
+
+Do not include detailed behavioral questions that belong to the **Concepts Stage**.
 
 ---
 
-## 6. Structure Validation
+## 8. Consultant Review
 
-**Status:** <Not started / Ready for external review / In review / Validated>
+> Complete when producing the **Structure v2 Document**.
 
-### Validation Findings
+### Accepted
 
-Leave empty until actual external validation has been performed.
+- <Accepted Functional Area / capability / decomposition decision>
 
-- <Confirmed>
-- <Correction>
-- <Decision>
-- <Rejected assumption>
-- <New information>
+### Removed
 
-### Changes After Validation
+- <Capability removed from Structure and why>
 
-Leave empty until actual external validation has been performed.
+### Added
 
-- <Change>
+- <Capability added during consultant review and why>
 
-### Remaining Open Questions
+### Transformed
 
-- <Open question>
+- <Capability / group merged, split, renamed, or moved>
+
+### Priority Changes
+
+| Capability | v1 Priority | v2 Priority | Reason |
+|---|---|---|---|
+| <Capability> | <Priority> | <Priority> | <Reason> |
+
+### Remaining Structural Questions
+
+- <Question>
+- <Question>
 
 ---
 
-## Structure Status
+## 9. Structure Validation
 
-**Structure Document:** <Draft / Ready for external review / Validated>  
-**Ready for Requirements Stage:** <Yes / No>
+### Structure Review
+
+- Functional Areas represent coherent responsibilities: Yes / No
+- Capability decomposition is sufficiently deep: Yes / No
+- Derived capabilities have functional rationale: Yes / No
+- Priorities have been reviewed: Yes / No
+- Important dependencies are represented: Yes / No
+- Validated Scope Coverage is complete: Yes / No
+- Functional Completeness review is complete: Yes / No
+- Primary JTBD are functionally supported: Yes / No
+- MVP value loop can reach its meaningful outcome: Yes / No
+- Structure remains above Concepts / Requirements detail: Yes / No
+
+### Structural Gaps
+
+<None or unresolved structural gaps>
+
+### Ready for Concepts Stage
+
+**Yes / No**
+
+### Structure Status
+
+**Proposed / Reviewed**

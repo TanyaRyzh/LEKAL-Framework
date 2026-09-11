@@ -2,30 +2,66 @@
 
 ## Goal
 
-Transform the validated **Shape v2 Document** into a coherent functional structure of the product.
+Transform the validated **Shape v2 Document** into a complete functional decomposition of the product.
 
-The consultant decomposes the validated product hypothesis into Functional Areas, capabilities, key Functional Flows, structurally relevant rules, data and states, and connections between parts of the product.
+The **Structure Stage** determines what functional capabilities must exist for the validated product scope to work as a coherent product.
 
-The **Structure Stage** describes how the product works as a connected functional system.
+The Stage does not describe detailed behavior of those capabilities.
 
-It operates above detailed requirements and below product-level scope.
+Instead, it builds a functional Work Breakdown Structure (WBS):
+
+**Product → Functional Areas → Capability Groups → Capabilities**
+
+The Structure should go beyond simply reorganizing capabilities explicitly named in the **Shape v2 Document**.
+
+It should actively discover capabilities that are implied by:
+
+- validated product behavior;
+- actor responsibilities;
+- functional object lifecycles;
+- continuation of user work;
+- management of existing work;
+- important negative and recovery paths;
+- dependencies between parts of the product.
+
+The result of the agent's analysis is the **Structure v1 Document**.
+
+The consultant then reviews the proposed Structure, removes unnecessary functionality, corrects decomposition, adds missing capabilities, adjusts priorities, and produces the **Structure v2 Document**.
+
+The **Structure v2 Document** becomes the input to the **Concepts Stage**.
 
 ---
 
 ## Objective
 
-Create a validated functional structure that defines:
+Produce a functional decomposition that gives the consultant a broad and sufficiently complete map of what the product needs to do before detailed functional behavior is analyzed.
 
-- the complete end-to-end Product Flow;
-- meaningful Functional Areas;
-- user-visible capabilities within those areas;
-- key Functional Flows between actors and the system;
-- key rules, data constraints, states and decisions where they materially define the structure;
-- connections and dependencies between Functional Areas;
-- explicit assumptions and open questions;
-- traceability from validated MVP scope to the resulting Structure.
+The Structure should answer:
 
-The resulting **Structure Document** should provide a stable functional basis for the **Requirements Stage**.
+> What functional capabilities make up this product?
+
+It should allow the consultant to review the complete functional landscape rather than rediscover basic product functionality manually.
+
+The **Structure Stage** should identify:
+
+- Functional Areas;
+- Capability Groups where useful;
+- validated capabilities;
+- functionally implied capabilities;
+- capability priorities;
+- capability dependencies where structurally important;
+- assumptions and open questions affecting the decomposition.
+
+The **Structure Stage** should not define:
+
+- detailed Actor/System flows;
+- detailed business rules;
+- exhaustive validations;
+- field-level requirements;
+- UI behavior;
+- technical implementation.
+
+These belong to later Stages.
 
 ---
 
@@ -33,407 +69,629 @@ The resulting **Structure Document** should provide a stable functional basis fo
 
 Primary input:
 
-**Shape v2 Document**
-
-The **Shape v2 Document** must already contain the validated product hypothesis.
+- validated **Shape v2 Document**.
 
 Additional inputs may include:
 
-- findings from Shape validation;
-- client materials;
-- supporting project information;
-- other evidence required to understand the validated product behavior.
+- validation findings;
+- existing product materials;
+- relevant research from previous Stages;
+- supporting project information.
 
-Do not use an unvalidated **Shape v1 Document** as the validated basis for the **Structure Stage**.
+The **Shape v2 Document** is the validated product boundary from which Structure begins.
 
-Do not restart product framing or redefine the validated product hypothesis unless a contradiction or structural problem requires returning a decision for validation.
+The **Structure Stage** must not silently redefine the validated product direction.
+
+---
+
+## Output
+
+The **Structure Stage** produces two versions of the same Document type.
+
+### Structure v1 Document
+
+The **Structure v1 Document** is the agent's proposed functional decomposition.
+
+It contains:
+
+- Functional Areas;
+- Capability Groups where useful;
+- Validated capabilities;
+- Derived capabilities;
+- capability priorities;
+- rationale for Derived capabilities where necessary;
+- important structural dependencies;
+- assumptions and open questions;
+- validated scope coverage;
+- functional completeness findings.
+
+The **Structure v1 Document** is deliberately allowed to be broader than the final Structure.
+
+When uncertainty exists between:
+
+- omitting a potentially necessary capability; and
+- explicitly proposing it for consultant review;
+
+prefer explicit proposal when there is a reasonable functional justification.
+
+The capability must be marked as Derived rather than presented as validated fact.
+
+---
+
+### Structure v2 Document
+
+The consultant reviews the **Structure v1 Document** and produces the **Structure v2 Document**.
+
+During this review, the consultant may:
+
+- remove unnecessary capabilities;
+- reject unjustified Derived capabilities;
+- add missing capabilities;
+- merge capabilities;
+- split capabilities;
+- rename capabilities;
+- move capabilities between Functional Areas;
+- reorganize Capability Groups;
+- correct actor responsibility;
+- change priorities;
+- resolve assumptions;
+- add new open questions.
+
+The purpose of this review is not to preserve the agent's decomposition.
+
+The purpose is to produce the best functional Structure for the product.
+
+The **Structure v2 Document** is the reviewed functional decomposition and becomes the primary input to the **Concepts Stage**.
 
 ---
 
 ## Core Structure Principle
 
-The primary decomposition model is:
+The primary decomposition is:
 
-**Product Flow → Functional Areas → Capabilities → Functional Flows**
+**Validated Product Scope → Functional Areas → Capability Groups → Capabilities**
 
-The decomposition should be driven by how users move through the product and how the product supports their jobs.
+Capability Groups are optional.
 
-Do not begin decomposition from:
+Use them when they make a Functional Area easier to understand.
+
+Do not create artificial hierarchy merely to make the Structure deeper.
+
+Example:
+
+```text
+Account & Authentication
+
+├── Registration
+├── Authentication
+│   ├── Login
+│   └── Logout
+├── Password Management
+│   ├── Forgot Password
+│   └── Change Password
+└── Profile
+    └── View Profile
+```
+
+Another Functional Area may require no intermediate grouping:
+
+```text
+Source Materials
+
+├── Add Source Materials
+├── View Source Materials
+└── Remove Source Materials
+```
+
+The Structure should represent meaningful functional decomposition rather than screens, technical components, or implementation architecture.
+
+---
+
+## Functional Discovery Principle
+
+The **Structure Stage** is not a transcription exercise.
+
+Capabilities explicitly named in the **Shape v2 Document** are the starting point, not necessarily the complete functional model.
+
+For every Functional Area, investigate the functional mechanisms required for the validated product behavior to work coherently.
+
+Ask:
+
+1. What responsibility does this Functional Area represent?
+2. Which actors interact with it?
+3. What validated capabilities belong here?
+4. What functional objects or processes exist here?
+5. How does each object or process begin?
+6. How does an actor find or access existing work later?
+7. How does an actor continue existing work?
+8. What may need to be viewed?
+9. What may need to be changed?
+10. What may need to be removed, closed, revoked, cancelled, repeated, or otherwise managed?
+11. What actor-specific management actions are required?
+12. What meaningful lifecycle transitions exist?
+13. What happens when the normal path cannot continue?
+14. What recovery capability may be necessary?
+15. What supporting capability is required for another validated capability to remain usable?
+16. What must exist before responsibility can pass to another Functional Area?
+
+These questions are analytical prompts, not a mandatory CRUD checklist.
+
+Do not automatically create Create / View / Edit / Delete capabilities for every object.
+
+Every capability must have a product-specific functional reason for existing.
+
+---
+
+## Capability Classification
+
+Every capability in the **Structure v1 Document** must be classified as either:
+
+- `Validated`
+- `Derived`
+
+### Validated
+
+A Validated capability directly represents behavior already established in the **Shape v2 Document**.
+
+Example:
+
+```text
+Create Project — Validated
+```
+
+---
+
+### Derived
+
+A Derived capability was not explicitly defined in the **Shape v2 Document**, but analysis indicates that it may be necessary or strongly implied by the validated product behavior.
+
+Example:
+
+```text
+Forgot Password — Derived
+
+Rationale:
+A vendor who loses authentication credentials needs a recovery mechanism to regain access to existing project work.
+```
+
+Derived does not mean approved.
+
+The purpose of the classification is to allow the agent to propose potentially necessary functionality without silently expanding validated scope.
+
+The consultant may accept, reject, transform, or reprioritize Derived capabilities during review.
+
+---
+
+## Priorities
+
+Every capability in the **Structure v1 Document** must receive a proposed priority.
+
+Use:
+
+- `Must`
+- `Should`
+- `Could`
+
+### Must
+
+The capability is necessary for the validated MVP value loop, primary JTBD, essential actor responsibility, required recovery path, or basic operability of another Must capability.
+
+Without it, the MVP cannot coherently deliver the validated outcome.
+
+### Should
+
+The capability materially improves the completeness or usability of the MVP but the validated value loop can still function without it.
+
+Its absence creates meaningful friction, limitation, or operational inconvenience rather than breaking the core product outcome.
+
+### Could
+
+The capability is useful or logically related but is not required for the validated MVP to work coherently.
+
+It can be deferred without materially damaging the core value loop.
+
+---
+
+Priority must be based on product necessity rather than how common a feature is.
+
+Do not classify a capability as Must merely because similar products normally have it.
+
+When assigning priority, consider:
+
+- primary JTBD;
+- Value Proposition;
+- validated MVP value loop;
+- actor ability to complete meaningful work;
+- lifecycle continuity;
+- recovery requirements;
+- dependencies;
+- validated constraints;
+- consequences of omission.
+
+For Derived capabilities, priority is also a hypothesis.
+
+Example:
+
+```text
+Forgot Password
+Classification: Derived
+Priority: Should
+
+Rationale:
+Account recovery is necessary for continued use by an existing user, but it does not prevent the first end-to-end MVP value loop from being executed.
+```
+
+The consultant may change any proposed priority when producing the **Structure v2 Document**.
+
+---
+
+## Focus Areas
+
+### 1. Functional Areas
+
+Identify meaningful areas of functional responsibility.
+
+A Functional Area should:
+
+- represent a coherent product responsibility;
+- contain related capabilities;
+- have understandable actor involvement;
+- support a meaningful part of the validated product behavior.
+
+Do not define Functional Areas primarily from:
 
 - screens;
 - pages;
 - database entities;
 - APIs;
 - services;
-- technical components;
-- implementation architecture.
+- technical components.
 
-A Functional Area represents a meaningful functional responsibility within the product.
+If one Functional Area contains materially different responsibilities, consider splitting it.
 
-A capability represents a meaningful ability or outcome available to an actor.
-
-A Functional Flow describes how an actor and the system interact to achieve a meaningful result.
-
-The Structure must contain enough detail to expose:
-
-- missing capabilities;
-- missing transitions;
-- unclear responsibilities;
-- important states;
-- structurally significant rules;
-- broken recovery paths;
-- gaps between Functional Areas.
-
-The **Structure Stage** must not expand into exhaustive behavioral requirements or technical implementation.
+Do not split areas merely to increase granularity.
 
 ---
 
-## Focus Areas
+### 2. Capability Groups
 
-### 1. High-Level Product Flow
+Within a Functional Area, introduce Capability Groups when several capabilities represent one recognizable responsibility or lifecycle.
 
-Describe the complete end-to-end functional flow of the validated product.
+Example:
 
-The flow should show:
+```text
+Project Workspace
 
-- where the user job begins;
-- the major user actions;
-- major system responses and transitions;
-- participating actors;
-- the primary successful path;
-- important negative or unresolved states;
-- required recovery paths;
-- the meaningful product outcome.
+Project Management
+- Create Project
+- View Project
+- Edit Project
+- Delete Project
 
-The High-Level Product Flow is the backbone of the Structure.
+Project Access
+- View Project List
+- Open Project
 
-It is not a detailed use case.
+Project Members
+- Invite Member
+- View Members
+- Remove Member
+```
 
-Do not stop the flow merely because:
+Capability Groups are organizational tools.
 
-- a failure was recorded;
-- an issue was created;
-- a participant was notified;
-- information became visible;
-- another participant became able to act.
-
-If the validated Job to Be Done requires resolution, acceptance, completion, confirmation, delivery or another meaningful final state, the functional structure must support reaching that state.
-
----
-
-### 2. Functional Areas
-
-Divide the product into meaningful Functional Areas.
-
-Each Functional Area should:
-
-- own a coherent functional responsibility;
-- contain related capabilities;
-- support a meaningful part of the Product Flow;
-- have understandable boundaries;
-- connect to other Functional Areas where required.
-
-Functional Areas should be derived from product behavior.
-
-Do not automatically create a Functional Area for every:
-
-- feature;
-- screen;
-- entity;
-- integration;
-- technical component;
-- cross-cutting concern.
-
-If one Functional Area becomes so broad that its capabilities represent several materially different responsibilities or user flows, consider whether it should be decomposed further.
+They are not mandatory product entities and should not be invented when a flat capability list is clearer.
 
 ---
 
 ### 3. Capabilities
 
-For each Functional Area, identify the meaningful capabilities available to its actors.
+Capabilities describe meaningful things an actor can accomplish through the product.
 
-Prefer actor-oriented capability statements.
+Prefer actor-oriented capability names.
 
-For example:
+Examples:
 
-- User can create a project.
-- User can edit own project.
-- User can invite a project member.
-- Client can execute an acceptance scenario.
-- Vendor can return a failed scenario for retest.
+```text
+User can create a project.
+User can view projects they participate in.
+Project Owner can remove a project member.
+Client can mark a UAT scenario as failed.
+Vendor can mark an issue as resolved.
+```
 
-Capabilities should be sufficiently decomposed to reveal the actual functional structure.
+A capability should be:
 
-Avoid capabilities that are so broad that they hide several materially different user actions or flows.
+- meaningful to product behavior;
+- specific enough to represent one understandable responsibility;
+- broad enough to avoid UI-level decomposition.
 
-Also avoid decomposing capabilities into individual UI controls or low-level implementation operations.
+Avoid capabilities such as:
 
----
+```text
+Click Create button.
+Open modal.
+Enter field value.
+Call API.
+Store record in database.
+```
 
-### 4. Functional Flows
-
-Develop Functional Flows for significant capabilities or connected groups of capabilities.
-
-A Functional Flow should normally show:
-
-1. what triggers the flow;
-2. the actor;
-3. the actor action;
-4. the system response;
-5. structurally relevant validation or decision;
-6. subsequent action or transition;
-7. meaningful result.
-
-Include important alternative, negative and recovery paths where they affect the functional structure.
-
-A Functional Flow may support several closely related capabilities.
-
-Not every capability requires a completely independent flow.
-
-Do not stop a Functional Flow at an intermediate state when further product behavior is required to reach the validated user outcome.
+These describe interaction or implementation details rather than functional Structure.
 
 ---
 
-### 5. Key Rules, Data and States
+### 4. Functional Lifecycles
 
-Capture rules, data constraints, states and decisions when they materially affect the functional structure or Functional Flows.
+For important functional objects or processes, examine the lifecycle around validated capabilities.
 
 Examples may include:
 
-- ownership;
-- permissions;
-- uniqueness;
-- structurally important limits;
-- required relationships;
-- meaningful object states;
-- state transitions;
-- conditions required to continue a flow;
-- conditions required to complete a process.
+- account lifecycle;
+- project lifecycle;
+- membership lifecycle;
+- source material lifecycle;
+- UAT scenario lifecycle;
+- issue lifecycle;
+- acceptance lifecycle.
 
-Include only what is necessary to understand how the functional structure works.
+The lifecycle analysis is used to discover missing capabilities.
 
-Do not attempt to define:
+It is not necessary to document every lifecycle as a formal state model during the **Structure Stage**.
 
-- every field validation;
-- every error message;
-- every edge case;
-- exhaustive business rules;
-- complete state machines;
-- technical data models.
-
-Those details belong primarily to the **Requirements Stage** or **Solutions Stage**.
+Detailed behavior and state transitions belong to the **Concepts Stage**.
 
 ---
 
-### 6. Connections Between Functional Areas
+### 5. Recovery and Continuation
 
-Functional Areas must form one connected product.
+Check whether users can continue meaningful work after common interruptions or negative states.
 
-For each important connection, determine:
+Examples may include:
 
-- what information, state or result moves between areas;
-- what event or action causes the transition;
-- which Functional Area owns the responsibility before the transition;
-- which Functional Area owns it after the transition;
-- what state or condition is required for the transition;
-- where recovery paths reconnect to the primary Product Flow.
+- recovering account access;
+- returning to an existing project;
+- reopening unfinished work;
+- resolving a failed UAT scenario;
+- retesting after resolution;
+- completing acceptance after a previous failure.
 
-Do not allow functionality to disappear between Functional Areas.
+Recovery capabilities should be included when they are necessary for the original JTBD or validated value loop to reach its meaningful outcome.
 
-Outputs from one area that are required by another must have a clear connection.
+Do not add generic recovery mechanisms without product-specific justification.
+
+---
+
+### 6. Dependencies
+
+Capture dependencies only when they materially affect Structure or priority.
+
+Example:
+
+```text
+Open Project
+Depends on:
+- Project exists
+- User has project access
+```
+
+or:
+
+```text
+Retest Scenario
+Depends on:
+- Scenario previously failed
+- Related issue has been resolved
+```
+
+Do not define technical dependencies during the **Structure Stage**.
 
 ---
 
 ### 7. Validated Scope Coverage
 
-The **Structure Stage** must preserve the validated MVP scope from the **Shape v2 Document**.
+Create an explicit inventory of validated MVP capabilities from the **Shape v2 Document**.
 
-Before the Structure can pass consistency review, verify every validated MVP capability from the **Shape v2 Document** against the proposed Structure.
+Map every validated capability to the proposed Structure.
 
-For every validated MVP capability, identify:
+For each item determine:
 
-- the Functional Area that owns it;
-- the capability or Functional Flow that represents it;
-- whether it is fully represented;
-- whether it has been intentionally transformed into a broader Structure capability;
-- whether a gap remains.
+- Functional Area;
+- Capability or Capability Group representing it;
+- coverage status.
 
-A validated MVP capability must not disappear during structural decomposition.
+Coverage statuses:
 
-If several Shape capabilities are combined into one broader Structure capability, their relationship must remain traceable.
+- `Covered`
+- `Transformed`
+- `Gap`
 
-If decomposition reveals that a validated MVP capability should be removed, materially changed or moved outside MVP, do not silently change the validated scope.
+`Covered` means the validated behavior is explicitly represented.
 
-Make the proposed scope change explicit and return it for validation.
+`Transformed` means it has been decomposed or reorganized without losing its validated meaning.
 
-Do not conclude that MVP coverage is complete from the overall Product Flow or Functional Area list alone.
+`Gap` means the validated behavior is not adequately represented.
 
-Verify coverage capability by capability.
+A validated capability must not silently disappear.
 
 ---
 
-### 8. Assumptions and Open Questions
+### 8. Functional Completeness
 
-Capture structural uncertainty explicitly.
+Validated Scope Coverage answers:
 
-When an uncertainty is discovered:
+> Did we preserve everything already validated?
 
-- determine whether it can be resolved through available information or analysis;
-- resolve it where possible;
-- retain unresolved client-specific or decision-dependent uncertainty as an assumption or open question.
+Functional Completeness answers:
 
-Do not present unresolved assumptions as confirmed product behavior.
+> Did we discover enough surrounding functionality for the validated product to work coherently?
 
-Structural uncertainty should not prevent useful decomposition where reasonable hypotheses can support continued work.
+These are separate checks.
+
+For each Functional Area ask:
+
+- Can relevant actors begin their work?
+- Can they find and return to existing work?
+- Can they continue unfinished work?
+- Can they perform necessary management actions?
+- Is the relevant lifecycle sufficiently represented?
+- Are important recovery capabilities present?
+- Is a broad capability hiding several meaningful capabilities?
+- Does another capability depend on functionality that does not exist in the Structure?
+- Can responsibility pass coherently to the next Functional Area?
+
+For the product as a whole ask:
+
+- Can each primary JTBD reach its meaningful outcome?
+- Does the validated Value Proposition have functional support?
+- Can the complete MVP value loop finish?
+- Can important negative paths return to that loop?
+- Is anything required for basic operability missing?
+
+Do not consider the Structure complete merely because every validated Shape capability appears somewhere in the hierarchy.
 
 ---
 
 ## Process
 
-### Step 1 — Review the Validated Shape
+### Step 1 — Review the Shape v2 Document
 
-Review the **Shape v2 Document**.
+Review:
 
-Identify:
-
-- primary users and actors;
-- Jobs to Be Done;
+- actors and users;
+- primary JTBD;
 - Value Proposition;
 - validated MVP scope;
-- complete value loop;
-- important negative and recovery paths;
+- Product Flow / value loop;
+- negative and recovery paths;
 - constraints;
 - assumptions;
 - open questions.
 
-Create an explicit inventory of the validated MVP capabilities that must remain traceable through Structure.
+Create an explicit inventory of validated MVP capabilities.
 
-Do not restart the **Shape Stage**.
-
----
-
-### Step 2 — Build the High-Level Product Flow
-
-Translate the validated product hypothesis into a complete functional flow.
-
-Identify:
-
-- starting condition;
-- actors;
-- major actions;
-- major system transitions;
-- successful path;
-- important negative states;
-- recovery paths;
-- meaningful final outcome.
-
-Verify that the flow reaches the outcome promised by the relevant Jobs to Be Done.
-
-Do not stop at an intermediate state merely because another participant can continue manually.
+Do not begin by mechanically converting Shape headings into Structure headings.
 
 ---
 
-### Step 3 — Identify Functional Areas
+### Step 2 — Identify Functional Areas
 
-Group product responsibilities into meaningful Functional Areas.
+Identify the major functional responsibilities required to support the validated MVP.
 
-For each Functional Area, determine:
+For every proposed Functional Area determine:
 
-- its purpose;
-- the part of the Product Flow it supports;
-- its actors;
-- what responsibility it owns;
-- what responsibility belongs elsewhere.
+- its responsibility;
+- relevant actors;
+- validated behavior it supports.
 
-Do not create Functional Areas directly from screens or technical architecture.
-
-Review broad Functional Areas and determine whether they hide several materially different responsibilities or user flows that should be separated.
+Review whether any Functional Area is too broad or too fragmented.
 
 ---
 
-### Step 4 — Identify Capabilities
+### Step 3 — Build Initial Capability Inventory
 
-Within each Functional Area:
+Place validated capabilities from the **Shape v2 Document** into the appropriate Functional Areas.
 
-1. identify the actors;
-2. identify what each actor must be able to do;
-3. express those abilities as meaningful capabilities;
-4. check whether the capabilities are sufficient to support the relevant part of the Product Flow;
-5. decompose capabilities that are too broad;
-6. combine capabilities that are unnecessarily granular.
+Introduce Capability Groups where they improve clarity.
 
-Compare the resulting capabilities against the validated MVP capability inventory.
+Mark these capabilities as:
 
-Do not allow validated MVP behavior to disappear because it was absorbed into an overly broad capability.
+`Validated`
+
+Do not assume this initial inventory is functionally complete.
 
 ---
 
-### Step 5 — Develop Functional Flows
+### Step 4 — Perform Functional Discovery
 
-For each significant capability or connected group of capabilities:
+Analyze each Functional Area independently.
 
-1. identify the trigger;
-2. identify the actor;
-3. describe the actor action;
-4. describe the system response;
-5. include structurally relevant validations or decisions;
-6. continue through subsequent actions or transitions;
-7. reach a meaningful result;
-8. include important negative and recovery paths.
+For every area:
 
-Use Functional Flows to discover:
+1. identify important functional objects and processes;
+2. examine their lifecycle;
+3. identify how actors begin work;
+4. identify how actors return to existing work;
+5. identify necessary viewing and management capabilities;
+6. identify actor-specific responsibilities;
+7. identify important recovery and continuation mechanisms;
+8. identify structural dependencies;
+9. identify functionality implied by existing capabilities.
 
-- missing capabilities;
-- missing states;
-- missing transitions;
-- unclear responsibilities;
-- gaps between Functional Areas.
+Add justified missing capabilities as:
 
----
+`Derived`
 
-### Step 6 — Capture Key Rules, Data and States
+Include a short rationale where the reason is not obvious.
 
-For each Functional Area and Functional Flow, determine whether understanding the structure requires explicit:
+Prefer exposing a reasonably justified Derived capability for consultant review over silently omitting a potentially material functional mechanism.
 
-- rules;
-- data constraints;
-- ownership;
-- permissions;
-- limits;
-- states;
-- transitions;
-- completion conditions.
-
-Capture only structurally relevant information.
-
-Defer detailed behavioral specification to the **Requirements Stage**.
+Do not add functionality solely because it is common in similar products.
 
 ---
 
-### Step 7 — Connect Functional Areas
+### Step 5 — Review Decomposition Depth
 
-Review the product across Functional Area boundaries.
+Review every Functional Area and Capability Group.
 
-Verify that:
+Check whether:
 
-- outputs from one area become valid inputs to the next;
-- ownership is clear;
-- important state is preserved;
-- no part of the Product Flow disappears between areas;
-- negative and recovery paths reconnect correctly;
-- completion depends on the correct upstream states.
+- capabilities are too broad;
+- one capability hides several materially different actor goals;
+- multiple capabilities represent the same responsibility;
+- a Functional Area should be split;
+- Capability Groups improve or reduce clarity;
+- important lifecycle actions are missing;
+- the decomposition has drifted into UI or implementation detail.
+
+Correct the Structure before continuing.
+
+---
+
+### Step 6 — Assign Priorities
+
+Assign each capability:
+
+- `Must`
+- `Should`
+- `Could`
+
+Base priority on:
+
+- validated MVP value loop;
+- primary JTBD;
+- Value Proposition;
+- actor ability to complete meaningful work;
+- functional dependencies;
+- lifecycle continuity;
+- recovery requirements;
+- consequences of omission.
+
+Do not use market convention as sufficient justification for priority.
+
+For uncertain Derived capabilities, preserve the uncertainty rather than forcing false confidence.
+
+---
+
+### Step 7 — Check Dependencies
+
+Identify structurally important capability dependencies.
+
+Use dependencies to verify:
+
+- capability ordering;
+- missing prerequisite capabilities;
+- priority consistency;
+- lifecycle continuity.
+
+If a Must capability depends on another capability, review whether the dependency must also be Must.
+
+Do not model technical implementation dependencies.
 
 ---
 
 ### Step 8 — Verify Validated Scope Coverage
 
-Create a capability-level mapping from the validated MVP scope in the **Shape v2 Document** to the proposed Structure.
-
-For every validated MVP capability, record:
-
-- its Functional Area;
-- its Structure capability or Functional Flow;
-- its coverage status.
+Map every validated MVP capability from the **Shape v2 Document** to the Structure.
 
 Use:
 
@@ -441,196 +699,146 @@ Use:
 - `Transformed`
 - `Gap`
 
-`Covered` means the validated capability is explicitly represented.
-
-`Transformed` means the validated capability is represented through a broader or differently structured capability without losing the original product behavior.
-
-`Gap` means the validated capability is not adequately represented.
-
-Every `Transformed` item must remain traceable to its original validated behavior.
-
-Every `Gap` must be resolved or explicitly returned for validation.
-
-Do not mark validated scope coverage as complete while unresolved gaps remain.
+Resolve every known `Gap` before producing the **Structure v1 Document**, or explicitly record why it remains unresolved.
 
 ---
 
-### Step 9 — Structure Consistency Review
+### Step 9 — Perform Functional Completeness Review
 
-Review the proposed Structure as one connected product model.
+Perform a separate completeness pass.
 
-Check:
+Review every Functional Area using the Functional Completeness questions.
 
-#### Product Flow
+Specifically search for capabilities that:
 
-- Does the Structure support the complete High-Level Product Flow?
-- Can each primary Job to Be Done reach its meaningful outcome?
-- Are important negative and recovery paths complete?
+- were not explicitly stated in Shape;
+- are necessary to operate an already validated capability;
+- allow users to return to existing work;
+- support an important lifecycle;
+- support necessary management;
+- recover from meaningful negative states;
+- connect otherwise disconnected parts of the validated value loop.
 
-#### Validated Scope Coverage
+Add justified Derived capabilities where necessary.
 
-- Has every validated MVP capability from the **Shape v2 Document** been checked individually?
-- Is every validated MVP capability represented in a Functional Area?
-- Is each capability traceable to a Structure capability or Functional Flow?
-- Have transformed capabilities preserved the validated behavior?
-- Are any validated capabilities missing?
-- Have any scope changes been made without explicit validation?
-
-#### Functional Coverage
-
-- Are capabilities sufficiently decomposed?
-- Are any capabilities unnecessarily broad?
-- Are any capabilities duplicated?
-- Does each capability belong to an appropriate Functional Area?
-
-#### Functional Area Boundaries
-
-- Are responsibilities clear?
-- Are Functional Areas coherent?
-- Are any Functional Areas hiding several materially different responsibilities?
-- Are there overlaps?
-- Are cross-area dependencies understandable?
-
-#### Shape Alignment
-
-- Does the Structure support the primary Jobs to Be Done?
-- Does the Structure support the Value Proposition?
-- Has validated MVP scope been preserved?
-- Has functionality been added beyond the validated Shape without justification?
-
-#### Structure / Requirements Boundary
-
-- Has the Structure captured enough behavior to understand the functional mechanisms?
-- Has it avoided exhaustive behavioral specification?
-- Are detailed validations, error behavior and edge cases appropriately deferred?
-
-#### Structure / Solutions Boundary
-
-- Has the Structure avoided premature technical implementation?
-- Are technical assumptions included only where they materially affect functional Structure?
-
-Resolve discovered structural gaps where possible.
-
-If resolving a gap requires changing validated product scope, surface it for validation instead of silently changing the product.
+Repeat until no material known structural gap remains.
 
 ---
 
-### Step 10 — Visualize the Structure
+### Step 10 — Produce the Structure v1 Document
 
-Transfer the proposed Structure into a visual representation suitable for review.
+Create the **Structure v1 Document**.
 
-The visualization should make it possible to inspect:
+The Document should primarily represent:
 
-- Functional Areas;
-- capabilities;
-- key Functional Flows;
-- important rules, states and decisions;
-- connections;
-- negative and recovery paths.
+**Functional Areas → Capability Groups → Capabilities**
 
-The exact visual layout and notation are flexible.
+For each capability include:
 
-The visual representation may organize information differently from the **Structure Document** where that improves readability, but it must preserve the same functional meaning.
+- capability;
+- classification: Validated / Derived;
+- priority: Must / Should / Could;
+- relevant actor where useful;
+- rationale for Derived capability where necessary;
+- important dependency where necessary;
+- open question where necessary.
 
----
+Also include:
 
-## External Validation Boundary
-
-The proposed **Structure Document** and its visual representation must be reviewed with the client or relevant decision-makers before the **Structure Stage** can be completed.
-
-External validation should confirm or correct:
-
-- High-Level Product Flow;
-- Functional Areas;
-- capabilities;
-- Functional Flows;
-- responsibilities;
-- boundaries;
-- structurally important rules and states;
-- cross-area connections;
-- assumptions;
-- open questions;
-- any proposed changes to validated MVP scope.
-
-External validation is a real consulting activity.
-
-It must not be replaced by internal analysis.
-
----
-
-### Step 11 — Validate the Structure
-
-Walk through the proposed Structure with the client or relevant decision-makers.
-
-Review:
-
-1. the complete Product Flow;
-2. Functional Areas;
-3. capabilities;
-4. Functional Flows;
-5. important negative and recovery paths;
-6. key rules and states;
-7. Functional Area responsibilities and boundaries;
-8. cross-area connections;
-9. assumptions and open questions;
-10. any proposed scope changes discovered during decomposition.
-
-Capture:
-
-- confirmed structure;
-- corrections;
-- decisions;
-- rejected assumptions;
-- new information;
-- required changes.
-
----
-
-### Step 12 — Finalize the Structure Document
-
-Incorporate validation feedback into the **Structure Document**.
-
-Update all affected:
-
-- Functional Areas;
-- capabilities;
-- Functional Flows;
-- rules;
-- data constraints;
-- states;
-- connections;
-- assumptions;
-- open questions;
-- validated scope coverage.
-
-Repeat the Structure Consistency Review after material changes.
-
-The validated **Structure Document** becomes the primary input to the **Requirements Stage**.
-
----
-
-## Output
-
-Use the Structure template to create the **Structure Document**.
-
-The **Structure Document** contains:
-
-- High-Level Product Flow;
-- Functional Areas;
-- actors;
-- capabilities;
-- key Functional Flows;
-- structurally relevant rules, data and states;
-- connections and boundaries;
-- validated MVP scope coverage;
+- Validated Scope Coverage;
 - assumptions and open questions;
-- validation findings;
-- changes after validation;
-- validation status.
+- Structure review status.
 
-Before external validation, the **Structure Document** represents the proposed functional structure.
+Do not add detailed Functional Flows.
 
-After external validation and incorporation of feedback, it represents the validated functional structure and may be used as input to the **Requirements Stage**.
+Do not add Actor/System interaction tables.
+
+Do not specify detailed Rules or States.
+
+Do not create technical architecture.
+
+---
+
+### Step 11 — Consultant Review
+
+The consultant reviews the **Structure v1 Document**.
+
+The review is an analytical activity, not an approval formality.
+
+The consultant should challenge:
+
+- whether every Functional Area is necessary;
+- whether Functional Areas have correct boundaries;
+- whether Capability Groups are useful;
+- whether capabilities are missing;
+- whether Derived capabilities are actually justified;
+- whether unnecessary functionality has been proposed;
+- whether capabilities should be merged or split;
+- whether actor responsibilities are correct;
+- whether priorities reflect the actual MVP;
+- whether the Structure is sufficiently complete to begin concept modeling.
+
+The consultant may freely remove, add, merge, split, rename, move, or reprioritize capabilities.
+
+The agent must not treat **Structure v1 Document** as validated Structure.
+
+---
+
+### Step 12 — Produce the Structure v2 Document
+
+Incorporate consultant review findings into the **Structure v2 Document**.
+
+After changes:
+
+- repeat Validated Scope Coverage;
+- repeat Functional Completeness review;
+- verify priority consistency;
+- verify important dependencies;
+- preserve unresolved assumptions and open questions.
+
+The **Structure v2 Document** represents the reviewed functional WBS of the product.
+
+It becomes the primary input to the **Concepts Stage**.
+
+---
+
+## Structure Document Format
+
+The recommended core representation is:
+
+```text
+## <Functional Area>
+
+### <Capability Group>
+
+#### <Capability>
+
+Classification: Validated | Derived  
+Priority: Must | Should | Could  
+Actor: <Actor, when useful>
+
+Rationale:
+<Required for Derived capabilities when not obvious>
+
+Dependencies:
+<Only structurally important dependencies>
+
+Open Questions:
+<Only questions affecting Structure>
+```
+
+For compact areas, table representation may be used:
+
+| Capability | Classification | Priority | Actor | Rationale / Notes |
+|---|---|---|---|---|
+| Create Project | Validated | Must | Vendor | |
+| View Project List | Derived | Must | Vendor | Required to return to existing project work |
+| Edit Project | Derived | Should | Project Owner | |
+| Delete Project | Derived | Could | Project Owner | Validate MVP necessity |
+
+Use whichever representation makes the Structure easiest to review.
+
+The hierarchy and functional meaning are more important than formatting consistency.
 
 ---
 
@@ -638,56 +846,52 @@ After external validation and incorporation of feedback, it represents the valid
 
 The **Structure Stage** is successful when:
 
-- the validated **Shape v2 Document** has been transformed into a coherent functional Structure;
-- the complete end-to-end Product Flow is represented;
-- the primary successful path reaches a meaningful product outcome;
-- important negative and recovery paths are represented;
-- meaningful Functional Areas have been identified;
-- Functional Area responsibilities and boundaries are understandable;
-- relevant actors are identified;
-- capabilities are sufficiently decomposed to expose the functional structure;
-- key Functional Flows describe meaningful actor/system interaction;
-- structurally important rules, data constraints and states are represented where necessary;
-- connections between Functional Areas are clear;
-- every validated MVP capability from the **Shape v2 Document** is traceable to the Structure;
-- no validated MVP capability has been silently omitted during decomposition;
-- every transformed validated capability remains traceable to its original behavior;
-- no unresolved validated-scope gap remains hidden by the overall Product Flow or Functional Area structure;
-- each primary Job to Be Done can reach its meaningful outcome;
-- the Structure supports the validated Value Proposition;
-- MVP scope has not been expanded unnecessarily;
-- detailed requirements have not been prematurely specified;
-- technical implementation has not been prematurely designed;
-- material assumptions and open questions are explicit;
-- external validation has been performed;
-- validation feedback has been incorporated;
-- no Failure Condition remains unresolved.
+- the validated **Shape v2 Document** has been decomposed into a coherent functional WBS;
+- Functional Areas represent meaningful product responsibilities;
+- Capability Groups are used only where they improve understanding;
+- every validated MVP capability is traceable to the Structure;
+- no validated capability silently disappears;
+- Functional Discovery has been performed for every Functional Area;
+- important implied capabilities have been identified;
+- Derived capabilities are clearly distinguished from Validated capabilities;
+- Derived capabilities have functional justification;
+- capabilities are sufficiently decomposed to expose meaningful actor responsibilities;
+- capabilities have proposed priorities;
+- priorities are based on product necessity rather than convention;
+- structurally important dependencies are visible;
+- functional lifecycles have been considered;
+- important recovery and continuation capabilities have been considered;
+- Validated Scope Coverage and Functional Completeness have been reviewed separately;
+- the Structure has not drifted into detailed Requirements or technical Solutions;
+- the **Structure v1 Document** has been reviewed by the consultant;
+- unnecessary functionality has been removed or deprioritized;
+- missing functionality identified during consultant review has been incorporated;
+- the **Structure v2 Document** represents the reviewed functional decomposition;
+- the **Structure v2 Document** is sufficient input for the **Concepts Stage**.
 
 ---
 
 ## Failure Conditions
 
-The **Structure Stage** must not be considered complete if:
+The **Structure Stage** has failed or remains incomplete when:
 
-- an unvalidated **Shape v1 Document** was used as the validated basis;
-- the High-Level Product Flow is incomplete;
-- a primary Job to Be Done cannot reach its meaningful outcome;
-- an important negative or recovery path required for the same job is missing;
-- Functional Areas are primarily derived from screens or technical components;
-- Functional Area responsibilities are unclear or materially overlapping;
-- capabilities required to understand product behavior are missing;
-- capabilities are so broad that materially different user actions or flows remain hidden;
-- Functional Flows stop at intermediate states before the validated user outcome can be reached;
-- connections between Functional Areas contain functional gaps;
-- structurally important rules, states, ownership or transitions are missing;
-- one or more validated MVP capabilities are missing from the Structure without an explicit validated scope change;
-- validated scope coverage is claimed without capability-level traceability to the **Shape v2 Document**;
-- a `Gap` in validated MVP coverage remains unresolved and is not explicitly returned for validation;
-- a `Transformed` capability cannot be traced back to the validated product behavior it represents;
-- validated scope has been silently removed or materially changed during decomposition;
-- unsupported functionality has been added without justification;
-- the Structure expands into exhaustive detailed requirements;
-- technical implementation is prematurely designed;
-- assumptions are presented as confirmed facts;
-- required external validation has not occurred;
-- validation feedback has not been incorporated into the final **Structure Document**.
+- the Structure merely reorganizes wording from the **Shape v2 Document**;
+- Functional Areas are primarily screens, database entities, APIs, services, or technical components;
+- the agent assumes capabilities explicitly named in Shape are the complete functional model;
+- important implied capabilities are omitted merely because Shape did not name them;
+- generic SaaS functionality is added without product-specific justification;
+- Derived capabilities are presented as validated facts;
+- capability hierarchy is artificially deep without improving functional understanding;
+- capabilities are so broad that materially different responsibilities remain hidden;
+- capabilities are decomposed into UI actions or implementation details;
+- capability priorities are missing;
+- priorities are based primarily on what similar products normally contain;
+- a Must capability depends on an omitted prerequisite capability;
+- a validated MVP capability disappears without an explicit decision;
+- Validated Scope Coverage is confused with Functional Completeness;
+- detailed Actor/System flows are produced instead of functional decomposition;
+- detailed requirements are specified prematurely;
+- technical architecture replaces functional Structure;
+- **Structure v1 Document** is treated as final without consultant review;
+- consultant corrections are not incorporated;
+- the **Structure v2 Document** remains too shallow or inconsistent to begin the **Concepts Stage**.
