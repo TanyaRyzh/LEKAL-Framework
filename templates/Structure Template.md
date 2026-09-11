@@ -180,27 +180,52 @@ Describe how the Functional Areas form one connected product.
 
 ### Product Flow
 
-- <Does the structure support the complete High-Level Product Flow?>
-- <Can the primary JTBD reach its meaningful outcome?>
+- <Does the Structure support the complete High-Level Product Flow?>
+- <Can each primary JTBD reach its meaningful outcome?>
 - <Are important negative and recovery paths complete?>
+
+### Validated Scope Coverage
+
+Map every validated MVP capability from the **Shape v2 Document** to the proposed Structure.
+
+| Validated MVP Capability from Shape v2 Document | Functional Area | Structure Representation | Coverage |
+|---|---|---|---|
+| <Capability> | <Functional Area> | <Capability / Functional Flow> | <Covered / Transformed / Gap> |
+
+Every validated MVP capability from the **Shape v2 Document** must appear in this table.
+
+Use:
+
+- `Covered` — the validated capability is explicitly represented in the Structure.
+- `Transformed` — the validated capability is represented through a broader or differently structured capability without losing the original validated behavior.
+- `Gap` — the validated capability is not adequately represented.
+
+For every `Transformed` item, explain how the original validated behavior is represented.
+
+Every `Gap` must be resolved or explicitly returned for validation before the **Structure Stage** can be completed.
+
+Do not claim complete MVP coverage based only on the overall Product Flow or Functional Area list.
 
 ### Functional Coverage
 
-- <Are all validated MVP capabilities represented?>
+- <Are capabilities sufficiently decomposed?>
 - <Does each capability belong to an appropriate Functional Area?>
 - <Are any capabilities missing, duplicated or unnecessarily broad?>
 
 ### Functional Area Boundaries
 
 - <Are responsibilities clear?>
+- <Are any Functional Areas too broad?>
 - <Are there overlaps?>
 - <Are cross-area dependencies understandable?>
 
 ### Shape Alignment
 
-- <How the structure supports the primary JTBD>
-- <How the structure supports the Value Proposition>
+- <How the Structure supports the primary JTBD>
+- <How the Structure supports the Value Proposition>
+- <Whether validated MVP scope has been preserved>
 - <Whether any functionality has been added beyond the validated Shape>
+- <Whether any validated functionality has been removed or materially changed>
 
 ### Structure / Requirements Boundary
 
@@ -244,6 +269,8 @@ Review:
 - key rules and states;
 - Functional Area responsibilities and boundaries;
 - cross-area connections;
+- validated MVP scope coverage;
+- proposed changes to validated MVP scope, if any;
 - assumptions and open questions.
 
 ### Validation Findings
@@ -273,4 +300,9 @@ Leave empty until actual external validation has been performed.
 **Structure Document:** <Draft / Ready for external review / Validated>  
 **Ready for Requirements Stage:** <Yes / No>
 
-The **Structure Document** may be used as the validated input to the **Requirements Stage** only after external validation has been performed and the resulting feedback has been incorporated.
+The **Structure Document** may be used as the validated input to the **Requirements Stage** only after:
+
+- external validation has been performed;
+- resulting feedback has been incorporated;
+- every validated MVP capability from the **Shape v2 Document** has been traced to the resulting Structure;
+- no unresolved validated-scope gap remains.
