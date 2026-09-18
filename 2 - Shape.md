@@ -21,6 +21,8 @@ The results of the review are incorporated into **Shape v2 Document** — the va
 Develop a sufficiently coherent and validated product hypothesis that establishes:
 
 - who the product is for;
+- what market or markets the product is intended to operate in;
+- what market-specific conditions may materially affect the product;
 - what users are trying to achieve;
 - what value the product provides;
 - how the product may create business value or generate revenue;
@@ -95,14 +97,15 @@ The purpose is not to eliminate all uncertainty, but to reduce it as far as reas
 **Shape Stage** analyzes the product across the following areas:
 
 1. Customer Segments
-2. Jobs to Be Done
-3. Value Proposition
-4. Revenue Streams
-5. Competitors / Alternatives
-6. Product Stages / Scope
-7. Integrations
-8. Constraints
-9. Potential Tech Stack
+2. Target Market
+3. Jobs to Be Done
+4. Value Proposition
+5. Revenue Streams
+6. Competitors / Alternatives
+7. Product Stages / Scope
+8. Integrations
+9. Constraints
+10. Potential Tech Stack
 
 Assumptions and open questions are maintained across all areas.
 
@@ -135,7 +138,30 @@ If the exact segmentation is uncertain, develop plausible alternatives and analy
 
 ---
 
-## 2. Jobs to Be Done
+## 2. Target Market
+
+Identify the market context in which the product is expected to operate.
+
+Determine, where relevant:
+
+- target countries or geographic regions;
+- whether the product is intended for a specific local market, several markets, or an international market;
+- primary product language;
+- expected additional languages and localization needs;
+- currencies, date and time formats, time zones, or other regional conventions that may materially affect the product;
+- market-specific regulatory, legal, or operational conditions that may affect the product hypothesis.
+
+Do not introduce localization, regionalization, or market-specific functionality merely because it is common.
+
+Analyze only those market characteristics that may materially affect Product Stages / Scope, Constraints, Integrations, or later product decisions.
+
+When the target market is not yet established, develop plausible market hypotheses or alternatives and analyze their implications.
+
+The Target Market must be consistent with the Customer Segments and must inform downstream product decisions where relevant.
+
+---
+
+## 3. Jobs to Be Done
 
 Identify what the relevant customer or user segments are trying to accomplish.
 
@@ -162,7 +188,7 @@ The resulting Jobs to Be Done must provide a basis for evaluating the Value Prop
 
 ---
 
-## 3. Value Proposition
+## 4. Value Proposition
 
 Define the value the product is expected to provide to each relevant segment.
 
@@ -179,7 +205,7 @@ The Value Proposition must later be used to validate whether the proposed MVP ac
 
 ---
 
-## 4. Revenue Streams
+## 5. Revenue Streams
 
 Analyze how the product may generate revenue or other direct business value.
 
@@ -215,7 +241,7 @@ If monetization is not relevant to the product, state this explicitly.
 
 ---
 
-## 5. Competitors / Alternatives
+## 6. Competitors / Alternatives
 
 Identify and analyze relevant products and alternative ways of solving the same problem.
 
@@ -292,7 +318,7 @@ Its findings must be used to refine Revenue Streams and Product Stages / Scope w
 
 ---
 
-## 6. Product Stages / Scope
+## 7. Product Stages / Scope
 
 Define meaningful product stages based on the product hypothesis.
 
@@ -310,6 +336,7 @@ Use as inputs:
 
 - the **Idea Document** and core interaction;
 - Customer Segments;
+- Target Market;
 - Jobs to Be Done;
 - Value Proposition;
 - Revenue Streams where relevant;
@@ -386,6 +413,16 @@ Check both:
 
 Does the MVP contain the capabilities necessary to support the current differentiation hypothesis and any relevant market baseline?
 
+#### Target Market
+
+Is the proposed MVP appropriate for the intended market context?
+
+Verify that material market-specific needs identified during **Shape Stage** are either:
+
+- supported by the proposed scope;
+- explicitly deferred to a later product stage; or
+- retained as a known assumption or open question.
+
 #### Constraints
 
 Is the proposed MVP realistic within the known business, technical, organizational, time, and budget constraints?
@@ -398,13 +435,14 @@ Stop adding functionality once:
 - the core value loop and necessary recovery paths are complete;
 - the Value Proposition is supported;
 - the relevant differentiation hypothesis is represented;
+- material Target Market needs are addressed or explicitly deferred;
 - the product-stage boundary is coherent.
 
 Do not add functionality solely to match competitors or fill conceptual space.
 
 ---
 
-## 7. Integrations
+## 8. Integrations
 
 Identify external systems or services that may interact with the product.
 
@@ -436,7 +474,7 @@ Detailed integration design and final provider selection belong to **Solutions S
 
 ---
 
-## 8. Constraints
+## 9. Constraints
 
 Identify constraints that materially affect the product hypothesis or scope.
 
@@ -487,7 +525,7 @@ Constraints should influence Product Stages / Scope and Potential Tech Stack whe
 
 ---
 
-## 9. Potential Tech Stack
+## 10. Potential Tech Stack
 
 Identify realistic technology candidates that could support the product.
 
@@ -559,7 +597,9 @@ Continuously check relationships between them.
 
 In particular:
 
+- Customer Segments and Target Market must be mutually consistent;
 - Customer Segments must inform Jobs to Be Done;
+- Target Market must inform Product Scope, Constraints, Integrations, and technical candidates where relevant;
 - Jobs to Be Done must inform Value Proposition;
 - Value Proposition must inform Product Scope;
 - competitor research should inform Revenue Streams, differentiation, and Product Scope;
@@ -583,6 +623,8 @@ Before visualization, review **Shape v1 Document** as a complete product hypothe
 Check that:
 
 - relevant customer and user segments are represented;
+- the Target Market is sufficiently defined or represented as an explicit hypothesis;
+- material market implications such as language, localization, regional conventions, or regulation have been considered where relevant;
 - Jobs to Be Done describe actual user needs rather than functionality;
 - Value Proposition follows from the Jobs to Be Done;
 - monetization uncertainty has been analyzed rather than merely recorded;
@@ -594,6 +636,7 @@ Check that:
 - the MVP represents a complete core value loop;
 - important negative or recovery paths required to complete that loop have been considered;
 - major Value Proposition statements are supported by the proposed MVP;
+- material Target Market needs are reflected in Product Scope, Constraints, Integrations, or explicit assumptions where appropriate;
 - Integrations are justified by product needs;
 - Potential Tech Stack contains realistic candidates without prematurely defining the solution;
 - Constraints are reflected in relevant decisions;
@@ -615,6 +658,7 @@ The consultant may reorganize information for clarity but must preserve its mean
 The visualization may include, where relevant:
 
 - Customer Segments;
+- Target Market;
 - Jobs to Be Done;
 - Value Proposition;
 - monetization hypotheses;
@@ -659,7 +703,9 @@ During validation:
 - validate or reject hypotheses;
 - review recommendations and alternatives;
 - resolve important disagreements;
-- validate Customer Segments, Jobs to Be Done, and Value Proposition;
+- validate Customer Segments and Target Market;
+- validate Jobs to Be Done and Value Proposition;
+- review material market-specific assumptions and implications;
 - review monetization hypotheses where relevant;
 - review competitor conclusions and differentiation hypotheses;
 - validate Product Stages / Scope;
@@ -686,6 +732,7 @@ When updating:
 - remove or revise rejected hypotheses;
 - record validated decisions;
 - propagate changes across affected Focus Areas;
+- update Target Market where validation changes the intended market context;
 - update Product Scope where validation changes the product direction;
 - update related assumptions, constraints, integrations, or technical candidates where necessary;
 - retain unresolved assumptions and open questions explicitly;
@@ -736,6 +783,8 @@ Client Review
 **Shape Stage** is complete when:
 
 - relevant Customer Segments are sufficiently understood;
+- the Target Market is sufficiently understood;
+- material market-specific implications for the product have been identified;
 - key Jobs to Be Done are defined;
 - the Value Proposition is connected to those jobs;
 - relevant monetization hypotheses have been analyzed;
@@ -749,6 +798,7 @@ Client Review
 - important negative or recovery paths required to complete the core value loop are supported;
 - the MVP is consistent with the Jobs to Be Done and Value Proposition;
 - major Value Proposition statements are supported by MVP capabilities;
+- material Target Market needs are reflected in the product hypothesis or explicitly deferred;
 - relevant Integrations and realistic candidates are identified;
 - relevant Constraints are understood;
 - Potential Tech Stack candidates are identified without prematurely defining the technical solution;
@@ -768,6 +818,8 @@ Client Review
 **Shape Stage** is not complete when:
 
 - the target customer or primary users remain fundamentally unclear;
+- the Target Market remains fundamentally unclear where it materially affects the product hypothesis;
+- material market-specific implications have not been considered;
 - key Jobs to Be Done cannot be established;
 - the Value Proposition cannot be connected to meaningful user outcomes;
 - major uncertainty is merely recorded without reasonable analysis where research or hypothesis development could reduce it;
@@ -779,6 +831,7 @@ Client Review
 - an important negative or recovery path required to complete the core value loop is missing;
 - a major Value Proposition statement has no supporting MVP capability;
 - the proposed scope contradicts the Jobs to Be Done or Value Proposition;
+- material Target Market needs contradict the proposed scope or remain unresolved without being made explicit;
 - critical Integrations or Constraints remain unknown;
 - technical feasibility contains unresolved risks that materially affect the product hypothesis;
 - major contradictions between Focus Areas remain unresolved;

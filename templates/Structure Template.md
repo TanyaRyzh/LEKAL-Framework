@@ -74,7 +74,7 @@ Include only questions that may materially change:
 - priority;
 - MVP functional scope.
 
-Do not include detailed behavioral questions that belong to the **Concepts Stage**.
+Do not include detailed behavioral questions that belong to the **Behavior Stage**.
 
 - <Open Question>
 - <Open Question>
@@ -94,7 +94,8 @@ If no material Open Questions remain:
 **MVP value loop functionally supported:** Yes / No  
 **Material dependencies checked:** Yes / No  
 **Structural Gaps explicit:** Yes / No  
-**Ready for Consultant Review / Concepts Stage:** Yes / No
+**Ready for Consultant Review:** Yes / No
+**Ready for Behavior Stage:** Yes / No
 
 ### Remaining Issues
 

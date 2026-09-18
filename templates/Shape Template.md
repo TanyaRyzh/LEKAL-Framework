@@ -15,7 +15,44 @@
 
 ---
 
-## 2. Jobs to Be Done
+## 2. Target Market
+
+### Target Geography / Markets
+
+- ...
+
+### Market Scope
+
+**Local / Regional / International:**  
+...
+
+### Primary Language
+
+...
+
+### Additional Languages / Localization
+
+- ...
+
+### Relevant Regional Considerations
+
+Include only considerations that may materially affect the product, such as:
+
+- currencies;
+- date and time formats;
+- time zones;
+- regulatory or legal conditions;
+- other market-specific conventions.
+
+...
+
+### Assumptions / To Validate
+
+- ...
+
+---
+
+## 3. Jobs to Be Done
 
 ### [Segment Name]
 
@@ -33,7 +70,7 @@
 
 ---
 
-## 3. Value Proposition
+## 4. Value Proposition
 
 ### [Segment Name]
 
@@ -43,7 +80,7 @@
 
 ---
 
-## 4. Revenue Streams
+## 5. Revenue Streams
 
 ### Known Information
 
@@ -93,7 +130,7 @@
 
 ---
 
-## 5. Competitors / Alternatives
+## 6. Competitors / Alternatives
 
 ### Competitive Matrix
 
@@ -150,7 +187,7 @@ Capabilities or product characteristics that appear to be expected in this marke
 
 ---
 
-## 6. Product Stages / Scope
+## 7. Product Stages / Scope
 
 ### MVP
 
@@ -200,13 +237,18 @@ Does the MVP contain the capabilities required to support the current differenti
 
 ...
 
+**Target Market coverage:**  
+Does the proposed scope address the material needs of the intended Target Market?
+
+...
+
 ### Out of Scope / Deferred
 
 - ...
 
 ---
 
-## 7. Integrations
+## 8. Integrations
 
 ### [Integration Area]
 
@@ -230,7 +272,7 @@ Does the MVP contain the capabilities required to support the current differenti
 
 ---
 
-## 8. Constraints
+## 9. Constraints
 
 ### Business
 
@@ -258,7 +300,7 @@ Does the MVP contain the capabilities required to support the current differenti
 
 ---
 
-## 9. Potential Tech Stack
+## 10. Potential Tech Stack
 
 > This section identifies realistic technology candidates.
 > It does not define the final technical solution.
@@ -313,7 +355,7 @@ Does the MVP contain the capabilities required to support the current differenti
 
 ---
 
-## 10. Assumptions & Open Questions
+## 11. Assumptions & Open Questions
 
 ### Assumptions
 

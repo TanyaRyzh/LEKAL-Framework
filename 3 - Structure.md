@@ -22,7 +22,7 @@ The **Structure Stage** identifies what functionality exists, who needs it, and 
 
 It does not define in detail how that functionality behaves.
 
-Detailed behavioral analysis belongs to the **Concepts Stage**.
+Detailed behavioral analysis belongs to the **Behavior Stage**.
 
 The agent produces the **Structure v1 Document**.
 
@@ -30,7 +30,7 @@ The consultant reviews the proposed Structure, removes unnecessary functionality
 
 The reviewed result becomes the **Structure v2 Document**.
 
-The **Structure v2 Document** is the primary input to the **Concepts Stage**.
+The **Structure v2 Document** is the primary input to the **Behavior Stage**.
 
 ---
 
@@ -44,6 +44,7 @@ The **Structure Stage** should:
 - identify meaningful Capabilities within each Functional Area;
 - preserve validated functionality from the **Shape v2 Document**;
 - discover functionality implied by validated product behavior;
+- discover cross-cutting and product-readiness functionality required by the specific product context;
 - identify relevant actors for each Capability;
 - assign proposed functional priorities;
 - identify important structural dependencies;
@@ -126,7 +127,7 @@ The purpose of Consultant Review is not to preserve the agent's proposal.
 
 The purpose is to produce the best functional Structure for the product.
 
-The **Structure v2 Document** becomes the primary input to the **Concepts Stage**.
+The **Structure v2 Document** becomes the primary input to the **Behavior Stage**.
 
 ---
 
@@ -180,12 +181,14 @@ Examples:
 ```text
 Register with email and password
 Recover account password
+Delete own account
 Create project
 View project list
 Invite member
 Edit scenario
 Provide guest access
-Report issue
+Change interface language
+Manage cookie preferences
 Retest scenario
 ```
 
@@ -278,6 +281,18 @@ Accept invitation
 ```
 
 because an invitation must lead to actual project participation.
+
+A Derived Capability may also be discovered from validated product context rather than directly from another Capability.
+
+For example, Target Market, regulatory context, privacy needs, or other validated Shape information may imply functional mechanisms such as:
+
+```text
+Change interface language
+Manage cookie preferences
+Delete own account
+```
+
+when those mechanisms are materially required by the specific product context.
 
 Derived does not mean approved.
 
@@ -395,6 +410,8 @@ The core principle is:
 
 For each Functional Area, analyze what functionality must surround validated behavior so that actors can actually perform meaningful work.
 
+In addition to analyzing the core product flow, review whether the validated product context creates cross-cutting functional responsibilities that are not naturally discovered from the primary value loop.
+
 ---
 
 ## Actor Lens
@@ -428,12 +445,13 @@ For important functional objects, ask:
 Examples of functional objects may include:
 
 ```text
+Account
 Project
 Journey
 Scenario
 Invitation
 Guest Access
-Issue
+Feedback
 ```
 
 These questions are analytical prompts.
@@ -446,7 +464,7 @@ Do not add operations that have no product-specific reason to exist.
 
 ## Lifecycle Lens
 
-For important product work, ask:
+For important product work and functional objects, ask:
 
 ```text
 How does it begin?
@@ -455,10 +473,14 @@ How does it continue?
 ↓
 How does it change?
 ↓
+How does it end or stop being active?
+↓
 How does it reach a meaningful outcome?
 ```
 
 Identify Capabilities required at important lifecycle transitions.
+
+The lifecycle review should include actor-owned objects such as accounts where their creation, continued existence, or termination materially affects the product.
 
 ---
 
@@ -507,6 +529,48 @@ A functional decomposition is incomplete if the value loop stops before the mean
 
 ---
 
+## Product Readiness Lens
+
+Core product flows do not necessarily reveal all functional mechanisms required for a real product to operate in its validated context.
+
+Review the product for cross-cutting concerns that may create user-facing or actor-facing Capabilities.
+
+Relevant concerns may include, where applicable:
+
+- privacy and consent;
+- account and personal-data lifecycle;
+- target-market and localization needs;
+- legal or regulatory interaction;
+- product limits or quotas;
+- user preferences;
+- other cross-cutting responsibilities implied by the validated product context.
+
+For each relevant concern, ask:
+
+1. Does the **Shape v2 Document**, Target Market, Constraint, actor model, data usage, or product scope make this concern relevant?
+2. Does addressing the concern require an actor to perform or control something through the product?
+3. Does the product need a functional mechanism to support that responsibility?
+4. If so, is the mechanism already represented by an existing Capability?
+5. If not, propose a Derived Capability.
+
+Examples may include:
+
+```text
+Manage cookie preferences
+Delete own account
+Change interface language
+```
+
+These are examples of possible findings, not mandatory product functionality.
+
+Do not automatically add standard SaaS capabilities.
+
+A Product Readiness concern belongs in the functional Structure only when the specific product context creates a justified functional responsibility.
+
+Technical, operational, or organizational concerns that do not create product functionality should remain Constraints or belong to later Stages rather than being forced into the WBS.
+
+---
+
 # Scope Discipline
 
 Functional Discovery does not mean adding generic product functionality.
@@ -515,6 +579,7 @@ Do not add a Capability merely because:
 
 - similar products have it;
 - it is common SaaS functionality;
+- it appears on a generic product-readiness checklist;
 - it seems professionally complete;
 - a competitor supports it;
 - it might be useful someday.
@@ -522,11 +587,14 @@ Do not add a Capability merely because:
 Every Derived Capability must have a product-specific reason based on at least one of:
 
 - validated product behavior;
+- validated Target Market or market-specific need;
+- validated Constraint;
 - actor responsibility;
 - functional object lifecycle;
 - continuation;
 - recovery;
 - value loop;
+- product-readiness concern that creates a functional responsibility;
 - another justified Capability.
 
 If the rationale cannot be explained, do not silently add the Capability.
@@ -539,7 +607,7 @@ Not every uncertainty needs to be solved during the **Structure Stage**.
 
 If functional need is clear but detailed behavior is unknown:
 
-> Include the Capability and defer behavioral analysis to the **Concepts Stage**.
+> Include the Capability and defer behavioral analysis to the **Behavior Stage**.
 
 If the Capability itself is plausible but insufficiently justified:
 
@@ -619,7 +687,7 @@ Validated Scope Coverage asks:
 
 Functional Completeness asks:
 
-> Did we discover the surrounding functionality required for the validated product to operate coherently?
+> Did we discover the surrounding functionality required for the validated product to operate coherently in its validated context?
 
 A Structure may have perfect Scope Coverage and still be functionally incomplete.
 
@@ -635,6 +703,8 @@ For each Functional Area, review:
 - recovery;
 - connections to the rest of the value loop.
 
+At product level, additionally review whether cross-cutting product-readiness concerns create missing functional responsibilities.
+
 ---
 
 # Analysis vs Document Content
@@ -645,6 +715,7 @@ The agent must perform relevant analytical controls, including:
 
 - Validated Scope Coverage;
 - Functional Discovery;
+- Product Readiness review;
 - Functional Completeness;
 - dependency analysis;
 - JTBD support review;
@@ -681,6 +752,7 @@ Read the complete **Shape v2 Document**.
 Understand:
 
 - primary actors;
+- Target Market and material market-specific needs;
 - primary JTBD;
 - Value Proposition;
 - validated MVP scope;
@@ -722,6 +794,8 @@ For every Functional Area, apply the relevant discovery lenses:
 - Continuation Lens;
 - Recovery Lens;
 - Value Loop Lens.
+
+At product level, also apply the Product Readiness Lens to identify cross-cutting functional responsibilities that may not belong naturally to an existing core flow.
 
 Add justified Derived Capabilities where necessary.
 
@@ -800,9 +874,14 @@ Pay particular attention to:
 - return to existing work;
 - actor handoffs;
 - lifecycle continuation;
+- functional object termination;
 - negative paths;
 - recovery;
 - end-to-end value-loop completion.
+
+Review the product as a whole using the Product Readiness Lens.
+
+Check whether the validated context creates cross-cutting functional responsibilities that are absent from the proposed Structure.
 
 ---
 
@@ -812,7 +891,8 @@ Confirm that the resulting Structure functionally supports:
 
 - primary JTBD;
 - validated Value Proposition;
-- the complete MVP value loop.
+- the complete MVP value loop;
+- material functional responsibilities created by the validated Target Market and Constraints.
 
 Record only material gaps or uncertainties in the **Structure Document**.
 
@@ -875,12 +955,13 @@ After actual Consultant Review findings are available:
 5. apply actor changes;
 6. apply priority changes;
 7. repeat Validated Scope Coverage;
-8. repeat Functional Completeness review;
-9. repeat dependency and value-loop checks;
-10. resolve or record remaining Structural Gaps and Open Questions;
-11. produce the **Structure v2 Document**.
+8. repeat Functional Discovery and Product Readiness review;
+9. repeat Functional Completeness review;
+10. repeat dependency and value-loop checks;
+11. resolve or record remaining Structural Gaps and Open Questions;
+12. produce the **Structure v2 Document**.
 
-The **Structure v2 Document** becomes the primary input to the **Concepts Stage**.
+The **Structure v2 Document** becomes the primary input to the **Behavior Stage**.
 
 ---
 
@@ -928,7 +1009,9 @@ The **Structure Stage** succeeds when:
 - decomposition is sufficiently deep for the next Stage;
 - validated Shape functionality remains traceable;
 - Functional Discovery has been performed for every Functional Area;
+- Product Readiness has been reviewed at product level;
 - important implied functionality has been identified;
+- justified cross-cutting functional responsibilities have been identified;
 - Derived functionality has product-specific justification;
 - actors are identified where useful;
 - priorities have been proposed and reviewed;
@@ -937,11 +1020,12 @@ The **Structure Stage** succeeds when:
 - material dependencies have been considered;
 - primary JTBD are functionally supported;
 - the complete validated MVP value loop is functionally supported;
+- material functional implications of Target Market and Constraints are represented;
 - Structural Gaps are explicit;
 - structural Open Questions are explicit;
 - the **Structure Document** contains the functional model rather than an unnecessary analytical report;
 - the **Structure v1 Document** has undergone real Consultant Review before the **Structure v2 Document** is produced;
-- the **Structure v2 Document** is sufficiently complete for the **Concepts Stage**.
+- the **Structure v2 Document** is sufficiently complete for the **Behavior Stage**.
 
 ---
 
@@ -952,7 +1036,9 @@ The **Structure Stage** fails when:
 - the **Structure Document** merely transcribes the **Shape v2 Document**;
 - Shape wording is assumed to be a complete functional model;
 - obvious implied functionality is omitted;
+- material cross-cutting functional responsibilities implied by the validated product context are omitted;
 - generic SaaS functionality is added without product-specific justification;
+- Product Readiness is treated as a mandatory generic feature checklist;
 - Derived functionality is treated as validated fact;
 - Functional Areas are based primarily on screens or technical components;
 - artificial Capability Groups are created merely for hierarchy;
@@ -968,4 +1054,4 @@ The **Structure Stage** fails when:
 - technical architecture is produced during Structure;
 - internal analytical checks are unnecessarily reproduced as large reports in the **Structure Document**;
 - the **Structure v1 Document** is treated as reviewed without actual Consultant Review;
-- the **Structure v2 Document** remains so shallow that the **Concepts Stage** must rediscover basic product functionality.
+- the **Structure v2 Document** remains so shallow that the **Behavior Stage** must rediscover basic product functionality.
