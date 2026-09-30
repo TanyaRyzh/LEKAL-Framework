@@ -4,7 +4,15 @@ LEKAL transforms a vague product idea into buildable product scope through a seq
 
 Each Stage performs a distinct transformation of product knowledge.
 
-The output of one Stage becomes the primary input to the next.
+LEKAL contains:
+
+- **Core Stages** — the default analytical path;
+- **Optional Stages** — used when a specific project requires their output;
+- **Validation checkpoints** — human activities that validate or change product knowledge but are not separate Stages.
+
+---
+
+# Core Flow
 
 ```text
 Raw Idea
@@ -12,6 +20,10 @@ Raw Idea
 Idea Stage
 ↓
 Idea Document
+↓
+Domain Stage
+↓
+Domain Document
 ↓
 Shape Stage
 ↓
@@ -39,11 +51,15 @@ Behavior v2 Document
 ↓
 Interaction Stage
 ↓
-Wireframes v1
+Interaction v1
+↓
+Consultant Review
+↓
+Interaction v2
 ↓
 Client Validation
 ↓
-Behavior v3 Document + Wireframes v2
+Behavior v3 Document + Interaction v3
 ↓
 Requirements Stage
 ↓
@@ -55,6 +71,26 @@ Solutions Document
 ↓
 Buildable Product Scope
 ```
+
+---
+
+# Optional Stages
+
+Optional Stages are not required for every LEKAL project.
+
+They are introduced when the project requires the additional type of product knowledge they produce.
+
+```text
+Shape v2
+└── Estimation*
+
+Requirements
+└── Design*
+```
+
+`*` = Optional Stage.
+
+An Optional Stage does not become part of the Core Flow merely because it is used on a particular project.
 
 ---
 
@@ -97,11 +133,77 @@ The goal is to make the initial idea explicit enough for meaningful product anal
 
 ---
 
-## Stage 2 — Shape
+## Stage 2 — Domain
 
 ### Purpose
 
-Transform the **Idea Document** into a validated product and business hypothesis.
+Build the minimum domain understanding required to reason about the product correctly before product shaping begins.
+
+The **Domain Stage** prepares the Consultant and downstream analytical Stages to work with the product in its actual domain context.
+
+The Stage may identify and structure:
+
+- domain terminology;
+- important domain concepts;
+- typical actors and responsibilities;
+- important domain entities and relationships;
+- common processes;
+- common lifecycle patterns;
+- relevant regulations or standards;
+- common operational constraints;
+- common industry practices;
+- external systems or institutions relevant to the domain;
+- other domain knowledge required to understand the product context.
+
+The purpose is not to produce an exhaustive industry study.
+
+The purpose is to establish enough shared domain knowledge to prevent downstream product analysis from being based on incorrect assumptions or missing domain context.
+
+### Domain Knowledge vs Product Truth
+
+The **Domain Document** describes contextual knowledge about the domain.
+
+It does not define the product.
+
+A pattern, process, rule, actor, object, or convention may be common in the domain without being applicable to the specific product.
+
+Domain knowledge must therefore remain distinguishable from product-specific decisions.
+
+A common domain pattern must not silently become:
+
+- a product Capability;
+- a product Rule;
+- a requirement;
+- a scope decision;
+- a technical constraint.
+
+Product-specific decisions are made in downstream Stages.
+
+### Input
+
+**Idea Document**
+
+The Idea Document establishes the product context and determines which domain areas are relevant enough to investigate.
+
+### Output
+
+**Domain Document**
+
+The Domain Document contains the domain knowledge required to support downstream product analysis.
+
+Its primary immediate consumer is the **Shape Stage**.
+
+### Core Question
+
+> What do we need to understand about this domain before we can reason about the product correctly?
+
+---
+
+## Stage 3 — Shape
+
+### Purpose
+
+Transform the **Idea Document**, informed by relevant domain knowledge, into a validated product and business hypothesis.
 
 The **Shape Stage** analyzes the product from several perspectives:
 
@@ -118,9 +220,9 @@ The **Shape Stage** analyzes the product from several perspectives:
 
 The Stage does not merely document known information.
 
-When important information is uncertain, the consultant determines whether that uncertainty can be reduced through analysis or research.
+When important information is uncertain, the Consultant determines whether that uncertainty can be reduced through analysis or research.
 
-Where appropriate, the consultant:
+Where appropriate, the Consultant:
 
 - identifies the gap;
 - develops hypotheses or alternatives;
@@ -129,6 +231,10 @@ Where appropriate, the consultant:
 - analyzes tradeoffs, risks, and conditions;
 - produces a recommendation or candidate set;
 - returns the result for validation.
+
+Domain knowledge may inform this analysis but must not automatically become product truth.
+
+### Target Market
 
 Target Market establishes the market context in which the product is expected to operate.
 
@@ -145,19 +251,25 @@ These findings inform Product Scope, Constraints, Integrations, and downstream f
 
 ### Input
 
-**Idea Document**
+Primary input:
+
+- **Idea Document**
+
+Contextual input:
+
+- **Domain Document**
 
 ### First Output
 
 **Shape v1 Document**
 
-The **Shape v1 Document** represents the consultant's analyzed product and business hypothesis before external validation.
+The **Shape v1 Document** represents the Consultant's analyzed product and business hypothesis before external validation.
 
-### Validation
+### External Validation
 
-The consultant visualizes and reviews the proposed Shape with the client or relevant decision-makers.
+The Consultant visualizes and reviews the proposed Shape with the client or relevant decision-makers.
 
-External validation may:
+External Validation may:
 
 - confirm hypotheses;
 - reject hypotheses;
@@ -166,9 +278,9 @@ External validation may:
 - change MVP scope;
 - resolve assumptions;
 - introduce new information;
-- expose missing product behavior.
+- expose missing product concerns.
 
-The agent cannot simulate external validation.
+The Agent cannot simulate External Validation.
 
 ### Final Output
 
@@ -182,7 +294,52 @@ The **Shape v2 Document** incorporates actual validation findings and represents
 
 ---
 
-## Stage 3 — Structure
+## Optional Stage — Estimation*
+
+### Purpose
+
+Produce an early implementation estimate when the project requires information about expected effort, cost, timeline, team, or delivery range.
+
+**Estimation is optional.**
+
+It becomes available after Shape because **Shape v2** establishes a validated product hypothesis and scope sufficient for an early estimate.
+
+Estimation does not require the complete downstream product definition produced by Structure, Behavior, Requirements, Design, or Solutions.
+
+Consequently, the estimate must reflect the level of uncertainty that exists at this point in the lifecycle.
+
+The Stage may estimate, where relevant:
+
+- implementation effort;
+- delivery range;
+- approximate cost;
+- team composition;
+- major implementation areas;
+- major uncertainty drivers;
+- assumptions affecting the estimate;
+- risks affecting cost or timeline.
+
+Estimation must distinguish known scope from assumptions.
+
+It must not manufacture implementation certainty that does not yet exist.
+
+### Input
+
+**Shape v2 Document**
+
+Relevant upstream Documents remain available as supporting context.
+
+### Output
+
+**Estimation Document**
+
+### Core Question
+
+> What is the likely implementation effort, cost, and delivery range for the currently validated product scope?
+
+---
+
+## Stage 4 — Structure
 
 ### Purpose
 
@@ -216,14 +373,14 @@ Capabilities
 
 Capability Groups may be used optionally when they improve readability, but they are not a required level of decomposition.
 
-During analysis, Capabilities are internally classified as:
+During analysis, Capabilities may be internally classified as:
 
 - Validated;
 - Derived.
 
-This classification supports analytical traceability and does not need to appear as a dedicated field in the final **Structure Document**.
+This classification supports analytical traceability and does not need to appear as a dedicated field in the final Structure Document.
 
-Capabilities receive a proposed functional priority:
+Capabilities may receive a proposed functional priority:
 
 - High;
 - Medium;
@@ -232,6 +389,22 @@ Capabilities receive a proposed functional priority:
 Priority represents relative functional importance.
 
 It does not redefine Product Stage or release scope established during the **Shape Stage**.
+
+### Product Scope Coverage
+
+The Structure Stage should make the identified functional space explicit.
+
+Relevant identified Capabilities should receive an explicit scope decision rather than disappearing from the Structure merely because they are not included in the current Product Stage or release.
+
+Where applicable, Structure should distinguish between:
+
+- functionality included in the current scope;
+- functionality explicitly excluded from the current scope;
+- other scope categories established by the product context.
+
+The absence of a Capability should not be the only signal that it is outside the current scope.
+
+This makes deliberate exclusions distinguishable from functionality that was simply missed.
 
 ### Product Readiness
 
@@ -251,33 +424,25 @@ This is not a generic product checklist.
 
 A Capability is added only when the specific product context creates a justified functional responsibility.
 
-Examples of possible findings may include:
-
-```text
-Manage cookie preferences
-Delete own account
-Change interface language
-```
-
-These are examples, not mandatory product functionality.
-
 ### Input
 
 **Shape v2 Document**
+
+Relevant Domain knowledge remains available as supporting context where necessary.
 
 ### First Output
 
 **Structure v1 Document**
 
-The **Structure v1 Document** is the agent's proposed functional decomposition.
+The **Structure v1 Document** is the Agent's proposed functional decomposition.
 
-It may deliberately include reasonably justified Derived Capabilities so that the consultant can evaluate them rather than having potentially necessary functionality silently omitted.
+It may deliberately include reasonably justified Derived Capabilities so that the Consultant can evaluate them rather than having potentially necessary functionality silently omitted.
 
 ### Consultant Review
 
-The consultant reviews the proposed functional WBS.
+The Consultant reviews the proposed functional WBS.
 
-During review, the consultant may:
+During review, the Consultant may:
 
 - remove unnecessary Capabilities;
 - reject Derived Capabilities;
@@ -288,10 +453,11 @@ During review, the consultant may:
 - reorganize optional groupings;
 - correct actor responsibility;
 - change priorities;
+- correct scope decisions;
 - resolve assumptions;
 - identify new structural questions.
 
-The purpose of the review is not to approve the agent's decomposition.
+The purpose of the review is not to approve the Agent's decomposition.
 
 The purpose is to produce the best functional Structure for the product.
 
@@ -299,15 +465,17 @@ The purpose is to produce the best functional Structure for the product.
 
 **Structure v2 Document**
 
-The **Structure v2 Document** represents the reviewed functional WBS and becomes the primary input to the **Behavior Stage**.
+The Consultant incorporates review findings and produces the **Structure v2 Document**.
+
+Structure v2 represents the reviewed functional WBS and becomes the primary input to the **Behavior Stage**.
 
 ### Core Question
 
-> What functional mechanisms must exist for this product to work?
+> What functional mechanisms must exist for this product to work, and what is their scope?
 
 ---
 
-## Stage 4 — Behavior
+## Stage 5 — Behavior
 
 ### Purpose
 
@@ -354,27 +522,11 @@ Depending on the behavior, appropriate representations may include:
 
 The representation should expose the mechanism clearly with the least unnecessary duplication.
 
-For example:
-
-```text
-State Machine
-→ What lifecycle States exist?
-
-Transition Matrix
-→ Who can move the object between those States?
-
-Actions Matrix
-→ What can actors do while the object is in each State?
-
-Status Calculation
-→ How is aggregate State derived?
-```
-
-Functional Flow is therefore one behavioral representation, not the mandatory representation for every mechanism.
+Functional Flow is one behavioral representation, not the mandatory representation for every mechanism.
 
 ### Behavioral Organization
 
-The **Behavior Document** is normally organized by Functional Area to support consultant review.
+The **Behavior Document** is normally organized by Functional Area to support Consultant Review.
 
 Functional Areas are organizational containers.
 
@@ -454,21 +606,23 @@ Such Structural Gaps must be explicit rather than silently hidden inside the beh
 
 **Structure v2 Document**
 
+Relevant upstream Documents and artifacts remain available as supporting context.
+
 ### First Output
 
 **Behavior v1 Document**
 
-The **Behavior v1 Document** is the agent's proposed behavioral model.
+The **Behavior v1 Document** is the Agent's proposed behavioral model.
 
 It provides analytical material for human review and visualization.
 
 ### Consultant Review and Visualization
 
-The consultant reviews the **Behavior v1 Document** while visualizing relevant behavior in Miro or another suitable visual workspace.
+The Consultant reviews the **Behavior v1 Document** while visualizing relevant behavior in Miro or another suitable visual workspace.
 
 Visualization is an analytical activity rather than mechanical transcription.
 
-During review, the consultant may:
+During review, the Consultant may:
 
 - reorganize behavior for review;
 - challenge behavioral boundaries;
@@ -488,15 +642,19 @@ During review, the consultant may:
 - identify Structural Gaps;
 - identify additional assumptions and Open Questions.
 
-The consultant may substantially change the agent's proposal.
+The Consultant may substantially change the Agent's proposal.
 
 ### Final Output
 
 **Behavior v2 Document**
 
-The **Behavior v2 Document** incorporates Consultant Review findings and represents the reviewed behavioral model.
+The Consultant incorporates Consultant Review findings and produces the **Behavior v2 Document**.
 
-It becomes the primary input to the **Interaction Stage**.
+Behavior v2 represents the Consultant-reviewed behavioral model.
+
+Reviewed behavioral diagrams and other artifacts created or updated during Consultant Review form part of Behavior v2.
+
+Behavior v2 becomes the primary input to the **Interaction Stage**.
 
 ### Core Question
 
@@ -504,150 +662,230 @@ It becomes the primary input to the **Interaction Stage**.
 
 ---
 
-## Stage 5 — Interaction
+## Stage 6 — Interaction
 
 ### Purpose
 
-Transform the reviewed behavioral model in the **Behavior v2 Document** into an interaction model of the product.
+Transform the reviewed **Behavior v2** into a visual interaction artifact that makes important product behavior easier to understand, discuss, and validate with the client.
 
-The **Behavior Stage** establishes how the product behaves independently of a particular interface representation.
+The **Interaction Stage** does not attempt to design the complete product interface.
 
-The **Interaction Stage** determines how users interact with that behavior through the product interface.
+Its purpose is to provide enough interface representation for important behavioral decisions to become concrete.
 
-The Stage translates behavioral mechanisms into an understandable interaction structure.
+The Agent selects the parts of Behavior where visualization materially improves understanding and represents them through a small, coherent set of low-fidelity wireframes.
 
-Depending on the product, this may include:
+The wireframes are a communication and validation artifact.
 
-- screens or views;
-- navigation;
-- information hierarchy;
-- placement and availability of actions;
-- representation of meaningful States;
-- representation of system feedback;
-- representation of negative and recovery behavior;
-- relationships between views;
-- user movement through important product flows;
-- wireframes.
+They are not a complete UX specification.
 
-The Stage must preserve the behavior established in the **Behavior v2 Document**.
-
-It must not silently invent or change core product behavior merely to make an interface convenient.
-
-At the same time, interaction modeling is analytical rather than decorative.
-
-Creating wireframes may expose:
-
-- missing navigation;
-- unclear information hierarchy;
-- missing system feedback;
-- inaccessible actions;
-- unclear State representation;
-- missing interaction steps;
-- contradictions in behavior;
-- behavior that cannot be represented coherently through the interface.
-
-These findings must be resolved rather than hidden by the wireframe.
+The Stage should prefer a small number of informative screens over exhaustive interface coverage.
 
 ### Input
 
-**Behavior v2 Document**
+The primary input is the complete Consultant-reviewed **Behavior v2**, including its reviewed behavioral diagrams and other artifacts.
+
+Relevant upstream Documents may be used where additional context is required.
+
+Behavior v2 is authoritative.
+
+The Interaction Stage must preserve established product behavior and scope.
+
+Items explicitly marked Out of Scope must not be introduced.
+
+### Interaction Selection
+
+The Agent identifies behavioral areas where interface representation would materially help the client understand, validate, or challenge the proposed product.
+
+Priority may be given to behavior that:
+
+- represents the core product experience;
+- is product-specific;
+- involves meaningful State changes;
+- involves several actors;
+- depends on important entity relationships;
+- contains important recovery behavior;
+- is difficult to understand from behavioral artifacts alone;
+- contains decisions likely to require client validation.
+
+Generic interface behavior does not require visualization merely for coverage.
+
+The key selection question is:
+
+> Would visualizing this behavior make it materially easier for the client to understand, validate, or challenge the proposed product behavior?
+
+If not, the behavior does not require a wireframe merely for completeness.
+
+### Lightweight Interaction Structure
+
+The Agent establishes enough shared interaction structure to make the selected wireframes coherent.
+
+This may include:
+
+- a basic application shell;
+- lightweight navigation;
+- relevant entity hierarchy;
+- recurring page structure;
+- actor-specific context where necessary.
+
+This structure is provisional.
+
+It exists to support behavioral understanding.
+
+It does not define the final information architecture, navigation system, or UX.
 
 ### First Output
 
-**Wireframes v1**
+**Interaction v1**
 
-**Wireframes v1** represent the consultant-proposed interaction model before client validation.
+Interaction v1 is the Agent's proposed low-fidelity visual representation of selected parts of Behavior v2.
 
-They should be editable working artifacts rather than static presentation images where practical.
+It should:
 
-Wireframes are not expected to define visual design.
+- represent selected behavioral flows;
+- use understandable screens or views;
+- provide sufficient product context;
+- remain coherent across related screens;
+- show important actor differences where relevant;
+- show important actions, States, transitions, or system responses where necessary to understand the Behavior;
+- avoid unnecessary interface detail;
+- avoid expanding into complete UX design.
 
-Their purpose is to make product interaction concrete enough to review and validate.
+The Agent may make reasonable lightweight interaction decisions where necessary to create understandable wireframes.
+
+Such decisions are proposals for Consultant Review.
+
+They do not silently become authoritative product requirements.
+
+### Consultant Review
+
+The Consultant reviews Interaction v1 against Behavior v2.
+
+The Consultant evaluates whether the artifact:
+
+- represents the intended Behavior correctly;
+- visualizes the behavioral areas that most benefit from interface representation;
+- provides enough context for client discussion;
+- introduces unnecessary interface assumptions;
+- contains misleading or confusing representations;
+- omits behavioral areas that should be visualized;
+- reveals gaps or contradictions in Behavior v2.
+
+The Consultant may substantially change the Agent's proposal.
+
+The Consultant may modify the visual artifact directly where this is more efficient.
+
+### Consultant-Reviewed Output
+
+**Interaction v2**
+
+The Consultant produces Interaction v2 based on the review.
+
+Interaction v2 represents the Consultant-reviewed visual interpretation of Behavior v2.
+
+It should be suitable for client validation together with Behavior v2.
+
+It does not need to be a complete UX specification or polished UI.
 
 ### Client Validation
 
-The consultant reviews the proposed interaction model with the client or relevant decision-makers.
+The Consultant reviews the following package with the client or relevant decision-makers:
 
-The validation surface includes:
+```text
+Behavior v2
++
+Interaction v2
+```
 
-- **Behavior v2 Document**;
-- **Wireframes v1**.
+Behavior and Interaction are validated together because visualizing product behavior may make product decisions easier to understand and challenge.
 
 Client Validation may:
 
 - confirm product behavior;
 - change product behavior;
 - expose missing behavior;
-- confirm or change interaction structure;
-- change navigation;
-- change information hierarchy;
-- change action availability or presentation;
-- expose misunderstood user workflows;
-- resolve assumptions;
+- confirm or challenge the visual representation;
+- reveal misunderstood user workflows;
+- change assumptions;
 - introduce new information.
 
-The agent cannot simulate Client Validation.
+The Agent cannot simulate Client Validation.
 
-### Final Outputs
+### Client-Validated Outputs
 
-Client Validation produces two updated artifacts where necessary:
+After Client Validation, the Consultant incorporates accepted feedback into both artifacts where required.
+
+The Consultant produces:
 
 **Behavior v3 Document**
 
-The **Behavior v3 Document** incorporates behavioral changes resulting from Client Validation.
+and
 
-It represents client-validated product behavior.
+**Interaction v3**
 
-**Wireframes v2**
+Behavior v3 represents client-validated product behavior.
 
-**Wireframes v2** incorporate validated interaction changes.
-
-They represent the client-validated interaction model.
+Interaction v3 represents the client-validated visual interpretation of that behavior.
 
 The pair:
 
 ```text
 Behavior v3 Document
 +
-Wireframes v2
+Interaction v3
 ```
 
 becomes the primary input to the **Requirements Stage**.
 
 ### Core Question
 
-> How does the user interact with the defined product behavior?
+> Which parts of the product behavior need to be made visual so they can be understood and validated with the client?
 
 ---
 
-## Stage 6 — Requirements
+## Stage 7 — Requirements
 
 ### Purpose
 
-Transform the client-validated behavioral and interaction models into precise product requirements.
+Transform client-validated behavioral and interaction knowledge into precise product requirements.
 
 The **Requirements Stage** defines exactly how the system must behave in material cases.
 
-It expands the behavioral and interaction models into specification-level detail.
+It expands validated product knowledge into specification-level detail.
 
 Depending on the product, this may include:
 
-- detailed scenarios;
-- exact business rules;
-- field requirements;
-- validations;
+- Functional Requirements;
+- detailed Scenarios;
+- exact Rules;
+- Fields and Validation;
 - constraints;
-- permissions;
-- alternative scenarios;
+- Roles and Permissions;
+- Alternative Scenarios;
+- Negative Scenarios;
 - error behavior;
 - detailed State Transition Rules;
-- acceptance criteria;
-- data requirements;
-- functional edge cases.
+- Acceptance Criteria;
+- functional edge cases;
+- System Messages;
+- Notifications;
+- Non-Functional Requirements;
+- Glossary.
 
-The Stage should preserve the product behavior established in the **Behavior v3 Document** and the validated interaction model represented by **Wireframes v2**, while removing ambiguity required for implementation.
+The Stage should preserve the product behavior established in **Behavior v3** and use **Interaction v3** as validated visual context.
 
-The **Requirements Stage** may identify inconsistencies or missing information in upstream artifacts.
+Interaction v3 is not treated as a complete UX specification.
+
+### Requirements vs Solutions
+
+Requirements define what the system must do and the conditions under which the behavior is correct.
+
+Requirements do not define technical implementation unless a technical constraint is itself part of the validated product requirement.
+
+Technical architecture, storage, implementation data models, APIs, infrastructure, and implementation choices belong to the **Solutions Stage**.
+
+### Upstream Gaps
+
+Requirements analysis may expose inconsistencies or missing information in upstream artifacts.
 
 Such findings should be traced to the earliest Stage responsible for that type of product knowledge rather than silently invented inside Requirements.
 
@@ -656,7 +894,9 @@ Such findings should be traced to the earliest Stage responsible for that type o
 Primary inputs:
 
 - **Behavior v3 Document**;
-- **Wireframes v2**.
+- **Interaction v3**.
+
+Relevant upstream Documents remain available as supporting product context.
 
 ### Output
 
@@ -668,7 +908,74 @@ Primary inputs:
 
 ---
 
-## Stage 7 — Solutions
+## Optional Stage — Design*
+
+### Purpose
+
+Transform validated product behavior, interaction context, and precise Requirements into a complete product UX/UI design when the project requires a design deliverable.
+
+**Design is optional.**
+
+The earlier **Interaction Stage** deliberately visualizes only the parts of product behavior required for understanding and client validation.
+
+Design is different.
+
+When Design is included in the project, this is where the product interface is designed comprehensively.
+
+Depending on the project, the Stage may define:
+
+- complete information architecture;
+- navigation;
+- screens and views;
+- actor-specific experiences;
+- complete functional interaction coverage;
+- action placement and availability;
+- representation of States and progress;
+- system feedback;
+- validation and error states;
+- confirmations;
+- destructive interactions;
+- recovery interactions;
+- boundary and terminal states;
+- detailed interaction patterns;
+- layout;
+- responsive behavior;
+- components and variants;
+- visual hierarchy;
+- typography;
+- visual language;
+- accessibility considerations;
+- other UX/UI decisions required by the project.
+
+Design must preserve validated Behavior and Requirements.
+
+It may elaborate interface decisions that were intentionally left unresolved during Interaction.
+
+Design must not silently redefine product behavior or Requirements.
+
+### Input
+
+Primary inputs:
+
+- **Behavior v3 Document**;
+- **Interaction v3**;
+- **Requirements Document**.
+
+Relevant upstream Documents and artifacts remain available where necessary.
+
+### Output
+
+**Design Artifact**
+
+The exact form and depth of the Design Artifact depend on the project and delivery context.
+
+### Core Question
+
+> How should the validated and specified product work through its complete user interface?
+
+---
+
+## Stage 8 — Solutions
 
 ### Purpose
 
@@ -682,7 +989,7 @@ Depending on the product, this may include:
 - application components;
 - APIs;
 - integrations;
-- data models;
+- technical data models;
 - storage;
 - external services;
 - authentication approach;
@@ -694,11 +1001,21 @@ Depending on the product, this may include:
 
 Potential technologies identified during the **Shape Stage** are candidates, not predetermined implementation decisions.
 
-The **Solutions Stage** evaluates implementation choices against the actual product Structure, Behavior, Interaction Model, and Requirements.
+The **Solutions Stage** evaluates implementation choices against the actual product Structure, Behavior, and Requirements.
+
+When the optional **Design Stage** has been performed, relevant Design decisions also become input to Solutions where they create implementation constraints or materially affect the technical solution.
 
 ### Input
 
-**Requirements Document**
+Required primary input:
+
+- **Requirements Document**.
+
+When available and relevant:
+
+- **Design Artifact**.
+
+Relevant upstream product artifacts remain available where required.
 
 ### Output
 
@@ -722,19 +1039,39 @@ Do not solve every discovered problem in the Stage where it happens.
 
 ---
 
-## Idea → Shape
+## Idea → Domain
 
 **Idea Stage** determines:
 
 > What do we know about the idea?
 
+**Domain Stage** determines:
+
+> What do we need to understand about the surrounding domain?
+
+Idea establishes the initial product context.
+
+Domain builds the contextual knowledge required to reason about that product correctly.
+
+Domain knowledge is context, not product truth.
+
+---
+
+## Domain → Shape
+
+**Domain Stage** determines:
+
+> What is generally true or relevant in the surrounding domain?
+
 **Shape Stage** determines:
 
-> What product hypothesis follows from that information?
+> What should be true for this specific product?
 
-Idea gathers and structures context.
+Domain provides context.
 
-Shape analyzes it and establishes validated product direction, including relevant market context.
+Shape uses that context together with the Idea to establish and validate product-specific hypotheses.
+
+A common domain pattern does not become a product decision without product-specific justification.
 
 ---
 
@@ -750,7 +1087,21 @@ Shape analyzes it and establishes validated product direction, including relevan
 
 Shape defines product direction, Target Market, value, and validated scope.
 
-Structure decomposes that product into a functional WBS and discovers implied functionality.
+Structure decomposes that product into a functional WBS, discovers implied functionality, and makes functional scope decisions explicit.
+
+---
+
+## Shape → Estimation*
+
+**Shape Stage** determines the validated product hypothesis and scope.
+
+**Estimation Stage**, when required, determines:
+
+> What is the likely implementation effort, cost, and delivery range at the current level of product definition?
+
+Estimation does not make the product definition more complete.
+
+It evaluates the currently known product and makes uncertainty in the estimate explicit.
 
 ---
 
@@ -778,31 +1129,63 @@ Behavior models the mechanisms, lifecycle, Rules, consequences, recovery, and re
 
 **Interaction Stage** determines:
 
-> How does the user interact with that behavior through the product interface?
+> Which parts of that behavior need to be made visual so they can be understood and validated?
 
-Behavior defines product logic independently of a specific interface representation.
+Behavior defines product logic.
 
-Interaction transforms that logic into screens, views, navigation, information hierarchy, available actions, State representation, system feedback, and wireframes.
+Interaction does not replace or comprehensively redesign that logic as UX.
 
-The **Interaction Stage** is not merely visualization of Behavior.
-
-It creates a different type of product knowledge: the interaction model.
+It selectively translates important behavioral decisions into low-fidelity interface representations for Consultant Review and Client Validation.
 
 ---
 
 ## Interaction → Requirements
 
-**Interaction Stage** determines:
+Interaction creates the visual part of a combined client-validation package.
 
-> How does the user interact with the defined product behavior?
+After Consultant Review:
+
+```text
+Behavior v2
++
+Interaction v2
+```
+
+are validated together with the client.
+
+The Consultant then produces:
+
+```text
+Behavior v3
++
+Interaction v3
+```
 
 **Requirements Stage** determines:
 
 > Exactly how must the system behave in material cases?
 
-Interaction produces client-validated behavior and interaction artifacts.
+Requirements transform client-validated product knowledge into precise implementation-independent specification.
 
-Requirements turn them into precise implementation-independent specification.
+---
+
+## Requirements → Design*
+
+When Design is required:
+
+**Requirements Stage** determines:
+
+> What exactly must the system do?
+
+**Design Stage** determines:
+
+> How should that complete required behavior work through the user interface?
+
+Requirements define precise expected system behavior.
+
+Design turns validated and specified product knowledge into a complete UX/UI solution.
+
+Design is not required for the Core Flow to continue.
 
 ---
 
@@ -810,15 +1193,15 @@ Requirements turn them into precise implementation-independent specification.
 
 **Requirements Stage** determines:
 
-> What must the system do?
+> What exactly must the system do?
 
 **Solutions Stage** determines:
 
-> How should the system implement it?
+> How should it be implemented technically?
 
-Requirements remain implementation-independent where possible.
+Solutions may proceed directly from Requirements when a separate Design deliverable is not required.
 
-Solutions make technical decisions.
+When Design is performed, relevant Design decisions become additional input to Solutions.
 
 ---
 
@@ -826,7 +1209,7 @@ Solutions make technical decisions.
 
 LEKAL combines machine analysis with human product judgment.
 
-The agent is particularly useful for:
+The Agent is particularly useful for:
 
 - processing large amounts of context;
 - maintaining breadth across the product;
@@ -840,9 +1223,11 @@ The agent is particularly useful for:
 - checking consistency;
 - identifying potential gaps;
 - identifying observable product behavior;
+- selecting behavioral areas that benefit from visualization;
+- producing initial low-fidelity interaction proposals;
 - preserving traceability between Stages.
 
-The consultant is responsible for:
+The Consultant is responsible for:
 
 - product judgment;
 - evaluating whether proposed functionality is actually necessary;
@@ -853,23 +1238,63 @@ The consultant is responsible for:
 - visual reasoning;
 - selecting and challenging behavioral representations;
 - recognizing patterns and inconsistencies during visualization;
-- translating behavior into a coherent interaction model;
+- reviewing and correcting Agent-generated proposals;
 - making or facilitating product decisions;
-- conducting real validation with clients and decision-makers.
+- conducting real validation with clients and decision-makers;
+- incorporating Consultant Review findings into reviewed artifacts;
+- incorporating Client Validation findings into client-validated artifacts.
 
-Human review is not merely quality control over agent output.
+Human review is not merely quality control over Agent output.
 
 It is part of the analytical process.
+
+The Agent does not replace external validation.
+
+The Agent must not manufacture client decisions, Consultant decisions, research findings, or validation outcomes.
 
 ---
 
 # Document and Artifact Lifecycle
 
-Some Stages require more than one version of the same Document or artifact because analysis, review, and validation represent different states of product knowledge.
+Some Stages require more than one version of the same Document or artifact because Agent generation, Consultant Review, and Client Validation represent different states of product knowledge.
+
+## Idea
+
+```text
+Raw Idea
+↓
+Idea Stage
+↓
+Idea Document
+```
+
+---
+
+## Domain
+
+```text
+Idea Document
+↓
+Domain Stage
+↓
+Domain Document
+```
+
+The Domain Document provides contextual knowledge for Shape.
+
+It does not become product truth merely because it describes common domain practice.
+
+---
 
 ## Shape
 
 ```text
+Idea Document
++
+Domain Document
+↓
+Shape Stage
+↓
 Shape v1 Document
 ↓
 External Validation
@@ -877,13 +1302,35 @@ External Validation
 Shape v2 Document
 ```
 
-The distinction represents pre-validation and post-validation product knowledge.
+The distinction between Shape v1 and Shape v2 represents pre-validation and post-validation product knowledge.
+
+---
+
+## Estimation*
+
+When required:
+
+```text
+Shape v2 Document
+↓
+Estimation Stage
+↓
+Estimation Document
+```
+
+Estimation is a branch from the validated Shape.
+
+It does not replace or block continuation into Structure.
 
 ---
 
 ## Structure
 
 ```text
+Shape v2 Document
+↓
+Structure Stage
+↓
 Structure v1 Document
 ↓
 Consultant Review
@@ -891,13 +1338,19 @@ Consultant Review
 Structure v2 Document
 ```
 
-The distinction represents agent-proposed functional decomposition and consultant-reviewed functional decomposition.
+Structure v1 is the Agent's proposal.
+
+The Consultant incorporates review findings and produces Structure v2.
 
 ---
 
 ## Behavior
 
 ```text
+Structure v2 Document
+↓
+Behavior Stage
+↓
 Behavior v1 Document
 ↓
 Consultant Review + Visualization
@@ -905,7 +1358,11 @@ Consultant Review + Visualization
 Behavior v2 Document
 ```
 
-The distinction represents agent-proposed behavioral analysis and consultant-reviewed behavioral synthesis.
+Behavior v1 is the Agent's proposal.
+
+The Consultant performs the analytical review and produces Behavior v2.
+
+Reviewed behavioral diagrams and other review artifacts form part of Behavior v2.
 
 ---
 
@@ -914,25 +1371,112 @@ The distinction represents agent-proposed behavioral analysis and consultant-rev
 ```text
 Behavior v2 Document
 ↓
-Interaction Modeling
+Interaction Stage
 ↓
-Wireframes v1
+Interaction v1
+↓
+Consultant Review
+↓
+Interaction v2
+```
+
+Interaction v1 is the Agent's proposal.
+
+The Consultant performs the review and produces Interaction v2.
+
+Interaction v2 is intentionally not a complete UX specification.
+
+---
+
+## Client Validation
+
+```text
+Behavior v2 Document
++
+Interaction v2
 ↓
 Client Validation
 ↓
-Behavior v3 Document + Wireframes v2
+Consultant incorporates accepted feedback
+↓
+Behavior v3 Document
++
+Interaction v3
 ```
 
-The **Interaction Stage** deliberately validates behavior and interaction together.
+Behavior and Interaction are deliberately validated together.
 
-Interaction modeling may expose product decisions that cannot be reliably validated from an abstract behavioral model alone.
+Client feedback may change either or both artifacts.
 
-Client feedback may therefore change both:
+The Consultant produces the client-validated versions.
 
-- the behavioral model;
-- the interaction model.
+The Agent does not independently create Behavior v3 or Interaction v3.
 
-The resulting **Behavior v3 Document** and **Wireframes v2** represent the client-validated basis for Requirements.
+---
+
+## Requirements
+
+```text
+Behavior v3 Document
++
+Interaction v3
+↓
+Requirements Stage
+↓
+Requirements Document
+```
+
+Requirements convert client-validated product knowledge into precise specification.
+
+---
+
+## Design*
+
+When required:
+
+```text
+Behavior v3 Document
++
+Interaction v3
++
+Requirements Document
+↓
+Design Stage
+↓
+Design Artifact
+```
+
+Design is an optional downstream branch.
+
+Its absence does not prevent the Core Flow from continuing to Solutions.
+
+---
+
+## Solutions
+
+Without Design:
+
+```text
+Requirements Document
+↓
+Solutions Stage
+↓
+Solutions Document
+```
+
+When Design is performed:
+
+```text
+Requirements Document
++
+Design Artifact
+↓
+Solutions Stage
+↓
+Solutions Document
+```
+
+Solutions translate specified product behavior and, where relevant, Design constraints into technical implementation decisions.
 
 ---
 
@@ -949,6 +1493,12 @@ Idea Document
 
     ↓
 
+Domain Stage
+    ↓
+Domain Document
+
+    ↓
+
 Shape Stage
     ↓
 Shape v1 Document
@@ -957,6 +1507,10 @@ External Validation
     ↓
 Shape v2 Document
 
+    ├──────────────→ Estimation Stage*
+    │                    ↓
+    │               Estimation Document
+    │
     ↓
 
 Structure Stage
@@ -981,13 +1535,25 @@ Behavior v2 Document
 
 Interaction Stage
     ↓
-Wireframes v1
+Interaction v1
     ↓
+Consultant Review
+    ↓
+Interaction v2
+
+    ↓
+
 Client Validation
+
     ↓
+
+Consultant incorporates accepted feedback
+
+    ↓
+
 Behavior v3 Document
 +
-Wireframes v2
+Interaction v3
 
     ↓
 
@@ -995,16 +1561,23 @@ Requirements Stage
     ↓
 Requirements Document
 
-    ↓
+    ├──────────────→ Design Stage*
+    │                    ↓
+    │               Design Artifact
+    │                    │
+    └────────────────────┤
+                         ↓
 
-Solutions Stage
-    ↓
-Solutions Document
+                   Solutions Stage
+                         ↓
+                   Solutions Document
 
-    ↓
+                         ↓
 
-Buildable Product Scope
+                 Buildable Product Scope
 ```
+
+`*` = Optional Stage.
 
 ---
 
@@ -1012,20 +1585,40 @@ Buildable Product Scope
 
 At the highest level, LEKAL progressively transforms uncertainty into implementation-ready knowledge.
 
+## Core Stages
+
 | Stage | Transformation | Primary Output |
 |---|---|---|
 | Idea Stage | Raw Idea → Structured Context | **Idea Document** |
-| Shape Stage | Structured Context → Validated Product Hypothesis | **Shape v2 Document** |
-| Structure Stage | Validated Product Hypothesis → Functional Structure | **Structure v2 Document** |
-| Behavior Stage | Functional Structure → Behavioral Model | **Behavior v2 Document** |
-| Interaction Stage | Behavioral Model → Validated Interaction Model | **Behavior v3 Document** + **Wireframes v2** |
-| Requirements Stage | Validated Behavior + Interaction → Precise Specification | **Requirements Document** |
+| Domain Stage | Product Context → Relevant Domain Knowledge | **Domain Document** |
+| Shape Stage | Context + Domain Knowledge → Validated Product Hypothesis | **Shape v2 Document** |
+| Structure Stage | Validated Product Hypothesis → Reviewed Functional Structure | **Structure v2 Document** |
+| Behavior Stage | Functional Structure → Consultant-Reviewed Behavioral Model | **Behavior v2 Document** |
+| Interaction Stage | Reviewed Behavioral Model → Consultant-Reviewed Visual Validation Artifact | **Interaction v2** |
+| Requirements Stage | Client-Validated Product Knowledge → Precise Specification | **Requirements Document** |
 | Solutions Stage | Precise Specification → Technical Solution | **Solutions Document** |
 
-The resulting chain is:
+Between Interaction and Requirements, Client Validation transforms:
+
+```text
+Behavior v2 + Interaction v2
+↓
+Behavior v3 + Interaction v3
+```
+
+## Optional Stages
+
+| Stage | Transformation | Primary Output |
+|---|---|---|
+| Estimation* | Validated Product Hypothesis → Early Delivery Estimate | **Estimation Document** |
+| Design* | Validated Product + Specification → Complete UX/UI Solution | **Design Artifact** |
+
+The Core transformation chain is:
 
 ```text
 Context
+↓
+Domain Understanding
 ↓
 Product Hypothesis
 ↓
@@ -1033,11 +1626,31 @@ Functional Structure
 ↓
 Behavioral Model
 ↓
-Interaction Model
+Visual Validation
+↓
+Client-Validated Product Knowledge
 ↓
 Specification
 ↓
 Technical Solution
+```
+
+Optional transformations are introduced when the project requires them:
+
+```text
+Product Hypothesis
+↓
+Estimation*
+```
+
+and:
+
+```text
+Client-Validated Product Knowledge
++
+Specification
+↓
+Design*
 ```
 
 Each Stage should reduce a different kind of uncertainty.
