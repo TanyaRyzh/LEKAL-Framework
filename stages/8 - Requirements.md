@@ -1,118 +1,321 @@
 # Requirements Stage
 
-The goal of this stage is to transform the reviewed product and interaction knowledge into a complete, implementation-ready and testable specification.
+## Purpose
 
-By the beginning of the Requirements Stage, the product behavior and interaction model have already been defined and reviewed.
+The Requirements Stage transforms validated product behavior and interaction
+knowledge into a precise, implementation-ready, and testable product
+specification.
 
-The purpose of this stage is not to redesign the product or determine how it should be technically implemented.
+By the beginning of the Requirements Stage, the product's functional scope,
+behavioral model, and interaction model have already been established and
+validated.
 
-The purpose is to describe the expected product behavior with sufficient precision for implementation, verification, and future UAT.
+Requirements do not redesign the product.
 
-Requirements should preserve the product structure established by the previous Stages rather than introduce an unrelated requirements taxonomy.
+Requirements define the expected product behavior and constraints with
+sufficient precision for implementation, verification, future UAT, and
+downstream technical design.
 
 The primary functional hierarchy is:
 
-```text
 Journey
 └── Scenario
     └── Acceptance Criteria
-```
 
-Cross-cutting requirements may be represented separately when doing so makes them substantially easier to read, review, approve, or reuse.
+Cross-cutting requirements may be represented separately where consolidation
+makes the specification substantially easier to understand, review, maintain,
+or reuse.
+
+---
 
 ## Objective
 
 Produce a Requirements Document that:
 
-- converts reviewed product behavior into precise and testable requirements;
-- incorporates the reviewed Interaction artifact;
-- covers all in-scope Journeys and Scenarios;
-- defines sufficient detail for implementation;
-- defines Acceptance Criteria for verification;
-- consolidates cross-cutting requirements where this improves review and usability;
-- preserves traceability between product behavior, interaction, requirements, and future UAT;
-- avoids making technical implementation decisions that belong to the Solutions Stage.
+- converts validated product behavior into precise and testable requirements;
+- incorporates validated Interaction decisions that materially affect expected
+  product behavior;
+- covers all known in-scope Journeys and relevant Scenarios;
+- provides sufficient detail for implementation;
+- defines sufficient Acceptance Criteria for verification;
+- preserves traceability between validated product knowledge, Requirements,
+  implementation, and future UAT;
+- consolidates cross-cutting requirements where doing so improves clarity and
+  consistency;
+- identifies material unresolved product decisions rather than hiding them;
+- avoids technical implementation decisions that belong to Solutions.
+
+---
 
 ## Input
 
-The Requirements Stage uses the accumulated reviewed product knowledge.
+The Requirements Stage uses the accumulated validated product knowledge.
 
-Primary inputs include:
+Primary inputs are:
 
-- Idea Document;
-- Domain Document;
-- Shape Document;
-- Structure Document;
-- reviewed Behavior Document and behavioral artifacts;
-- reviewed Interaction artifact;
-- explicit scope decisions;
-- assumptions and constraints;
+- Behavior v3;
+- Interaction v3;
+- current in-scope Structure;
+- established scope decisions;
+- established constraints and assumptions;
 - Out of Scope decisions;
-- relevant Consultant decisions produced during previous Stages.
+- relevant validated product decisions from previous Stages.
 
-The Requirements Stage must use the current reviewed product knowledge rather than obsolete pre-review versions.
+Other upstream product knowledge may be used where necessary to correctly
+interpret the current validated product model.
+
+Behavior is authoritative for product behavior.
+
+Interaction provides validated context for how important behavior is
+represented to users.
+
+Requirements must preserve the validated product model rather than derive a
+new one.
+
+---
+
+## Core Principles
+
+### 1. Requirements Specify Established Product Behavior
+
+Requirements make validated product behavior precise.
+
+They may refine the specification of established behavior where additional
+detail is necessary for implementation or verification.
+
+They must not silently:
+
+- introduce new product scope;
+- change Actor responsibilities;
+- change permissions;
+- change Rules;
+- change State logic;
+- change established workflows;
+- change recovery behavior;
+- contradict validated Interaction;
+- resolve missing product decisions by assumption.
+
+When specification exposes a missing or contradictory product decision, that
+is an upstream gap rather than permission to invent an answer.
+
+---
+
+### 2. Requirements Preserve Product Structure
+
+Requirements should preserve the product structure established by previous
+Stages rather than introduce an unrelated requirements taxonomy.
+
+The primary hierarchy is:
+
+Journey
+└── Scenario
+    └── Acceptance Criteria
+
+A Journey groups related product behavior around a meaningful user or system
+objective.
+
+A Scenario describes concrete user or system behavior within that Journey.
+
+Acceptance Criteria define observable conditions used to determine whether the
+required Scenario behavior has been implemented correctly.
+
+The hierarchy may be refined where necessary for specification clarity, but
+refinement must preserve established product meaning.
+
+---
+
+### 3. Precision Is Driven by Implementation and Verification Needs
+
+Requirements should contain enough detail to remove material ambiguity for
+implementation and verification.
+
+Precision does not mean documenting every possible fact about the product.
+
+Include detail when its absence would require an implementation or verification
+decision that should instead be defined as product behavior.
+
+Do not add detail merely because a requirements template permits it.
+
+---
+
+### 4. Requirements Remain Product-Level
+
+Requirements define:
+
+> what behavior or result the product must provide and the conditions it must
+> satisfy.
+
+They may define product-visible:
+
+- entities;
+- attributes;
+- fields;
+- values;
+- relationships;
+- constraints;
+- validation;
+- Rules;
+- States;
+- permissions;
+- observable responses;
+- required outcomes.
+
+Requirements do not prescribe technical implementation unless an established
+constraint already mandates it.
+
+Technical architecture, storage models, service decomposition, APIs,
+infrastructure, deployment, implementation mechanisms, and technology
+selection belong to Solutions.
+
+---
+
+### 5. Interaction Informs Requirements Without Becoming Design
+
+Interaction provides validated context for how product behavior is represented
+and accessed.
+
+Requirements should preserve Interaction decisions that materially affect
+expected product behavior or implementation.
+
+This may include:
+
+- interaction context;
+- navigation behavior;
+- information hierarchy;
+- available actions;
+- Actor-specific interaction modes;
+- representation of important States;
+- continuation and recovery behavior;
+- system feedback;
+- relationships between overview and detail.
+
+Requirements should not convert incidental low-fidelity visual choices into
+mandatory product behavior.
+
+Visual styling, detailed layout, component design, spacing, and other complete
+interface decisions belong to Design unless they materially define required
+product behavior.
+
+---
+
+### 6. Completeness Means Behavioral Coverage, Not Document Volume
+
+A complete Requirements Document preserves all known in-scope behavior needed
+for implementation and verification.
+
+Completeness is not measured by:
+
+- number of pages;
+- number of requirements;
+- number of Acceptance Criteria;
+- number of sections;
+- number of fields in a template.
+
+A concise specification can be complete.
+
+A large specification can still contain material gaps.
+
+---
 
 ## Focus Areas
 
 ### 1. Functional Requirements
 
-Functional requirements describe the expected behavior of the product in sufficient detail for implementation and verification.
+Functional Requirements describe expected product behavior in sufficient
+detail for implementation and verification.
 
 They are organized primarily as:
 
-```text
 Journey
 └── Scenario
     └── Acceptance Criteria
-```
 
-A Journey groups related product behavior around a meaningful user or system objective.
+Depending on the Scenario, specification may include:
 
-A Scenario describes a concrete interaction or system behavior within that Journey.
-
-Depending on the Scenario, its requirements may include:
-
-- actors;
+- Actor or context;
 - trigger;
 - preconditions;
 - expected flow;
 - system responses;
 - relevant fields and attributes;
-- required/optional fields;
-- input constraints and validation;
-- business rules;
-- state-dependent behavior;
+- required and optional data;
+- constraints;
+- validation;
+- Rules;
+- State-dependent behavior;
 - permissions;
-- alternative flows;
-- negative flows;
+- alternative behavior;
+- negative behavior;
 - error handling;
-- resulting state;
+- recovery behavior;
+- resulting State;
 - relevant system feedback;
-- references to corresponding Interaction views;
-- other information required to implement the Scenario unambiguously.
+- relevant Interaction context.
 
 Not every Scenario requires every element.
 
-Do not add sections mechanically when they provide no useful information.
+Information should remain close to the Scenario when doing so makes the
+behavior easier to understand, implement, and verify.
 
-#### Acceptance Criteria
+---
 
-Each Scenario must contain sufficient Acceptance Criteria to determine whether the implemented behavior satisfies the requirement.
+### 2. Acceptance Criteria
+
+Each Scenario must contain sufficient Acceptance Criteria to determine whether
+the implemented behavior satisfies the Requirement.
 
 Acceptance Criteria should:
 
-- be observable or otherwise verifiable;
-- cover the expected successful behavior;
-- cover materially relevant alternative and negative behavior;
+- be observable or otherwise objectively verifiable;
+- cover expected successful behavior;
+- cover materially relevant alternative behavior;
+- cover materially relevant negative behavior;
 - include important boundary conditions where applicable;
-- reflect relevant permissions and state-dependent behavior;
+- reflect relevant permissions;
+- reflect relevant State-dependent behavior;
+- reflect relevant recovery behavior;
 - correspond to the behavior actually required by the Scenario.
 
-Acceptance Criteria are intended to support implementation verification and later UAT.
+Acceptance Criteria should not merely repeat the Scenario flow in different
+words.
 
-### 2. Roles and Permissions
+Acceptance Criteria define verification conditions.
 
-Consolidate roles and permissions when a centralized representation makes the authorization model easier to understand and review.
+They are not intended to become a complete QA test suite.
+
+---
+
+### 3. Fields and Validation
+
+Where product-visible data is necessary to define expected behavior,
+Requirements should specify relevant:
+
+- meaning;
+- required or optional status;
+- allowed values;
+- format;
+- constraints;
+- uniqueness;
+- defaults;
+- editability;
+- State-dependent availability;
+- validation behavior;
+- user-visible error behavior.
+
+Only specify constraints that are established or necessary product decisions.
+
+Do not invent arbitrary limits, formats, defaults, or validation Rules merely
+because they are common implementation practices.
+
+If a material constraint is necessary but unresolved, record the unresolved
+decision.
+
+---
+
+### 4. Roles and Permissions
+
+Roles and permissions may be consolidated when a centralized representation
+makes the authorization model easier to understand and review.
 
 This may include:
 
@@ -120,51 +323,90 @@ This may include:
 - role descriptions;
 - permission matrix;
 - access restrictions;
-- relevant actor distinctions.
+- relevant Actor distinctions.
 
-Individual Scenarios may reference the centralized permission model rather than reproduce it in full.
+Individual Scenarios may reference the centralized authorization model rather
+than reproduce it in full.
 
-Scenario-specific authorization behavior should remain in the Scenario where necessary for understanding or implementation.
+Scenario-specific authorization behavior should remain in the Scenario where
+necessary for understanding or implementation.
 
-### 3. System Messages
+The centralized model and Scenario behavior must remain consistent.
 
-Consolidate user-facing system messages when centralized review makes their wording and usage easier to validate.
+---
+
+### 5. States and Recovery
+
+Requirements should specify State-dependent behavior where States affect what
+the product or Actor can do.
+
+Where relevant, Requirements should make clear:
+
+- applicable State;
+- available actions;
+- transition conditions;
+- resulting State;
+- invalid transitions;
+- recovery behavior;
+- invalidation or recalculation behavior;
+- consequences of relevant structural or behavioral changes.
+
+Requirements do not need to reproduce the complete behavioral State model in
+every Scenario.
+
+State behavior may be centralized or referenced where doing so remains clear
+and unambiguous.
+
+---
+
+### 6. System Messages
+
+User-facing System Messages may be consolidated when centralized review makes
+their wording and usage easier to validate.
 
 For each relevant message, define as applicable:
 
 - trigger or condition;
 - context;
 - message text;
-- variables/placeholders;
-- relevant actor;
+- variables or placeholders;
+- relevant Actor;
 - resulting interaction where necessary.
 
-System Messages should correspond to actual behavior defined by the requirements and Interaction artifact.
+System Messages must correspond to actual required product behavior.
 
 Do not invent messages merely to populate the section.
 
-### 4. Notifications
+---
 
-Define notifications that the product is required to send.
+### 7. Notifications
 
-For each notification, define as applicable:
+Define Notifications the product is required to send.
+
+For each relevant Notification, define as applicable:
 
 - trigger;
 - recipient;
 - channel;
 - timing;
 - conditions;
-- message/template;
-- variables/placeholders;
-- duplicate-prevention or delivery rules where product behavior requires them.
+- message or template;
+- variables or placeholders;
+- duplicate-prevention or delivery Rules where product behavior requires them.
 
-Notification behavior must remain consistent with the corresponding functional requirements.
+Notification behavior must remain consistent with corresponding Functional
+Requirements.
 
-### 5. Non-Functional Requirements
+Do not introduce Notifications merely because they may be useful.
 
-Identify non-functional requirements that materially constrain the expected product.
+---
 
-Consider relevant areas such as:
+### 8. Non-Functional Requirements
+
+Define Non-Functional Requirements that materially constrain the expected
+product.
+
+Relevant areas may include:
 
 - performance;
 - availability and reliability;
@@ -181,54 +423,39 @@ Consider relevant areas such as:
 - backup and recovery;
 - regulatory or compliance requirements.
 
+Only relevant categories should be included.
+
 Do not invent arbitrary numerical targets or constraints.
 
-When a relevant NFR cannot yet be determined, record the unresolved requirement or required decision rather than fabricating a value.
+When a material NFR cannot yet be determined, record the unresolved requirement
+or required decision rather than fabricating a value.
 
-Only include categories relevant to the product.
+---
 
-### 6. Glossary
+### 9. Glossary
 
-Maintain a consolidated glossary of product terminology required to interpret the Requirements Document consistently.
+Maintain a consolidated glossary where precise terminology is necessary for
+consistent interpretation of the Requirements Document.
 
-The glossary should use terminology established by the reviewed upstream product knowledge.
+The Glossary should use terminology established by validated upstream product
+knowledge.
 
-The Requirements Stage is not responsible for repeating Domain research.
+The Requirements Stage does not repeat Domain research.
 
-Add or clarify terminology when specification work reveals that precise interpretation is necessary.
+Terms should be added or clarified when specification reveals that precise
+interpretation is necessary.
+
+---
 
 ## Process
 
-### Phase 1 — Requirements Generation
+### 1. Establish Requirements Coverage
 
-#### 1. Read Accumulated Reviewed Product Knowledge
+Before detailed specification, establish coverage between validated product
+knowledge and the Requirements that must represent it.
 
-Read the relevant upstream Documents and artifacts.
+At minimum, consider:
 
-Pay particular attention to:
-
-- in-scope functionality;
-- Actors;
-- Journeys;
-- Scenarios;
-- states and transitions;
-- business rules;
-- permissions;
-- interaction decisions;
-- validation behavior;
-- system feedback;
-- error and recovery behavior;
-- explicit Out of Scope decisions.
-
-Do not derive requirements from a single upstream artifact in isolation.
-
-#### 2. Build Requirements Coverage
-
-Create an internal coverage model connecting the reviewed product knowledge to the requirements that must be produced.
-
-At minimum, verify coverage across:
-
-```text
 In-Scope Functionality
 ×
 Actors
@@ -240,190 +467,210 @@ Scenarios
 States
 ×
 Relevant Interaction
-```
 
-The purpose is not to create requirements mechanically for every combination.
+Also consider where relevant:
 
-The purpose is to prevent reviewed product behavior from disappearing during specification.
+- Rules;
+- permissions;
+- alternative behavior;
+- negative behavior;
+- recovery;
+- validation;
+- constraints.
 
-#### 3. Build the Journey and Scenario Structure
+The purpose is not to create Requirements mechanically for every possible
+combination.
 
-Organize the functional specification using the product's established Journey and Scenario structure.
+The purpose is to prevent validated product behavior from disappearing during
+specification.
 
-Do not create an unrelated functional decomposition merely because a traditional requirements template uses one.
+---
 
-Where upstream knowledge does not yet have sufficient decomposition for specification, the Agent may refine the requirement structure without changing established product meaning.
+### 2. Establish the Journey and Scenario Structure
 
-Do not silently introduce new product scope.
+Organize Functional Requirements using the product's established Journey and
+Scenario structure.
 
-#### 4. Specify Each Scenario
+Refine decomposition where necessary to make the specification usable, but do
+not change established product meaning or silently introduce new scope.
 
-For each Scenario, determine what information is necessary to make it implementation-ready and testable.
+Avoid unrelated functional decomposition created solely to fit a generic
+requirements template.
 
-Specify relevant:
+---
 
-```text
-Actor / context
-Trigger
-Preconditions
-Flow
-Fields and constraints
-Validation
-Business rules
-State-dependent behavior
-Alternative behavior
-Negative behavior
-System feedback
-Resulting state
-Acceptance Criteria
-```
+### 3. Specify Scenario Behavior
 
-Use only the elements relevant to that Scenario.
+For each in-scope Scenario, determine what information is necessary to make the
+expected behavior implementation-ready and testable.
 
-Keep information close to the Scenario when doing so makes the requirement easier to understand and implement.
+Specify only relevant elements.
 
-Do not extract information into separate requirement categories merely for taxonomic purity.
+Keep information close to the Scenario when this improves understanding and
+implementation.
 
-#### 5. Produce Acceptance Criteria
+Do not extract information into separate categories merely for taxonomic
+purity.
+
+---
+
+### 4. Define Acceptance Criteria
 
 Derive Acceptance Criteria from the required Scenario behavior.
 
-Acceptance Criteria must be sufficiently concrete to verify the implementation.
+Acceptance Criteria must be sufficiently concrete to verify implementation.
 
-Ensure that important successful, alternative, negative, state-dependent, permission-dependent, and boundary behavior is represented where relevant.
+Cover materially relevant:
 
-Do not simply repeat the Scenario flow in different wording.
+- successful behavior;
+- alternatives;
+- negative behavior;
+- State-dependent behavior;
+- permission-dependent behavior;
+- recovery;
+- validation;
+- boundary conditions.
 
-#### 6. Consolidate Cross-Cutting Requirements
+Do not simply repeat the Scenario flow.
 
-After functional requirements have been specified, consolidate information that is substantially easier to review or approve together.
+---
+
+### 5. Consolidate Cross-Cutting Requirements
+
+After Functional Requirements are sufficiently understood, consolidate
+information that is substantially easier to review, approve, maintain, or
+reuse together.
 
 This may include:
 
-```text
-Roles & Permissions
-System Messages
-Notifications
-NFR
-Glossary
-```
+- Roles & Permissions;
+- System Messages;
+- Notifications;
+- Non-Functional Requirements;
+- Glossary.
 
-The reason for consolidation is usability of the Requirements Document, not classification for its own sake.
+Consolidation exists for specification usability and consistency.
 
-Do not create additional cross-cutting sections unless they materially improve review, approval, consistency, or reuse.
+Do not create cross-cutting sections for classification alone.
 
-#### 7. Separate Requirements from Solutions
+---
 
-Review the specification for premature implementation decisions.
+### 6. Check Coverage
 
-Requirements should define:
+Verify that:
 
-> what behavior or result the system must provide and the conditions it must satisfy.
-
-The Requirements Stage may specify product-visible entities, fields, values, constraints, validation, and relationships when they are necessary to define expected behavior.
-
-It should not prescribe technical persistence models merely because those product concepts will eventually require storage.
-
-For example:
-
-```text
-Requirement:
-Journey Title is required and must not exceed the defined maximum length.
-```
-
-does not imply:
-
-```text
-Solution:
-journeys.title VARCHAR(...) NOT NULL
-```
-
-Likewise, a requirement that repeated processing must not create duplicate results does not itself prescribe a particular idempotency implementation.
-
-Technical architecture, storage models, service decomposition, APIs, infrastructure, and implementation mechanisms belong to the Solutions Stage unless an existing constraint already mandates them.
-
-#### 8. Perform Requirements Review
-
-Before presenting the Requirements Document for human review, verify:
-
-**Coverage**
-
-- every in-scope Journey is represented;
+- every known in-scope Journey is represented;
 - relevant Scenarios are represented;
-- reviewed Behavior has not disappeared;
-- reviewed Interaction decisions affecting implementation are represented;
-- relevant alternative, negative, recovery, and boundary behavior is covered.
+- validated Behavior has not disappeared;
+- validated Interaction decisions affecting expected behavior or
+  implementation are represented;
+- materially relevant alternative behavior is covered;
+- materially relevant negative behavior is covered;
+- recovery behavior is covered where applicable;
+- important boundary conditions are covered.
 
-**Consistency**
+---
+
+### 7. Check Consistency
+
+Verify that:
 
 - terminology is consistent;
-- roles and permissions do not contradict individual Scenarios;
-- System Messages correspond to defined states/events;
+- roles and permissions agree with Scenario behavior;
+- State behavior is internally consistent;
+- System Messages correspond to defined product behavior;
 - Notifications correspond to defined triggers;
 - Acceptance Criteria agree with Scenario behavior;
-- equivalent rules do not contradict each other.
+- equivalent Rules do not contradict each other;
+- cross-cutting Requirements do not contradict local Scenario Requirements;
+- Requirements remain consistent with validated Behavior and Interaction.
 
-**Testability**
+---
 
-- requirements can be objectively verified;
+### 8. Check Testability
+
+Verify that:
+
+- Requirements can be objectively verified;
 - Acceptance Criteria have observable outcomes;
-- ambiguous adjectives such as "fast", "convenient", "secure", or "user-friendly" are not used as substitutes for requirements;
-- undefined implementation assumptions are not presented as requirements.
+- materially ambiguous behavior has been resolved or explicitly identified;
+- vague qualities are not used as substitutes for Requirements;
+- implementation assumptions are not presented as established product
+  Requirements.
 
-**Stage Boundary**
+---
 
-- implementation choices have not leaked unnecessarily into Requirements;
-- unresolved product decisions are identified rather than silently converted into technical assumptions.
+### 9. Check Stage Boundaries
 
-Correct obvious defects before presenting the Requirements Document.
+Verify that:
 
-### Phase 2 — Consultant Review & Refinement
+- no new product scope has been silently introduced;
+- missing product decisions have not been silently invented;
+- Interaction has not been redesigned;
+- low-fidelity visual choices have not been unnecessarily converted into
+  mandatory Requirements;
+- technical implementation decisions have not been introduced unnecessarily;
+- unresolved product decisions remain explicit.
 
-#### 9. Consultant Reviews the Requirements
+---
 
-The Consultant reviews the actual Requirements Document.
+## Upstream Gaps
+
+Requirements work may reveal missing, ambiguous, or contradictory product
+knowledge.
+
+When this occurs:
+
+1. identify the unresolved product question;
+2. identify the earliest Stage responsible for establishing it;
+3. identify the affected Requirements;
+4. determine whether unaffected specification can continue;
+5. resolve the product decision at the appropriate methodological level before
+   treating it as established Requirements.
+
+Do not silently invent missing product behavior merely to make the
+Requirements Document appear complete.
+
+A localized upstream gap does not necessarily invalidate unrelated
+Requirements work.
+
+---
+
+## Consultant Review
+
+The Consultant reviews the complete Requirements Document.
 
 The Consultant may:
 
-- correct requirements;
-- add missing scenarios;
-- remove unnecessary requirements;
-- clarify rules;
+- correct Requirements;
+- add missing Scenarios;
+- remove unnecessary Requirements;
+- clarify Rules;
 - modify Acceptance Criteria;
 - adjust requirement decomposition;
-- correct cross-cutting requirements;
+- correct cross-cutting Requirements;
 - identify upstream gaps;
-- identify premature Solution decisions.
+- identify premature Solution decisions;
+- simplify over-specified areas;
+- request additional precision where implementation or verification remains
+  ambiguous.
 
-The Agent must not simulate Consultant Review.
+Review should consider the Requirements Document as a coherent specification,
+not only as isolated individual Requirements.
 
-#### 10. Refine the Requirements Document
+Findings should be incorporated without unnecessarily discarding unaffected
+valid work.
 
-Apply Consultant findings to the existing Requirements Document.
+Consultant Review may be repeated until the Requirements Document is
+sufficiently complete and coherent for downstream work.
 
-Preserve unaffected valid work.
-
-Do not regenerate the complete specification merely because part of it requires correction.
-
-Repeat Consultant Review and refinement as necessary.
-
-#### 11. Resolve Upstream Gaps
-
-If specification exposes missing or contradictory product knowledge:
-
-1. identify the gap;
-2. identify the earliest Stage responsible for establishing it;
-3. determine whether unaffected Requirements work can continue;
-4. record the issue;
-5. return the material decision to the appropriate Stage or human reviewer where necessary.
-
-Do not silently invent missing product behavior merely to complete the Requirements Document.
+---
 
 ## Output
 
-The output of the Requirements Stage is a **Requirements Document** containing, where applicable:
+The output of the Requirements Stage is a **Requirements Document** containing,
+where applicable:
 
-```text
 Glossary
 
 Roles & Permissions
@@ -437,13 +684,14 @@ Non-Functional Requirements
 Functional Requirements
     Journey
         Scenario
-            detailed requirements
+            detailed Requirements
             Acceptance Criteria
-```
 
-The exact ordering of sections may be adjusted for readability.
+The exact ordering may be adjusted for readability.
 
-A section should not exist merely because the template permits it.
+A section should not exist merely because the structure permits it.
+
+---
 
 ## Completion Criteria
 
@@ -452,18 +700,103 @@ The Requirements Stage is Complete when:
 - all known in-scope Journeys are covered;
 - relevant Scenarios are specified;
 - each Scenario contains sufficient detail for implementation;
-- relevant fields, constraints, validation, rules, states, permissions, errors, and outcomes are specified where necessary;
+- relevant fields, constraints, validation, Rules, States, permissions, errors,
+  recovery behavior, and outcomes are specified where necessary;
 - Acceptance Criteria are sufficient to verify required behavior;
-- relevant cross-cutting requirements are consolidated where doing so improves review or reuse;
+- relevant cross-cutting Requirements are consolidated where doing so improves
+  review, consistency, or reuse;
 - Roles and Permissions are internally consistent;
 - System Messages correspond to defined product behavior;
-- Notifications have defined triggers, recipients, channels, and content where applicable;
-- applicable NFRs have been specified or material unresolved NFR decisions are explicitly recorded;
+- Notifications have sufficient definition where applicable;
+- applicable NFRs have been specified or material unresolved NFR decisions are
+  explicitly recorded;
 - terminology is consistent;
-- the Requirements Document is consistent with reviewed Behavior and Interaction knowledge;
+- Requirements are consistent with validated Behavior and Interaction;
 - no known in-scope behavior has disappeared during specification;
 - technical implementation decisions have not been introduced unnecessarily;
 - material upstream gaps are resolved or explicitly recorded;
 - actual Consultant Review has occurred;
 - required refinement has been completed;
-- the Consultant determines that the Requirements Document is sufficiently complete for downstream Solutions work.
+- the Consultant determines that the Requirements Document is sufficiently
+  complete for downstream Solutions work.
+
+---
+
+## Failure Conditions
+
+The Requirements Stage has failed when the resulting specification materially:
+
+- invents product behavior not established upstream;
+- loses known in-scope behavior;
+- contradicts validated Behavior;
+- contradicts validated Interaction without explicitly resolving the conflict;
+- leaves implementation-dependent product decisions ambiguous;
+- contains Acceptance Criteria that cannot meaningfully verify required
+  behavior;
+- treats a generic template as more authoritative than the product model;
+- duplicates information so extensively that consistency becomes unreliable;
+- converts incidental Interaction details into unnecessary mandatory behavior;
+- introduces technical implementation decisions without an established
+  constraint requiring them;
+- hides unresolved product decisions behind assumptions;
+- becomes a test-case catalogue instead of a product specification;
+- becomes a technical Solution instead of Requirements.
+
+---
+
+## Stage Boundaries
+
+### Requirements vs Behavior
+
+Behavior defines:
+
+> How does the product behave?
+
+Requirements define:
+
+> What exactly must the product do, under what conditions, so that its behavior
+> can be implemented and verified?
+
+Requirements make validated Behavior precise.
+
+They do not independently redefine it.
+
+### Requirements vs Interaction
+
+Interaction defines:
+
+> How is important product behavior represented so that users can understand
+> and interact with it?
+
+Requirements define the exact expected behavior and constraints behind that
+interaction.
+
+Interaction provides validated visual and interaction context.
+
+Requirements do not turn Interaction into a complete UI specification.
+
+### Requirements vs Design
+
+Requirements define expected product behavior and constraints.
+
+Design defines the complete UX/UI required to represent that behavior.
+
+Requirements may constrain Design where product behavior requires it.
+
+They should not make detailed visual design decisions unnecessarily.
+
+### Requirements vs Solutions
+
+Requirements define:
+
+> What must be true of the product?
+
+Solutions define:
+
+> How should the product be technically implemented?
+
+Requirements may establish product-visible data, constraints, validation,
+relationships, and observable outcomes.
+
+Solutions establish technical architecture, data storage, APIs, infrastructure,
+services, technologies, and implementation mechanisms.
