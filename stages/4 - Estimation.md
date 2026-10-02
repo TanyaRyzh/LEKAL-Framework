@@ -14,7 +14,7 @@ It is used when the client or project requires an understanding of likely:
 - team composition;
 - major implementation risks.
 
-The Estimation Stage runs after **Shape v2**.
+The Estimation Stage runs after the current authoritative validated **Shape**.
 
 At this point, the product direction and scope have been validated, but detailed Structure, Behavior, Requirements, Design, and Solutions may not yet exist.
 
@@ -57,7 +57,7 @@ The Estimation Stage should provide useful decision-making information without p
 
 The primary input is:
 
-**Shape v2 Document**
+the current authoritative validated **Shape artifact**
 
 Relevant upstream materials may also be used as supporting context:
 
@@ -68,7 +68,7 @@ Relevant upstream materials may also be used as supporting context:
 - known delivery constraints;
 - available technical information where it already exists.
 
-Shape v2 defines the product scope being estimated.
+The validated Shape defines the product scope being estimated.
 
 The Estimation Stage must not silently expand that scope.
 
@@ -114,7 +114,7 @@ Precision should be earned by information.
 
 The estimate must have an explicit scope basis.
 
-The Agent should identify:
+Identify:
 
 - Product Stage or release being estimated;
 - functionality included in that scope;
@@ -357,9 +357,9 @@ Avoid generic project-management risk lists.
 
 # Process
 
-## Step 1 — Read Shape v2
+## Step 1 — Read the Current Validated Shape
 
-Read the complete **Shape v2 Document** and relevant upstream context.
+Read the complete current authoritative validated **Shape artifact** and relevant upstream context.
 
 Identify:
 

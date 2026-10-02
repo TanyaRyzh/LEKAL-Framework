@@ -2,7 +2,7 @@
 
 ## Goal
 
-Transform the reviewed **Structure v2 Document** into a coherent behavioral model of the product.
+Transform the reviewed **Structure v2 artifact** into a coherent behavioral model of the product.
 
 The **Structure Stage** determines:
 
@@ -12,7 +12,7 @@ The **Behavior Stage** determines:
 
 > How does the product behave?
 
-For significant functionality from the **Structure v2 Document**, analyze where relevant:
+For significant functionality from the **Structure v2 artifact**, analyze where relevant:
 
 - who participates in the behavior;
 - what triggers it;
@@ -76,17 +76,17 @@ These belong to later Stages.
 
 Primary input:
 
-- reviewed **Structure v2 Document**.
+- reviewed **Structure v2 artifact**.
 
 Additional inputs may include:
 
-- validated **Shape v2 Document** for context and traceability;
+- current authoritative validated **Shape artifact** for context and traceability;
 - Structure review findings;
 - existing product materials;
 - relevant research from previous Stages;
 - supporting project information.
 
-The **Structure v2 Document** defines the functional mechanisms and priorities used by the **Behavior Stage**.
+The **Structure v2 artifact** defines the functional mechanisms and priorities used by the **Behavior Stage**.
 
 The **Behavior Stage** must not silently redesign that Structure.
 
@@ -104,7 +104,7 @@ The **Behavior v1 Document** is the agent's proposed behavioral model.
 
 It contains, where relevant:
 
-- behavior mapped to Capabilities from the **Structure v2 Document**;
+- behavior mapped to Capabilities from the **Structure v2 artifact**;
 - actors and responsibilities;
 - triggers and Preconditions;
 - behavioral flows;
@@ -169,7 +169,7 @@ The primary transformation is:
 
 **Functional Structure → Behavioral Model**
 
-A Capability in the **Structure v2 Document** tells us that functionality exists.
+A Capability in the **Structure v2 artifact** tells us that functionality exists.
 
 The **Behavior Stage** explains how that functionality behaves.
 
@@ -224,7 +224,7 @@ Do not duplicate the same behavior under several Functional Areas merely because
 
 Not every Capability requires the same amount of behavioral modeling.
 
-Use the High / Medium / Low priority from the **Structure v2 Document** as one input when determining analytical depth.
+Use the High / Medium / Low priority from the **Structure v2 artifact** as one input when determining analytical depth.
 
 ### High
 
@@ -263,7 +263,7 @@ Several Capabilities may be modeled together when their behavior is inseparable.
 
 A single Capability may require several behavioral representations when it contains materially different behavior.
 
-Every significant Capability from the **Structure v2 Document** must be behaviorally represented or explicitly accounted for.
+Every significant Capability from the **Structure v2 artifact** must be behaviorally represented or explicitly accounted for.
 
 No significant Capability should silently disappear.
 
@@ -651,7 +651,7 @@ When they affect existing product state, model the consequences.
 
 ## Limits and Quotas
 
-When the **Structure v2 Document**, **Shape v2 Document**, or validated product context establishes limits or quotas, define their behavioral effect.
+When the **Structure v2 artifact**, current authoritative validated **Shape artifact**, or validated product context establishes limits or quotas, define their behavioral effect.
 
 Examples may include:
 
@@ -737,7 +737,7 @@ Check:
 - Are States named and interpreted consistently?
 - Are transitions compatible with available actions?
 - Does one mechanism require Data that no previous behavior produces?
-- Does behavior assume a Capability absent from the **Structure v2 Document**?
+- Does behavior assume a Capability absent from the **Structure v2 artifact**?
 - Do negative paths lead somewhere meaningful?
 - Can recovery return to the intended value loop?
 - Can the same object reach contradictory States?
@@ -752,7 +752,7 @@ Do not consider the behavioral model complete merely because each individual mec
 
 ## Structural Gap Detection
 
-Behavioral analysis may reveal that the **Structure v2 Document** is incomplete or incorrect.
+Behavioral analysis may reveal that the **Structure v2 artifact** is incomplete or incorrect.
 
 Examples:
 
@@ -769,7 +769,7 @@ When this occurs:
 1. Identify the Structural Gap.
 2. Explain why the Structure is insufficient.
 3. Record the proposed correction.
-4. Do not silently modify the reviewed **Structure v2 Document** as if the change were already approved.
+4. Do not silently modify the reviewed **Structure v2 artifact** as if the change were already approved.
 
 Minor structural corrections may be incorporated during consultant review according to the methodology.
 
@@ -995,7 +995,7 @@ Detailed technical interaction belongs to the **Solutions Stage**.
 
 ## Process
 
-### Step 1 — Review the **Structure v2 Document**
+### Step 1 — Review the **Structure v2 artifact**
 
 Review:
 
@@ -1007,7 +1007,7 @@ Review:
 - assumptions;
 - Open Questions.
 
-Use the **Shape v2 Document** when necessary to preserve:
+Use the current authoritative validated **Shape artifact** when necessary to preserve:
 
 - product intent;
 - Target Market;
@@ -1105,7 +1105,7 @@ For each relevant negative condition determine:
 - whether recovery is required;
 - where recovery reconnects.
 
-If recovery requires functionality absent from the **Structure v2 Document**, record a Structural Gap.
+If recovery requires functionality absent from the **Structure v2 artifact**, record a Structural Gap.
 
 ---
 
@@ -1183,7 +1183,7 @@ Record structural problems separately.
 
 ### Step 11 — Verify Structure Coverage
 
-Internally map every significant Capability from the **Structure v2 Document** to the behavioral model.
+Internally map every significant Capability from the **Structure v2 artifact** to the behavioral model.
 
 Determine whether it is:
 
@@ -1255,13 +1255,14 @@ Also include material:
 
 Do not add empty sections merely for template consistency.
 
-Stop after producing the **Behavior v1 Document**.
-
-Consultant Review must not be simulated.
+Behavior v1 remains a proposal until actual Consultant refinement.
 
 ---
 
 ### Step 14 — Consultant Review and Visualization
+
+Independent review may challenge the working artifact while the Consultant prepares Behavior v2.
+Findings are advisory; the Consultant accepts, rejects, defers, or resolves them upstream.
 
 The consultant reviews the **Behavior v1 Document** and visualizes behavior in Miro or another suitable workspace where visual representation improves analysis.
 
@@ -1298,7 +1299,7 @@ The purpose of the agent output is to provide analytical material for human synt
 
 ### Step 15 — Produce **Behavior v2 Document**
 
-After actual Consultant Review findings are available:
+The Consultant completes refinement by evaluating advisory findings and applying professional judgment:
 
 1. incorporate accepted review decisions;
 2. correct behavioral boundaries;
@@ -1319,6 +1320,15 @@ After actual Consultant Review findings are available:
 The **Behavior v2 Document** is the consultant-reviewed behavioral model.
 
 It becomes the primary input to the **Interaction Stage**.
+
+---
+
+## Client Validation
+
+Behavior v2 and Interaction v2 are validated together after Consultant refinement.
+The Consultant evaluates validation feedback, incorporates accepted changes, and
+produces Behavior v3 and Interaction v3 for Requirements.
+Independent review does not create these validated versions.
 
 ---
 
@@ -1397,7 +1407,7 @@ merely for formatting consistency.
 
 The **Behavior Stage** is successful when:
 
-- every significant Capability from the **Structure v2 Document** is behaviorally represented;
+- every significant Capability from the **Structure v2 artifact** is behaviorally represented;
 - behavioral boundaries reflect coherent product behavior;
 - High-priority Capabilities have sufficient behavioral analysis;
 - representation is selected according to the mechanism rather than template convention;
@@ -1436,7 +1446,7 @@ The **Behavior Stage** is successful when:
 
 The **Behavior Stage** has failed or remains incomplete when:
 
-- the **Behavior Document** merely repeats Capability names from the **Structure v2 Document**;
+- the **Behavior Document** merely repeats Capability names from the **Structure v2 artifact**;
 - significant Capabilities have no behavioral representation;
 - every Capability is forced into the same behavioral template;
 - Actor/System Functional Flow is treated as mandatory when another representation explains the mechanism better;

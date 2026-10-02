@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The Interaction Stage translates the validated behavioral model of the product
+The Interaction Stage translates the Consultant-refined behavioral model of the product
 into a low-fidelity visual interaction model.
 
 Its purpose is to make important product behavior tangible enough to understand,
@@ -33,7 +33,7 @@ Primary input:
 Supporting inputs:
 
 - Structure v2
-- Shape v2
+- current authoritative validated Shape
 - Domain
 - Idea
 - relevant project materials
@@ -349,6 +349,10 @@ a catalogue of examples.
 
 Interaction v1 is reviewed and modified by the Consultant.
 
+Independent review may challenge the working artifact while the Consultant prepares
+Interaction v2. Findings are advisory; the Consultant accepts, rejects, defers,
+or resolves them upstream. Review does not create or approve v2 or v3.
+
 Consultant Review may:
 
 - accept or reject interaction hypotheses;
@@ -381,7 +385,8 @@ decisions can be understood, discussed, and challenged.
 
 It does not replace Behavior.
 
-Accepted validation feedback may result in changes to either or both artifacts.
+The Consultant evaluates validation feedback and incorporates accepted changes
+into either or both artifacts.
 
 The resulting validated artifacts are:
 

@@ -1,5 +1,11 @@
 # LEKAL 2 — Shape
 
+> Version note: this Stage retains historical Shape v1 / v2 labels pending
+> deliberate lifecycle reconciliation. They do not override the global distinction
+> between Agent Draft, Consultant-refined artifact, and Validated artifact.
+> Downstream work uses the current authoritative validated Shape, including
+> an artifact already labeled Shape v3, rather than selecting a stale v2.
+
 ## Goal
 
 The goal of this stage is to transform the structured **Idea Document** into an analyzed and validated product and business hypothesis.

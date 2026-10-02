@@ -15,61 +15,21 @@ LEKAL contains:
 # Core Flow
 
 ```text
-Raw Idea
+Idea
 ↓
-Idea Stage
+Domain
 ↓
-Idea Document
+Shape
 ↓
-Domain Stage
+Structure
 ↓
-Domain Document
+Behavior
 ↓
-Shape Stage
+Interaction
 ↓
-Shape v1 Document
+Requirements
 ↓
-External Validation
-↓
-Shape v2 Document
-↓
-Structure Stage
-↓
-Structure v1 Document
-↓
-Consultant Review
-↓
-Structure v2 Document
-↓
-Behavior Stage
-↓
-Behavior v1 Document
-↓
-Consultant Review + Visualization
-↓
-Behavior v2 Document
-↓
-Interaction Stage
-↓
-Interaction v1
-↓
-Consultant Review
-↓
-Interaction v2
-↓
-Client Validation
-↓
-Behavior v3 Document + Interaction v3
-↓
-Requirements Stage
-↓
-Requirements Document
-↓
-Solutions Stage
-↓
-Solutions Document
-↓
-Buildable Product Scope
+Solutions
 ```
 
 ---
@@ -343,7 +303,7 @@ Relevant upstream Documents remain available as supporting context.
 
 ### Purpose
 
-Transform the validated **Shape v2 Document** into a functional Work Breakdown Structure of the product.
+Transform the validated current authoritative validated **Shape artifact** into a functional Work Breakdown Structure of the product.
 
 The **Structure Stage** determines what functional mechanisms must exist for the validated product to operate coherently.
 
@@ -371,14 +331,14 @@ Functional Areas
 Capabilities
 ```
 
-Capability Groups may be used optionally when they improve readability, but they are not a required level of decomposition.
+The canonical hierarchy contains only Product, Functional Area, and Capability.
 
 During analysis, Capabilities may be internally classified as:
 
 - Validated;
 - Derived.
 
-This classification supports analytical traceability and does not need to appear as a dedicated field in the final Structure Document.
+This classification supports analytical traceability and does not need to appear as a dedicated field in the final Structure artifact.
 
 Capabilities may receive a proposed functional priority:
 
@@ -387,6 +347,11 @@ Capabilities may receive a proposed functional priority:
 - Low.
 
 Priority represents relative functional importance.
+
+The canonical table fields are ID, Functional Area, Capability, Description,
+Scope, Priority, and Preliminary Size (XS / S / M / L / XL).
+Area IDs are 1, 2, 3; Capability IDs are 1.1, 1.2, 1.3.
+Structure is an editable Miro artifact, without a duplicate primary Markdown document.
 
 It does not redefine Product Stage or release scope established during the **Shape Stage**.
 
@@ -399,8 +364,9 @@ Relevant identified Capabilities should receive an explicit scope decision rathe
 Where applicable, Structure should distinguish between:
 
 - functionality included in the current scope;
-- functionality explicitly excluded from the current scope;
-- other scope categories established by the product context.
+- functionality explicitly excluded from the current scope.
+
+Scope values are IN and OUT; excluded Capabilities remain in their natural Functional Area.
 
 The absence of a Capability should not be the only signal that it is outside the current scope.
 
@@ -426,15 +392,15 @@ A Capability is added only when the specific product context creates a justified
 
 ### Input
 
-**Shape v2 Document**
+current authoritative validated **Shape artifact**
 
 Relevant Domain knowledge remains available as supporting context where necessary.
 
 ### First Output
 
-**Structure v1 Document**
+**Structure v1 artifact**
 
-The **Structure v1 Document** is the Agent's proposed functional decomposition.
+The **Structure v1 artifact** is the Agent's proposed functional decomposition.
 
 It may deliberately include reasonably justified Derived Capabilities so that the Consultant can evaluate them rather than having potentially necessary functionality silently omitted.
 
@@ -450,8 +416,8 @@ During review, the Consultant may:
 - merge or split Capabilities;
 - rename Capabilities;
 - move Capabilities between Functional Areas;
-- reorganize optional groupings;
-- correct actor responsibility;
+- reorganize Functional Areas;
+- correct functional responsibility;
 - change priorities;
 - correct scope decisions;
 - resolve assumptions;
@@ -463,9 +429,9 @@ The purpose is to produce the best functional Structure for the product.
 
 ### Final Output
 
-**Structure v2 Document**
+**Structure v2 artifact**
 
-The Consultant incorporates review findings and produces the **Structure v2 Document**.
+The Consultant evaluates advisory findings during refinement and produces the **Structure v2 artifact**.
 
 Structure v2 represents the reviewed functional WBS and becomes the primary input to the **Behavior Stage**.
 
@@ -479,7 +445,7 @@ Structure v2 represents the reviewed functional WBS and becomes the primary inpu
 
 ### Purpose
 
-Transform the reviewed **Structure v2 Document** into a coherent behavioral model of the product.
+Transform the reviewed **Structure v2 artifact** into a coherent behavioral model of the product.
 
 The **Behavior Stage** determines how the significant functional mechanisms identified during Structure actually behave.
 
@@ -598,13 +564,13 @@ Analytics behavior must remain consistent with the product's privacy and consent
 
 ### Structural Gaps
 
-Behavioral analysis may expose missing or incorrectly decomposed Capabilities in the **Structure v2 Document**.
+Behavioral analysis may expose missing or incorrectly decomposed Capabilities in the **Structure v2 artifact**.
 
 Such Structural Gaps must be explicit rather than silently hidden inside the behavioral model.
 
 ### Input
 
-**Structure v2 Document**
+**Structure v2 artifact**
 
 Relevant upstream Documents and artifacts remain available as supporting context.
 
@@ -672,7 +638,7 @@ The **Interaction Stage** does not attempt to design the complete product interf
 
 Its purpose is to provide enough interface representation for important behavioral decisions to become concrete.
 
-The Agent selects the parts of Behavior where visualization materially improves understanding and represents them through a small, coherent set of low-fidelity wireframes.
+Select the parts of Behavior where visualization materially improves understanding and represent them through a small, coherent set of low-fidelity wireframes.
 
 The wireframes are a communication and validation artifact.
 
@@ -694,7 +660,7 @@ Items explicitly marked Out of Scope must not be introduced.
 
 ### Interaction Selection
 
-The Agent identifies behavioral areas where interface representation would materially help the client understand, validate, or challenge the proposed product.
+Identify behavioral areas where interface representation would materially help the client understand, validate, or challenge the proposed product.
 
 Priority may be given to behavior that:
 
@@ -717,7 +683,7 @@ If not, the behavior does not require a wireframe merely for completeness.
 
 ### Lightweight Interaction Structure
 
-The Agent establishes enough shared interaction structure to make the selected wireframes coherent.
+Establish enough shared interaction structure to make the selected wireframes coherent.
 
 This may include:
 
@@ -894,13 +860,14 @@ Such findings should be traced to the earliest Stage responsible for that type o
 Primary inputs:
 
 - **Behavior v3 Document**;
-- **Interaction v3**.
+- **Interaction v3**;
+- **Structure v2 artifact**.
 
 Relevant upstream Documents remain available as supporting product context.
 
 ### Output
 
-**Requirements Document**
+**Requirements v2 Document**
 
 ### Core Question
 
@@ -1009,7 +976,7 @@ When the optional **Design Stage** has been performed, relevant Design decisions
 
 Required primary input:
 
-- **Requirements Document**.
+- **Requirements v2 Document**.
 
 When available and relevant:
 
@@ -1258,6 +1225,22 @@ The Agent must not manufacture client decisions, Consultant decisions, research 
 
 Some Stages require more than one version of the same Document or artifact because Agent generation, Consultant Review, and Client Validation represent different states of product knowledge.
 
+## Version Semantics
+
+v1 is an Agent Draft. v2 is the Consultant-refined artifact.
+Independent Reviewer analysis operates inside refinement from v1 to v2.
+Findings are advisory; the Consultant accepts, rejects, defers, or resolves them upstream.
+Review does not create or approve another artifact version.
+
+v3 exists only after a meaningful Stage-specific validation checkpoint.
+The Consultant evaluates validation feedback and incorporates accepted changes.
+Structure ends at v2; Behavior and Interaction proceed together from v2 through
+Client Validation to v3; Requirements ends at v2 before Solutions.
+
+Shape below retains historical version labels pending deliberate reconciliation.
+Downstream Stages must use current authoritative validated Shape rather than
+select an older artifact merely because its filename says v2.
+
 ## Idea
 
 ```text
@@ -1331,29 +1314,29 @@ Shape v2 Document
 ↓
 Structure Stage
 ↓
-Structure v1 Document
+Structure v1 artifact
 ↓
-Consultant Review
+Consultant refinement (with advisory review)
 ↓
-Structure v2 Document
+Structure v2 artifact
 ```
 
 Structure v1 is the Agent's proposal.
 
-The Consultant incorporates review findings and produces Structure v2.
+The Consultant evaluates advisory findings during refinement and produces Structure v2.
 
 ---
 
 ## Behavior
 
 ```text
-Structure v2 Document
+Structure v2 artifact
 ↓
 Behavior Stage
 ↓
 Behavior v1 Document
 ↓
-Consultant Review + Visualization
+Consultant refinement + Visualization (with advisory review)
 ↓
 Behavior v2 Document
 ```
@@ -1375,7 +1358,7 @@ Interaction Stage
 ↓
 Interaction v1
 ↓
-Consultant Review
+Consultant refinement (with advisory review)
 ↓
 Interaction v2
 ```
@@ -1417,16 +1400,21 @@ The Agent does not independently create Behavior v3 or Interaction v3.
 ## Requirements
 
 ```text
-Behavior v3 Document
-+
-Interaction v3
+Behavior v3 + Interaction v3 + Structure v2
 ↓
 Requirements Stage
 ↓
-Requirements Document
+Requirements v1
+↓
+Consultant refinement ↔ independent Reviewer
+↓
+Requirements v2
+↓
+Solutions
 ```
 
-Requirements convert client-validated product knowledge into precise specification.
+Requirements convert validated product knowledge into precise specification.
+No separate validation checkpoint or Requirements v3 is currently defined.
 
 ---
 
@@ -1515,11 +1503,11 @@ Shape v2 Document
 
 Structure Stage
     ↓
-Structure v1 Document
+Structure v1 artifact
     ↓
 Consultant Review
     ↓
-Structure v2 Document
+Structure v2 artifact
 
     ↓
 
@@ -1527,7 +1515,7 @@ Behavior Stage
     ↓
 Behavior v1 Document
     ↓
-Consultant Review + Visualization
+Consultant refinement + Visualization (with advisory review)
     ↓
 Behavior v2 Document
 
@@ -1559,7 +1547,11 @@ Interaction v3
 
 Requirements Stage
     ↓
-Requirements Document
+Requirements v1
+    ↓
+Consultant refinement (with advisory review)
+    ↓
+Requirements v2
 
     ├──────────────→ Design Stage*
     │                    ↓
@@ -1592,10 +1584,10 @@ At the highest level, LEKAL progressively transforms uncertainty into implementa
 | Idea Stage | Raw Idea → Structured Context | **Idea Document** |
 | Domain Stage | Product Context → Relevant Domain Knowledge | **Domain Document** |
 | Shape Stage | Context + Domain Knowledge → Validated Product Hypothesis | **Shape v2 Document** |
-| Structure Stage | Validated Product Hypothesis → Reviewed Functional Structure | **Structure v2 Document** |
+| Structure Stage | Validated Product Hypothesis → Reviewed Functional Structure | **Structure v2 artifact** |
 | Behavior Stage | Functional Structure → Consultant-Reviewed Behavioral Model | **Behavior v2 Document** |
 | Interaction Stage | Reviewed Behavioral Model → Consultant-Reviewed Visual Validation Artifact | **Interaction v2** |
-| Requirements Stage | Client-Validated Product Knowledge → Precise Specification | **Requirements Document** |
+| Requirements Stage | Client-Validated Product Knowledge → Precise Specification | **Requirements v2** |
 | Solutions Stage | Precise Specification → Technical Solution | **Solutions Document** |
 
 Between Interaction and Requirements, Client Validation transforms:

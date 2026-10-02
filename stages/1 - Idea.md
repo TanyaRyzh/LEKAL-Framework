@@ -70,7 +70,7 @@ Which important aspects of the idea remain uncertain or unknown?
 
 # Process
 
-Use the [First Interview Script](./templates/First%20Interview%20Script.md) as guidance for the clarification conversation.
+Use the [First Interview Script](../templates/First%20Interview%20Script.md) as guidance for the clarification conversation.
 
 The consultant performs the following activities:
 
@@ -91,7 +91,7 @@ The goal is to gather information rather than to design the solution.
 
 # Output
 
-The stage produces an **Idea Document** using the [Idea template](./templates/Idea%20Template.md).
+The stage produces an **Idea Document** using the [Idea template](../templates/Idea%20Template.md).
 
 The document contains structured information describing the idea and its surrounding context.
 
@@ -116,7 +116,7 @@ The stage is complete when:
 - known constraints are recorded
 - major assumptions and open questions are captured
 
-Once these conditions are satisfied, the process can move to the next stage: **Shape Stage**.
+Once these conditions are satisfied, the process can move to the next stage: **Domain Stage**.
 
 ## Failure Conditions
 
@@ -127,6 +127,6 @@ The stage is considered unsuccessful if the consultant cannot establish enough i
 - the core interaction between the user and the potential product
 - the context in which the idea would operate
 
-In such cases, the idea is considered insufficiently defined to proceed to **Shape Stage**.
+In such cases, the idea is considered insufficiently defined to proceed to **Domain Stage**.
 
 The consultant should request additional information before completing the stage.

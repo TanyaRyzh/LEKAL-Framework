@@ -55,7 +55,7 @@ Primary inputs are:
 
 - Behavior v3;
 - Interaction v3;
-- current in-scope Structure;
+- Structure v2, including established IN / OUT scope decisions;
 - established scope decisions;
 - established constraints and assumptions;
 - Out of Scope decisions;
@@ -638,7 +638,11 @@ Requirements work.
 
 ## Consultant Review
 
-The Consultant reviews the complete Requirements Document.
+The initial Requirements v1 is an analytical proposal.
+
+The Consultant reviews and refines the complete Requirements Document toward v2.
+Independent review may challenge the working artifact during this refinement.
+Findings are advisory; the Consultant accepts, rejects, defers, or resolves them upstream.
 
 The Consultant may:
 
@@ -663,6 +667,10 @@ valid work.
 
 Consultant Review may be repeated until the Requirements Document is
 sufficiently complete and coherent for downstream work.
+
+The Consultant completes Requirements v2, the authoritative input to Solutions.
+Review does not create or approve a version. No separate post-Requirements
+validation checkpoint or Requirements v3 is currently defined.
 
 ---
 

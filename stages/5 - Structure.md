@@ -884,9 +884,7 @@ The Consultant may:
 - resolve Open Questions;
 - correct Structural Gaps.
 
-The Consultant-refined result becomes **Structure v2**.
-
-Structure v2 may then undergo independent Reviewer analysis.
+Independent review may challenge the working artifact during Consultant refinement.
 
 Reviewer findings are advisory.
 
@@ -897,11 +895,12 @@ The Consultant decides which findings to:
 - defer;
 - treat as upstream issues.
 
-The Consultant incorporates accepted decisions into **Structure v3**.
+The Consultant incorporates accepted findings and completes **Structure v2**.
 
-Structure v3 is the authoritative Structure input to the **Behavior Stage**.
+Structure v2 is the authoritative Structure input to the **Behavior Stage**.
 
-The agent must not simulate Consultant Review or Consultant refinement.
+There is no separate Structure validation checkpoint and no automatic Structure v3.
+Independent review does not create or approve a Structure version.
 
 ---
 
@@ -931,7 +930,7 @@ The Structure Stage succeeds when:
 - Open Questions that may change Structure are explicit;
 - the Structure artifact contains the functional model rather than an unnecessary analytical report;
 - detailed behavior has not been prematurely specified;
-- Structure v3 is sufficiently complete for Behavior to proceed without rediscovering basic product functionality.
+- Structure v2 is sufficiently complete for Behavior to proceed without rediscovering basic product functionality.
 
 ---
 

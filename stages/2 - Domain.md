@@ -105,7 +105,7 @@ Product Decision
 
 Domain knowledge may influence downstream product decisions, but those decisions must be made explicitly in the appropriate Stage.
 
-The Agent must not silently convert common domain practices into:
+Do not silently convert common domain practices into:
 
 - Product Scope;
 - Capabilities;
