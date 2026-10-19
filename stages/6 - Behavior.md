@@ -1325,9 +1325,9 @@ It becomes the primary input to the **Interaction Stage**.
 
 ## Client Validation
 
-Behavior v2 and Interaction v2 are validated together after Consultant refinement.
+Structure v2, Behavior v2, and Interaction v2 are validated together after Consultant refinement.
 The Consultant evaluates validation feedback, incorporates accepted changes, and
-produces Behavior v3 and Interaction v3 for Requirements.
+produces Structure v3, Behavior v3, and Interaction v3 for Requirements.
 Independent review does not create these validated versions.
 
 ---

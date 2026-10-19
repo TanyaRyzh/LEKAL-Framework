@@ -25,7 +25,7 @@ The purpose of this stage is to describe **how the system supports the required 
 ## Input
 
 Requirements v2 is the primary specification. Use validated Behavior v3,
-Interaction v3, Structure v2, and established constraints where necessary to
+Interaction v3, Structure v3, and established constraints where necessary to
 interpret it. Design may provide additional context when available; it is
 optional and is not a prerequisite for Solutions.
 

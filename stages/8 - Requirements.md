@@ -18,7 +18,7 @@ downstream technical design.
 
 The primary functional hierarchy is:
 
-Journey
+Functional Block (Structure Functional Area)
 └── Scenario
     └── Acceptance Criteria
 
@@ -35,7 +35,7 @@ Produce a Requirements Document that:
 - converts validated product behavior into precise and testable requirements;
 - incorporates validated Interaction decisions that materially affect expected
   product behavior;
-- covers all known in-scope Journeys and relevant Scenarios;
+- covers all established in-scope Capabilities and their relevant Scenarios;
 - provides sufficient detail for implementation;
 - defines sufficient Acceptance Criteria for verification;
 - preserves traceability between validated product knowledge, Requirements,
@@ -55,7 +55,7 @@ Primary inputs are:
 
 - Behavior v3;
 - Interaction v3;
-- Structure v2, including established IN / OUT scope decisions;
+- Structure v3 — the client-validated functional structure and IN / OUT scope decisions;
 - established scope decisions;
 - established constraints and assumptions;
 - Out of Scope decisions;
@@ -107,14 +107,22 @@ Stages rather than introduce an unrelated requirements taxonomy.
 
 The primary hierarchy is:
 
-Journey
+Functional Block (Structure Functional Area)
 └── Scenario
     └── Acceptance Criteria
 
-A Journey groups related product behavior around a meaningful user or system
-objective.
+A Functional Block corresponds to a Functional Area in the authoritative Structure.
+Preserve established Functional Area names and ordering where practical.
 
-A Scenario describes concrete user or system behavior within that Journey.
+A Scenario describes concrete user or system behavior within that Functional Block.
+Maintain traceability to the Structure Capabilities it specifies; a Capability may
+require several Scenarios, and a Scenario may involve several Capabilities.
+Capability does not need to become an additional mandatory heading level.
+
+User Journeys provide an end-to-end coverage check across Functional Blocks.
+They are not the parent hierarchy of the Requirements Document.
+Product entities named Journey or Scenario retain their domain meaning; their
+names do not determine the specification hierarchy.
 
 Acceptance Criteria define observable conditions used to determine whether the
 required Scenario behavior has been implemented correctly.
@@ -226,7 +234,7 @@ detail for implementation and verification.
 
 They are organized primarily as:
 
-Journey
+Functional Block (Structure Functional Area)
 └── Scenario
     └── Acceptance Criteria
 
@@ -486,10 +494,14 @@ specification.
 
 ---
 
-### 2. Establish the Journey and Scenario Structure
+### 2. Establish the Functional Block and Scenario Structure
 
-Organize Functional Requirements using the product's established Journey and
-Scenario structure.
+Organize Functional Requirements by the Functional Areas in the authoritative
+Structure. Within each Functional Block, specify the Scenarios needed to cover
+its in-scope Capabilities and established behavior.
+
+When a Scenario crosses Functional Blocks, describe it in its primary responsible
+block and reference related behavior rather than duplicating the specification.
 
 Refine decomposition where necessary to make the specification usable, but do
 not change established product meaning or silently introduce new scope.
@@ -559,7 +571,8 @@ Do not create cross-cutting sections for classification alone.
 
 Verify that:
 
-- every known in-scope Journey is represented;
+- every established in-scope Capability is covered by Scenarios or relevant cross-cutting Requirements;
+- meaningful end-to-end User Journeys remain supported across Functional Blocks;
 - relevant Scenarios are represented;
 - validated Behavior has not disappeared;
 - validated Interaction decisions affecting expected behavior or
@@ -690,7 +703,7 @@ Notifications
 Non-Functional Requirements
 
 Functional Requirements
-    Journey
+    Functional Block (Structure Functional Area)
         Scenario
             detailed Requirements
             Acceptance Criteria
@@ -705,7 +718,9 @@ A section should not exist merely because the structure permits it.
 
 The Requirements Stage is Complete when:
 
-- all known in-scope Journeys are covered;
+- all established in-scope Capabilities are covered;
+- Functional Blocks preserve the authoritative Structure decomposition;
+- meaningful end-to-end User Journeys are supported across Functional Blocks;
 - relevant Scenarios are specified;
 - each Scenario contains sufficient detail for implementation;
 - relevant fields, constraints, validation, Rules, States, permissions, errors,

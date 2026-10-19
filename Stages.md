@@ -757,12 +757,14 @@ It does not need to be a complete UX specification or polished UI.
 The Consultant reviews the following package with the client or relevant decision-makers:
 
 ```text
+Structure v2
++
 Behavior v2
 +
 Interaction v2
 ```
 
-Behavior and Interaction are validated together because visualizing product behavior may make product decisions easier to understand and challenge.
+Structure, Behavior, and Interaction are validated together because visualizing product behavior may make product decisions easier to understand and challenge.
 
 Client Validation may:
 
@@ -778,9 +780,13 @@ The Agent cannot simulate Client Validation.
 
 ### Client-Validated Outputs
 
-After Client Validation, the Consultant incorporates accepted feedback into both artifacts where required.
+After Client Validation, the Consultant incorporates accepted feedback into the affected artifacts where required.
 
 The Consultant produces:
+
+**Structure v3 artifact**
+
+and
 
 **Behavior v3 Document**
 
@@ -792,9 +798,11 @@ Behavior v3 represents client-validated product behavior.
 
 Interaction v3 represents the client-validated visual interpretation of that behavior.
 
-The pair:
+The validated package:
 
 ```text
+Structure v3 artifact
++
 Behavior v3 Document
 +
 Interaction v3
@@ -861,7 +869,7 @@ Primary inputs:
 
 - **Behavior v3 Document**;
 - **Interaction v3**;
-- **Structure v2 artifact**.
+- **Structure v3 artifact**.
 
 Relevant upstream Documents remain available as supporting product context.
 
@@ -1113,6 +1121,8 @@ Interaction creates the visual part of a combined client-validation package.
 After Consultant Review:
 
 ```text
+Structure v2
++
 Behavior v2
 +
 Interaction v2
@@ -1234,8 +1244,8 @@ Review does not create or approve another artifact version.
 
 v3 exists only after a meaningful Stage-specific validation checkpoint.
 The Consultant evaluates validation feedback and incorporates accepted changes.
-Structure ends at v2; Behavior and Interaction proceed together from v2 through
-Client Validation to v3; Requirements ends at v2 before Solutions.
+Structure, Behavior, and Interaction proceed together from v2 through Client
+Validation to v3; Requirements ends at v2 before Solutions.
 
 Shape below retains historical version labels pending deliberate reconciliation.
 Downstream Stages must use current authoritative validated Shape rather than
@@ -1374,6 +1384,8 @@ Interaction v2 is intentionally not a complete UX specification.
 ## Client Validation
 
 ```text
+Structure v2 artifact
++
 Behavior v2 Document
 +
 Interaction v2
@@ -1382,25 +1394,27 @@ Client Validation
 ↓
 Consultant incorporates accepted feedback
 ↓
+Structure v3 artifact
++
 Behavior v3 Document
 +
 Interaction v3
 ```
 
-Behavior and Interaction are deliberately validated together.
+Structure, Behavior, and Interaction are deliberately validated together.
 
-Client feedback may change either or both artifacts.
+Client feedback may change any of the three artifacts.
 
 The Consultant produces the client-validated versions.
 
-The Agent does not independently create Behavior v3 or Interaction v3.
+The Agent does not independently create Structure v3, Behavior v3, or Interaction v3.
 
 ---
 
 ## Requirements
 
 ```text
-Behavior v3 + Interaction v3 + Structure v2
+Structure v3 + Behavior v3 + Interaction v3
 ↓
 Requirements Stage
 ↓
@@ -1423,6 +1437,8 @@ No separate validation checkpoint or Requirements v3 is currently defined.
 When required:
 
 ```text
+Structure v3 artifact
++
 Behavior v3 Document
 +
 Interaction v3
@@ -1539,6 +1555,8 @@ Consultant incorporates accepted feedback
 
     ↓
 
+Structure v3 artifact
++
 Behavior v3 Document
 +
 Interaction v3

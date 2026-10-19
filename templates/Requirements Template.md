@@ -40,13 +40,15 @@
 
 # Functional Requirements
 
-# Journey: [Journey Name]
+# Functional Block: [Structure Functional Area Name]
 
 ## Description
 
 ...
 
 ## Scenario: [Scenario Name]
+
+**Structure Capabilities:** [Capability IDs / names from Structure v3]
 
 ### Description
 

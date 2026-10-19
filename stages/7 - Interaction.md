@@ -378,7 +378,7 @@ The result of Consultant Review is:
 
 ## Client Validation
 
-Interaction v2 is validated together with Behavior v2.
+Structure v2, Behavior v2, and Interaction v2 are validated together.
 
 Interaction provides a visual representation through which important behavioral
 decisions can be understood, discussed, and challenged.
@@ -386,10 +386,11 @@ decisions can be understood, discussed, and challenged.
 It does not replace Behavior.
 
 The Consultant evaluates validation feedback and incorporates accepted changes
-into either or both artifacts.
+into the affected Structure, Behavior, and Interaction artifacts.
 
 The resulting validated artifacts are:
 
+- **Structure v3**
 - **Behavior v3**
 - **Interaction v3**
 

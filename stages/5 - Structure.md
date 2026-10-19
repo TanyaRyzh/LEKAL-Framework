@@ -899,7 +899,9 @@ The Consultant incorporates accepted findings and completes **Structure v2**.
 
 Structure v2 is the authoritative Structure input to the **Behavior Stage**.
 
-There is no separate Structure validation checkpoint and no automatic Structure v3.
+Structure v2 is validated with Behavior v2 and Interaction v2 at Client Validation.
+The Consultant evaluates feedback, incorporates accepted changes, and produces Structure v3.
+Structure v3 is the validated functional scope input to Requirements.
 Independent review does not create or approve a Structure version.
 
 ---
