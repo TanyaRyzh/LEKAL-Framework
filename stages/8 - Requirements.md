@@ -511,7 +511,34 @@ requirements template.
 
 ---
 
-### 3. Specify Scenario Behavior
+### 3. Validate Requirements Coverage and Scenario Structure
+
+Before detailed specification begins, the proposed Requirements structure must be reviewed and agreed with the Consultant.
+
+The proposed structure must identify:
+
+- all Functional Blocks corresponding to the authoritative Structure Functional Areas;
+- the Scenarios required to cover established in-scope Capabilities and validated product behavior;
+- a concise description of the expected behavior covered by each Scenario;
+- traceability to relevant upstream product knowledge;
+- material coverage gaps, ambiguities, or contradictions;
+- proposed Scenario decomposition that requires Consultant consideration.
+
+The purpose of this review is to validate the completeness and suitability of the proposed specification structure before investing in detailed Requirements.
+
+The Consultant may accept, reject, consolidate, split, or request changes to proposed Scenarios.
+
+Detailed specification proceeds only after the Consultant agrees with the proposed structure.
+
+Agreement on the structure does not constitute approval of the Requirements themselves or resolution of outstanding product decisions.
+
+If detailed specification reveals material missing coverage or requires changes to the agreed Scenario structure, the affected changes must be brought back for Consultant consideration.
+
+This checkpoint does not introduce a separate Requirements version or additional client validation stage.
+
+---
+
+### 4. Specify Scenario Behavior
 
 For each in-scope Scenario, determine what information is necessary to make the
 expected behavior implementation-ready and testable.
@@ -524,9 +551,25 @@ implementation.
 Do not extract information into separate categories merely for taxonomic
 purity.
 
+Scenario specification should establish a coherent relationship between:
+
+- the validated behavior being specified;
+- applicable Actors, preconditions, permissions, and constraints;
+- the action or trigger;
+- the expected system response and resulting State;
+- consequences for related product behavior or data;
+- materially relevant alternatives, failures, and recovery;
+- Acceptance Criteria verifying the required outcomes.
+
+These elements should be considered together rather than treated as independent documentation categories.
+
+Not every Scenario requires every element.
+
+The specification should focus on behavior whose absence would create material ambiguity for implementation or verification.
+
 ---
 
-### 4. Define Acceptance Criteria
+### 5. Define Acceptance Criteria
 
 Derive Acceptance Criteria from the required Scenario behavior.
 
@@ -547,7 +590,7 @@ Do not simply repeat the Scenario flow.
 
 ---
 
-### 5. Consolidate Cross-Cutting Requirements
+### 6. Consolidate Cross-Cutting Requirements
 
 After Functional Requirements are sufficiently understood, consolidate
 information that is substantially easier to review, approve, maintain, or
@@ -567,7 +610,7 @@ Do not create cross-cutting sections for classification alone.
 
 ---
 
-### 6. Check Coverage
+### 7. Check Coverage
 
 Verify that:
 
@@ -582,9 +625,21 @@ Verify that:
 - recovery behavior is covered where applicable;
 - important boundary conditions are covered.
 
+Coverage must be demonstrable through identifiable Requirements rather than asserted through general statements or broad mappings between Functional Areas and Capabilities.
+
+For material established behavior, it must be possible to identify where the corresponding expected behavior, constraints, and verification conditions are specified.
+
+Coverage analysis should consider the consequences of actions across related Scenarios, including relevant State changes, permissions, invalidation, recalculation, and recovery.
+
+Coverage does not require a separate Requirement for every upstream statement or every possible combination of conditions.
+
+Equivalent or shared behavior may be specified once and referenced where appropriate.
+
+The objective is to prevent material omissions and contradictions without unnecessary duplication or document expansion.
+
 ---
 
-### 7. Check Consistency
+### 8. Check Consistency
 
 Verify that:
 
@@ -600,7 +655,7 @@ Verify that:
 
 ---
 
-### 8. Check Testability
+### 9. Check Testability
 
 Verify that:
 
@@ -613,7 +668,7 @@ Verify that:
 
 ---
 
-### 9. Check Stage Boundaries
+### 10. Check Stage Boundaries
 
 Verify that:
 
@@ -718,6 +773,7 @@ A section should not exist merely because the structure permits it.
 
 The Requirements Stage is Complete when:
 
+- the proposed Functional Block and Scenario structure has been reviewed and agreed with the Consultant, and the resulting Requirements cover the agreed structure or explicitly identify subsequently approved changes;
 - all established in-scope Capabilities are covered;
 - Functional Blocks preserve the authoritative Structure decomposition;
 - meaningful end-to-end User Journeys are supported across Functional Blocks;
